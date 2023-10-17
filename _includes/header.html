@@ -11,11 +11,19 @@
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
                             <a class="nav-link" href="{% if link.url %}{{ site.baseurl }}/{{ link.url }}{% else %}{{ link.external_url }}{% endif %}" ><span>{{ link.title }}</span></a>
 			</li>{% endfor %}
+
+      <!-- COMMENT: STARTING HERE CAN BE DELETED FOR THE DROP DOWN MENU!!! -->
+
       {% if site.version_params.versioning == true %}
       <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
+
+        <!-- THIS IS THE CODE FOR THE 'RELEASE' PART -->
         {% if site.version_params.version_menu != '' %}
           <span class="nav-link ">{{site.version_params.version_menu}}:</span>
         {% endif %}
+
+        <!-- COMMENT: This part (li to li) can be deleted!!! -->
+
         <li class="nav-item dropdown d-none d-lg-block">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ currentpageversion }}</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

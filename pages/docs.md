@@ -6,8 +6,8 @@ permalink: /docs/
 
 # Documentation
 
-Welcome to the {{ site.title }} Documentation pages! Here you can quickly jump to a 
-particular page.
+Welcome to the LDAK-KVIK Documentation pages! Here you can quickly jump to a 
+particular page for explanations and example code.
 
 <div class="section-index">
     <hr class="panel-line">

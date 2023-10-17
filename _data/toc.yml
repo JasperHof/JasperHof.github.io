@@ -16,6 +16,8 @@
       url: "about"
     - title: "News"
       url: "news"
+    - title: "Downloads"
+      url: "download"
 - title: "Extras"
   url: "docs/extras"
   links:

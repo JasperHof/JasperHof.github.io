@@ -1,6 +1,6 @@
 ---
-title: About
-permalink: /about/
+title: Downloads
+permalink: /download/
 ---
 
 # Download
