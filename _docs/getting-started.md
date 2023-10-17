@@ -1,147 +1,25 @@
 ---
 title: Getting Started
-tags: 
- - jekyll
- - github
-description: Getting started with Docsy Jekyll
+
+description: Getting started with LDAK-KVIK
 ---
 
 # Getting Started
 
-## Features
+## Downloading LDAK
 
-### User Interaction
-
-
-On the right side of any page, you'll notice links to edit the page, or
-open an issue. This ensures that any time you have a question or want to 
-suggest or request a change, you can do so immediately and link directly
-to the section of interest. The sections on the page also have permalinks so
-you can link directly to them.
-
-### Search
-
-The entire site, including posts and documentation, is indexed and then available
-for search at the top or side of the page. Give it a try! The content is rendered
-into window data that is used by lunr.js to generate the search results.
-If you want to exclude any file from search, add this to its front end matter:
+LDAK can be downloaded from the [LDAK website](www.dougspeed.com/downloads2), or using these command lines in Linux:
 
 ```
 ---
-layout: null
-excluded_in_search: true
+wget www.dougspeed.com/downloads2/linuxversion
+unzip zipfile
 ---
 ```
 
-The example above is for a javascript file in the assets folder that is used as a template,
-but should not be included in search.
-
-### External Search
-
-If you have an external site with a search GET endpoint (meaning one that ends
-in `?q=<term>`, then you can automatically link page tags to search this endpoint.
-For example, on an HPC site I'd want a tag like "mpi" to do a search on 
-[http://ask.cyberinfrastructure.org](http://ask.cyberinfrastructure.org) for mpi.
-See the [tags](#tags) section below for how to configure this.
-
-### Documentation
-
-Documentation pages should be written in the `docs` folder of the repository,
-and you are allowed to use whatever level of nesting (subfolders) that 
-works for you! It's a Jekyll [collection](https://jekyllrb.com/docs/collections/), which means that you
-can add other content (images, scripts) and it will be included for linking to.
-To create subfolders with files, you can simply create new markdon files. For example:
-
- - `_docs/subfolder/example-page.md` renders to `http://localhost:4000/docsy-jekyll/docs/subfolder/example-page/`
- - `_docs/subfolder.md` renders to `http://localhost:4000/docsy-jekyll/docs/subfolder/`
-
-And the page you are reading now renders from `_docs/getting-started.md`
-
-#### Organization
-
-The url that will render is based on the path. For example, if we had the following structure:
-
-```
-docs/
-  getting-started.md
-  clusters/
-     sherlock/
-         getting-started.md
-```
-
-The first page (akin to the one you are reading) would render at it's path,
-`/docs/getting-started/`.
-
-
-#### Linking
-
-From that page, we could provide the
-direct path in markdown to any subfolder to link to it, such as the second
-getting started page for sherlock:
-
-```
-{% raw %}[example](clusters/sherlock/getting-started.md){% endraw %}
-```
-
-[Here](example-page) is an example link to a relative path of a file (`example-page.md`)
-in the same directory, and from that page you can test linking to a subfolder.
-In the case of not having a subfolder, we could write the link out directly:
-
-```
-{% raw %}[example]({{ site.baseurl }}/docs/clusters/sherlock/getting-started.md){% endraw %}
-```
-
-or just put the relative path:
-
-```
-{% raw %}[Here](example-page){% endraw %}
-```
-
-or better, there is a shortand trick! We can use the provided "includes" 
-template to do the same based on the path to create a link:
-
-```
-{% raw %}{% include doc.html name="Sherlock Cluster" path="clusters/sherlock/getting-started" %}{% endraw %}
-```
-The path should be relative to the docs folder.
-
-### Pages
-
-The `pages` folder uses the same page layout, but is not part of the docs collection.
-The two are provided to create a distinction between website pages (e.g., about,
-feed.xml) and documentation pages.  
+Then you can run  `ldak.out` to see a list of options. If you have done all this earlier, you can skip to the Single SNP section
 
 ### Navigation
-
-Whether you place your page under "pages" or "docs," for those pages that you want added to the navigation, 
-you should add them to `_data/toc.yml`. If you've defined a `permalink` in the
-front end matter, you can use that (e.g., "About" below). If you haven't and
-want to link to docs, the url is the path starting with the docs folder.
-Here is an example (currently the active example):
-
-```yaml
-- title: Documentation
-  url: docs
-  links:
-    - title: "Getting Started"
-      url: "docs/getting-started"
-      children:
-        - title: Features
-          url: "docs/getting-started#getting-started"
-        - title: Development
-          url: "docs/getting-started#development"
-        - title: Customization
-          url: "docs/getting-started#customization"
-    - title: "Extras"
-      url: "docs/extras"
-      children:
-        - title: Quizzes
-          url: "docs/extras/example-quiz"
-    - title: "About"
-      url: "about"
-    - title: "News"
-      url: "news
-```
 
 If you want to add an external url for a parent or child, do this:
 

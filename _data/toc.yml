@@ -14,10 +14,9 @@
       url: "docs/versioning"
     - title: "About"
       url: "about"
-    - title: "News"
-      url: "news"
     - title: "Downloads"
       url: "download"
+
 - title: "Extras"
   url: "docs/extras"
   links:
@@ -25,3 +24,6 @@
       url: "docs/extras/example-quiz"
     - title: Tags Page
       url: "tags"
+
+- title: LDAK webpage
+  external_url: https://www.ldak.org
