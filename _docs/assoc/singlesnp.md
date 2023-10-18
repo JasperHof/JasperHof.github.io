@@ -20,4 +20,10 @@ First, it is necessary to compute the LOCO predictors
 
 The computed LOCO predictors of the previous step can be used as offset in the GWAS step.
 
-Binary traits can be analysed using a saddlepoint approximation by setting --spa-test YES.
+```
+./ldak.out --linear outcome --bfile data ----pheno phenofile --covar covfile --predictions kvik --max-threads 2
+```
+
+# Saddlepoint approximation
+
+We recommand using the saddlepoint approximation (SPA) when analysing binary traits. SPA robustly tests binary traits in presence of case:control imbalance, controlling Type I error. 
