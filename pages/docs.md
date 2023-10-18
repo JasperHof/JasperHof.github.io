@@ -1,13 +1,12 @@
 ---
 layout: page
-title: Documentation
+title: Getting started
 permalink: /docs/
 ---
 
-# Documentation
+# Getting started
 
-Welcome to the LDAK-KVIK Documentation pages! Here you can quickly jump to a 
-particular page for explanations and example code.
+Welcome to the LDAK-KVIK pages! We first describe how to install LDAK-KVIK and get the formatting of the data right.
 
 <div class="section-index">
     <hr class="panel-line">

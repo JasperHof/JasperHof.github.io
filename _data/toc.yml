@@ -1,4 +1,4 @@
-- title: Documentation
+- title: "Getting started"
   url: docs
   links:
     - title: "Downloads"
@@ -12,23 +12,19 @@
           url: "docs/input#covariate-format"
         - title: "Genotype format"
           url: "docs/input#genotype-format"
-    - title: Single-SNP analysis
-      url: "docs/singlesnp" 
+
+- title: "Association-analysis" 
+  url: "docs/assoc"
+  links:
+    - title: "Single-SNP analysis"
+      url: "docs/assoc/singlesnp" 
       children:
         - title: "Step 1"
-          url: "docs/singlesnp#step-1"
+          url: "docs/assoc/singlesnp#step-1"
         - title: "Step 2"
-          url: "docs/singlesnp#step-2"
-    - title: Gene-based testing
-      url: "docs/gene" 
-
-- title: "Extras"
-  url: "docs/extras"
-  links:
-    - title: Quizzes
-      url: "docs/extras/example-quiz"
-    - title: Tags Page
-      url: "tags"
+          url: "docs/assoc/singlesnp#step-2"
+    - title: "Gene-based testing"
+      url: "docs/assoc/gene" 
 
 - title: LDAK webpage
   external_url: https://www.ldak.org

@@ -1,5 +1,5 @@
 ---
-title: Jasper test page
+title: Single-SNP analysis
 description: Single-SNP analysis
 ---
 
@@ -10,8 +10,11 @@ Here we describe how to run LDAK-KVIK for single SNP analysis
 First, it is necessary to compute the LOCO predictors
 
 ```
-ldak.out --elastic kvik --bfile data
+./ldak.out --elastic kvik --bfile data --LOCO YES --pheno phenofile --covar covfile --ignore-weights YES \
+    --fast YES --cv-proportion 0.1  --power -0.25 --max-threads 2 --bit-size 256
 ```
+
+
 
 # Step 2
 

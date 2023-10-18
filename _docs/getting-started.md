@@ -1,11 +1,9 @@
 ---
-title: Getting Started
+title: Getting started
 description: Getting started with LDAK-KVIK
 ---
 
-# Getting Started 
-
-## Downloading LDAK
+# Downloading LDAK
 
 LDAK can be downloaded from the [LDAK website](www.dougspeed.com/downloads2), or using these command lines in Linux:
 
