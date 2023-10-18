@@ -7,7 +7,11 @@ Here we describe how to run LDAK-KVIK for single SNP analysis
 
 # Step 1
 
-First, it is necessary to compute the LOCO predictors 
+First, it is necessary to compute the LOCO predictors
+
+```
+ldak.out --elastic kvik --bfile data
+```
 
 # Step 2
 

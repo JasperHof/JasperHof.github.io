@@ -3,15 +3,15 @@
   links:
     - title: "Downloads"
       url: "docs/getting-started"
-    - title: Input formats
+    - title: File formats
       url: "docs/input"
       children:
-        - title: Phenotype format
-          url: "docs/input#phenotype"
-        - title: Covariate format
-          url: "docs/input#covariate"
-        - title: Genotype format
-          url: "docs/input#genotype"
+        - title: "Phenotype format"
+          url: "docs/input#phenotype-format"
+        - title: "Covariate format"
+          url: "docs/input#covariate-format"
+        - title: "Genotype format"
+          url: "docs/input#genotype-format"
     - title: Single-SNP analysis
       url: "docs/singlesnp" 
       children:
