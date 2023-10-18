@@ -3,13 +3,24 @@ title: Downloads
 permalink: /download/
 ---
 
-# Download
+## Source code
 
-LDAK-KVIK is included in the LDAK software, and can be downloaded from the [LDAK webpage](http://dougspeed.com/downloads2/).
-on the Beautiful [Docsy](https://github.com/google/docsy) that renders with Hugo. This version is intended for
-native deployment on GitHub pages. See the [repository]({{ site.repo }}) for more details.
+The **LDAK-KVIK** source code is hosted on [Github](https://github.com/dougspeed/LDAK)
+
+## Downloading LDAK
+
+LDAK-KVIK is included in the LDAK software, and can be downloaded from the [LDAK webpage](http://dougspeed.com/downloads2/). LDAK-KVIK can also be installed in Linux using these command lines:
+
+```
+---
+wget www.dougspeed.com/downloads2/linuxversion
+unzip zipfile
+---
+```
+
+Then you can run  `ldak.out` to see a list of options. If you have done all this earlier, you can skip to the Single SNP section
 
 ## Support
 
-If you need help, please don't hesitate to [open an issue](https://www.github.com/{{ site.github_user }}/{{ site.github_repo }}).
+If you need help, please don't hesitate to [open an issue](https://github.com/dougspeed/LDAK/issues).
 

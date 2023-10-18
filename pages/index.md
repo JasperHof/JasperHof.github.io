@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Docsy Jekyll Theme
+title: LDAK-KVIK
 permalink: /
 ---
 
 # Welcome to LDAK-KVIK
 
-**LDAK-KVIK** is a method for mixed-model association analysis for genome-wide association studies. LDAK-KVIK is highly efficient, and offer a high power to detect trait-associated loci.
+**LDAK-KVIK** is a method for mixed-model association analysis for genome-wide association studies. LDAK-KVIK is highly efficient, and offers a high power to detect trait-associated loci.
 
 ## Features
 

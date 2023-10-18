@@ -1,21 +1,26 @@
 - title: Documentation
   url: docs
   links:
-    - title: "Getting Started"
-      url: "docs/getting-started"
-      children:
-        - title: Features
-          url: "docs/getting-started#getting-started"
-        - title: Development
-          url: "docs/getting-started#development"
-        - title: Customization
-          url: "docs/getting-started#customization"
-    - title: Versioning
-      url: "docs/versioning"
-    - title: "About"
-      url: "about"
     - title: "Downloads"
-      url: "download"
+      url: "docs/getting-started"
+    - title: Input formats
+      url: "docs/input"
+      children:
+        - title: Phenotype format
+          url: "docs/input#phenotype"
+        - title: Covariate format
+          url: "docs/input#covariate"
+        - title: Genotype format
+          url: "docs/input#genotype"
+    - title: Single-SNP analysis
+      url: "docs/singlesnp" 
+      children:
+        - title: "Step 1"
+          url: "docs/singlesnp#step-1"
+        - title: "Step 2"
+          url: "docs/singlesnp#step-2"
+    - title: Gene-based testing
+      url: "docs/gene" 
 
 - title: "Extras"
   url: "docs/extras"
