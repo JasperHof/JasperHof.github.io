@@ -2,16 +2,16 @@
   url: docs
   links:
     - title: "Downloads"
-      url: "docs/getting-started"
+      url: "docs/downloads"
     - title: File formats
       url: "docs/input"
       children:
+        - title: "Genotype format"
+          url: "docs/input#genotype-format"
         - title: "Phenotype format"
           url: "docs/input#phenotype-format"
         - title: "Covariate format"
           url: "docs/input#covariate-format"
-        - title: "Genotype format"
-          url: "docs/input#genotype-format"
 
 - title: "Association-analysis" 
   url: "docs/assoc"

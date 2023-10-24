@@ -3,7 +3,7 @@ title: File formats
 description: File formats for GWAS anlysis
 ---
 
-# File formats
+# Genotype format
 
 LDAK accepts genetic data in many formats, including:
 
@@ -12,6 +12,8 @@ LDAK accepts genetic data in many formats, including:
  - **Sparse Partitioning (SP) format**, which simply requires data in a large matrix (rows are predictors, columns are samples)
 
 To filter either samples or predictors, see the [Data Filtering](https://dougspeed.com/data-filtering/) options on the LDAK website. LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
+
+More details about genotype formatting can be found on the [LDAK webpage](https://dougspeed.com/file-formats/).
 
 # Phenotype format
 
@@ -33,9 +35,7 @@ When a phenotypic values is NA for a particular sample, then that sample is excl
 
 # Covariate format
 
-Similarly as phenotype files, covariate files should be in PLINK format. The first two columns provide the sample IDs, with subsequent columns providing covariate values.
-
-For example: 
+Similarly as phenotype files, covariate files should be in PLINK format. The first two columns provide the sample IDs, with subsequent columns providing covariate values. For example: 
 ```
 FID IID PC1 PC2 PC3 Age Sex
 1 1 0.42 -0.12 1.23 41 0
@@ -43,16 +43,3 @@ FID IID PC1 PC2 PC3 Age Sex
 3 3 0.42 -0.12 1.23 41 0
 ...
 ```
-
-
-# Genotype format
-
-LDAK accepts files of .bed format, .sp and .speed format.
-.
-.
-.
-.
-.
-.
-.
-.
