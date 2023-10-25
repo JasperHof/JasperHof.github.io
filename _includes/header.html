@@ -31,8 +31,8 @@
             <a class="dropdown-item" href="{{ site.baseurl }}/docs/performance/runtime">Run time</a>
             <a class="dropdown-item" href="{{ site.baseurl }}/docs/performance/ukbb">UK Biobank</a>
             <a class="dropdown-item" href="{{ site.baseurl }}/docs/performance/simulations">Simulations</a>
-            <a class="dropdown-item" href="{{ site.baseurl }}/docs/assoc/singlesnp#step-2">Type I error control</a>
-            <a class="dropdown-item" href="{{ site.baseurl }}/docs/performance/ukbb">Gene-based testing</a>
+            <a class="dropdown-item" href="{{ site.baseurl }}/docs/performance/typeierror">Type I error control</a>
+            <a class="dropdown-item" href="{{ site.baseurl }}/docs/performance/genebased">Gene-based testing</a>
           </div>
         </li>
 
@@ -72,10 +72,10 @@
         </div>
 
 	<div class="navbar-nav d-none d-lg-block">
-          <a class="gh-source" data-gh-source="github" href="{{ site.repo }}" title="Go to repository" data-md-state="done">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/dougspeed/LDAK" title="Go to repository" data-md-state="done">
           <div class="gh-source__repository">
             <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
-            {{ site.github_user }}/{{ site.github_repo }}
+            dougspeed/LDAK
           <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
         </div>
       </div>
@@ -86,7 +86,7 @@
 
 <script>
 $(document).ready(function() {
-  var url = "https://api.github.com/search/repositories?q={{ site.github_user }}/{{ site.github_repo }}";
+  var url = "https://api.github.com/search/repositories?q=dougspeed/LDAK";
   fetch(url, { 
       headers: {"Accept":"application/vnd.github.preview"}
   }).then(function(e) {

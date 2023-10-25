@@ -29,7 +29,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://JasperHof.github.io" # the base hostname & protocol for your site
 
 # Social (First three Required)
-repo: "https://github.com/JasperHof/JasperHof.github.io"
+# repo: "https://github.com/JasperHof/JasperHof.github.io"
+
+repo: "https://github.com/dougspeed/LDAK"
 github_user: "JasperHof"
 github_repo: "JasperHof.github.io"
 github_branch: "master"
