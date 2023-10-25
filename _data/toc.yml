@@ -26,5 +26,8 @@
     - title: "Gene-based testing"
       url: "docs/assoc/gene" 
 
+- title: "Example code"
+  url: "docs/example" 
+
 - title: LDAK webpage
   external_url: https://www.ldak.org

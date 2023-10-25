@@ -3,7 +3,7 @@ title: Single-SNP analysis
 description: Single-SNP analysis
 ---
 
-Here we describe how to run **LDAK-KVIK** for single SNP analysis
+Here we describe how to run **LDAK-KVIK** for single SNP analysis. Running LDAK-KVIK can be broken down into two steps, which are executed by running two command lines.
 
 # Step 1
 
@@ -22,31 +22,21 @@ An example command line of Step 1 in LDAK-KVIK is as follows:
 
 This command line can be broken down as follows:
 
-
-|-----|--------|
-|**--elastic** | indicates that an elastic net model is fitted. While   |
+|------------|--------|
+|**--elastic**    | indicates that an elastic net model is fitted. While   |
 |**--bfile**   | indicates the name of the .bed file to be analyzed.      |
 |**--LOCO**   | has two options. The option `--LOCO YES` indicates that for every chromosome, an elastic net should be fitted *excluding* SNPs on the chromosome, which is needed to run LDAK-KVIK. Conversely, `--LOCO NO` fits the elastic net for the whole genome.  |
 |**--pheno**   | specifies the name of the phenotype file      |
 |**--covar**   | indicates the name of the covariate file     |
 |**--ignore-weights**   | indicates there are no SNP weightings for computing the elastic net model.  |
-|**--fast**   | indicates the name of the .bed file to be analyzed.      |
+|**--fast**   | has two options. The option `--fast YES`   |
 |**--cv-proportion**   | indicates the name of the .bed file to be analyzed.      |
 |**--power**   | indicates the name of the .bed file to be analyzed.      |
 |**--max-threads**   | indicates the name of the .bed file to be analyzed.      |
 |**--bit-size**   | indicates the name of the .bed file to be analyzed.      |
 
->
-> **--elastic** indicates that an elastic net model is fitted.
-
-> **--bfile** indicates the name of the .bed file to be analyzed.
 
 
->
->
->
->
->
 
 
 The `elastic` command indicates that we are fitting an elastic net polygenic risk score model. The `--bfile` command specifies the .bed file to be analysed (without .bed name extension).
