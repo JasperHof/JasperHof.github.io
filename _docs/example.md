@@ -5,7 +5,7 @@ description: Example code for running LDAK-KVIK
 
 # Example code for running LDAK-KVIK
 
-This page provides with example code to run LDAK-KVIK. It is possible to run LDAK-KVIK direclty on your own data, or first try it on simulated data. 
+This page provides with example code to run LDAK-KVIK. It is possible to run LDAK-KVIK direclty on your own data, or first try it on simulated data. In case you wish to directly apply LDAK-KVIK to your own data, please skip to [Running LDAK-KVIK](docs/example#Running-LDAK-KVIK)
 
 ## Generating genotypes and phenotypes
 

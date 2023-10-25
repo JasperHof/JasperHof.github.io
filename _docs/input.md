@@ -25,7 +25,7 @@ FID IID Pheno1 Pheno2
 3 3 0.32 36
 ...
 ```
-The files can contain a header row, but then the first two elements must be named either FID & IID or ID1 & ID2. When a phenotype file contains more than one phenotype (i.e., more than three columns), you should specify which to analyse using the option `--mpheno <integer>` (to specify by number) or `--pheno-name <name>` (to specify by name). Alternatively, some functions (most notably REML) allow for testing of all phenotypes by adding --mpheno -1. There is no option to select covariates (all covariates will be used, so to use only a subset, you should first make a reduced covariate file).
+LDAK accepts phenotype files both with and without a header. In casea header is included, the first two elements must be named either FID & IID or ID1 & ID2. When a phenotype file contains more than one phenotype (i.e., more than three columns), you should specify which to analyse using the option `--mpheno <integer>` (to specify by number) or `--pheno-name <name>` (to specify by name). Alternatively, some functions (most notably REML) allow for testing of all phenotypes by adding --mpheno -1. There is no option to select covariates (all covariates will be used, so to use only a subset, you should first make a reduced covariate file).
 
 Missing values should be denoted by NA. Note that whereas PLINK also treats -9 as missing, this is not the case in LDAK. Binary phenotypes should only take values:
 - 0 (control), 1 (case) or NA; or

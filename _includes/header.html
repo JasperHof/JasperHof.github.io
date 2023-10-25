@@ -18,11 +18,28 @@
       <!-- <li class="nav-item mr-4 mb-2 mb-lg-0"> -->
 
         <!-- THIS IS THE CODE FOR THE 'RELEASE' PART -->
+
+        <!--
         {% if site.version_params.version_menu != '' %}
           <span class="nav-link ">{{site.version_params.version_menu}}:</span>
         {% endif %}
+        -->
+
+        <li class="nav-item dropdown d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Performance</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="performance/runtime">Run time</a>
+            <a class="dropdown-item" href="performance/ukbb">UK Biobank</a>
+            <a class="dropdown-item" href="performance/simulations">Simulations</a>
+            <a class="dropdown-item" href="performance/typeierror">Type I error control</a>
+            <a class="dropdown-item" href="performance/genebased">Gene-based testing</a>
+          </div>
+        </li>
 
         <!-- COMMENT: This part (li to li) can be deleted!!! -->
+
+
+        <!--
 
         <li class="nav-item dropdown d-none d-lg-block">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ currentpageversion }}</a>
@@ -44,6 +61,8 @@
             {% endfor %}
           </div>
         </li>
+
+        -->
       <!-- </li> -->
       {% endif %}
 		</ul>

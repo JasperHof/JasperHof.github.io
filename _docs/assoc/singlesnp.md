@@ -25,7 +25,7 @@ This command line can be broken down as follows:
 |------------|--------|
 |**--elastic**    | indicates that an elastic net model is fitted. While   |
 |**--bfile**   | indicates the name of the .bed file to be analyzed.      |
-|**--LOCO**   | has two options. The option `--LOCO YES` indicates that for every chromosome, an elastic net should be fitted *excluding* SNPs on the chromosome, which is needed to run LDAK-KVIK. Conversely, `--LOCO NO` fits the elastic net for the whole genome.  |
+|**--LOCO**   | has two options. The option `--LOCO YES` indicates that for every chromosome, an elastic net is fitted *excluding* SNPs on the chromosome, which is needed to run LDAK-KVIK. Conversely, `--LOCO NO` fits the elastic net for the whole genome.  |
 |**--pheno**   | specifies the name of the phenotype file      |
 |**--covar**   | indicates the name of the covariate file     |
 |**--ignore-weights**   | indicates there are no SNP weightings for computing the elastic net model.  |

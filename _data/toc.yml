@@ -28,6 +28,9 @@
 
 - title: "Example code"
   url: "docs/example" 
+  children:
+    - title: "Running LDAK-KVIK"
+      url: "example#Running-LDAK-KVIK"
 
 - title: LDAK webpage
   external_url: https://www.ldak.org
