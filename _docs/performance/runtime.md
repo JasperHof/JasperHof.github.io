@@ -9,7 +9,7 @@ We compared the run time and memory requirements of LDAK-KVIK with Bolt-LMM and 
 
 <img title="Run time" alt="Run time" src="/assets/img/runtime_poster.png">
 
-We found that LDAK-KVIK required approximately 12 CPU hours to analyse 430k individuals for 690k SNPs.
+LDAK-KVIK required approximately 12 CPU hours to analyse 430k individuals for 690k SNPs, whereas Bolt-LMM required >150 hours.
 
 ## Steps
 

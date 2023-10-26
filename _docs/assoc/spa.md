@@ -9,7 +9,7 @@ We recommend using the saddlepoint approximation (SPA) when testing binary trait
 
 The SPA can be run in LDAK by including the arguments `--spa-test YES`, for example:
 ```
-./ldak.out --linear outcome --bfile data ----pheno phenofile --covar covfile --spa-test YES --max-threads 2
+./ldak.out --linear step2 --bfile data ----pheno phenofile --covar covfile --spa-test YES --max-threads 2
 ``` 
 When running a linear- or logistic regression with `--spa-test YES`, LDAK first pre-computes the SPA for a grid of values, which are related to the values of the score statistics and the standardized genotype values. When SNPs are tested for association, these pre-computed values are used in combination with a Taylors expansion.
 
