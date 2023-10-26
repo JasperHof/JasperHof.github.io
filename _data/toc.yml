@@ -25,6 +25,8 @@
           url: "docs/assoc/singlesnp#step-2"
     - title: "Gene-based testing"
       url: "docs/assoc/gene" 
+    - title: "Saddlepoint approximation"
+      url: "docs/assoc/spa" 
 
 - title: "Example code"
   url: "docs/example" 

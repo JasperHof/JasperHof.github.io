@@ -14,13 +14,13 @@ Features of LDAK-KVIK include:
  - The LDAK-KVIK model naturally **accounts for relatedness** 
  - Efficient **saddlepoint approximation** for robust association analysis of binary traits
  - Improved **gene-based association analysis** by using polygenic risk scores as offset
- - Option to specify the **heritability model** used in the model
+ - Option to specify the **heritability model**
 
 ## Recommendations
 
-We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). GWAS benefits the most from mixed-model association analysis when it is possible to predict the outcome using polygenic risk scores. Only when it is possible to predict phenotypes using GWAS data, it is possible to improve the statistical power of the analysis (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). In addition, LDAK-KVIK has not been tested on datasets of smaller sample sizes.
+We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). GWAS benefits the most from mixed-model association analysis when it is possible to predict the outcome using polygenic risk scores. Only then, it is possible to improve the statistical power of the analysis (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). LDAK-KVIK has not been tested on datasets of smaller sample sizes.
 
-When testing binary data of sample size smaller than 5000, it is still possible to make use of the [saddlepoint approximation](docs/assoc/spa). The saddlepoint approximation can assist in controlling the Type I error of binary GWAS, which is particularly useful when testing data with an imbalanced case:control ratio.
+When testing data of sample size smaller than 5000, it is still possible to make use of the [saddlepoint approximation](docs/assoc/spa). The saddlepoint approximation can assist in controlling the Type I error of GWAS, which is particularly useful when testing binary data with an imbalanced case:control ratio.
 
 ## Contact
 
