@@ -7,11 +7,11 @@
       url: "docs/input"
       children:
         - title: "Genotype format"
-          url: "docs/input#genotype-format"
+          url: "docs/input#gen"
         - title: "Phenotype format"
-          url: "docs/input#phenotype-format"
+          url: "docs/input#pheno"
         - title: "Covariate format"
-          url: "docs/input#covariate-format"
+          url: "docs/input#covar"
 
 - title: "Overview of LDAK-KVIK" 
   url: "docs/assoc"

@@ -3,6 +3,8 @@ title: File formats
 description: File formats for GWAS anlysis
 ---
 
+<a id="gen"></a>
+
 # Genotype format
 
 LDAK accepts genetic data in many formats, including:
@@ -14,6 +16,8 @@ LDAK accepts genetic data in many formats, including:
 To filter either samples or predictors, see the [Data Filtering](https://dougspeed.com/data-filtering/) options on the LDAK website. LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
 
 More details about genotype formatting can be found on the [LDAK webpage](https://dougspeed.com/file-formats/).
+
+<a id="pheno"></a>
 
 # Phenotype format
 
@@ -32,6 +36,8 @@ Missing values should be denoted by NA. Note that whereas PLINK also treats -9 a
 - 1 (control), 2 (case) or NA
 
 When a phenotypic values is NA for a particular sample, then that sample is excluded from the analysis; however, if a covariate is NA, its value is replaced by the mean.
+
+<a id="covar"></a>
 
 # Covariate format
 
