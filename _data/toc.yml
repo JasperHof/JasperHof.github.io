@@ -13,7 +13,7 @@
         - title: "Covariate format"
           url: "docs/input#covariate-format"
 
-- title: "Association-analysis" 
+- title: "Overview of LDAK-KVIK" 
   url: "docs/assoc"
   links:
     - title: "Single-SNP analysis"

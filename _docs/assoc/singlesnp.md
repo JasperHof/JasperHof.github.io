@@ -7,9 +7,9 @@ Here we describe how to run **LDAK-KVIK** for single SNP analysis. Running LDAK-
 
 # Step 1
 
-In Step 1, an elastic net model is fitted to compute polygenic risk scores for every chromosome. This step can be broken down into different sub-steps:
+In Step 1, an LDAK-KVIK fits an elastic net model compute polygenic risk scores, for every chromosome separately. This step can be broken down into the following sub-steps:
 
-1. Compute the SNP heritabilities used in the fitting the prediction model
+1. Compute the SNP heritabilities for the prediction model
 2. Determine the optimal hyperparameters for the elastic net using training samples
 3. Construct the best-fitting model and compute a polygenic risk score for every chromosome being tested
 
@@ -22,24 +22,21 @@ An example command line of Step 1 in LDAK-KVIK is as follows:
 
 This command line can be broken down as follows:
 
+| Argument |  Description | 
 |------------|--------|
-|**--elastic**    | indicates that an elastic net model is fitted. While   |
-|**--bfile**   | indicates the name of the .bed file to be analyzed.      |
-|**--LOCO**   | has two options. The option `--LOCO YES` indicates that for every chromosome, an elastic net is fitted *excluding* SNPs on the chromosome, which is needed to run LDAK-KVIK. Conversely, `--LOCO NO` fits the elastic net for the whole genome.  |
-|**--pheno**   | specifies the name of the phenotype file      |
-|**--covar**   | indicates the name of the covariate file     |
-|**--ignore-weights**   | indicates there are no SNP weightings for computing the elastic net model.  |
-|**--fast**   | has two options. The option `--fast YES`   |
-|**--cv-proportion**   | indicates the name of the .bed file to be analyzed.      |
-|**--power**   | indicates the name of the .bed file to be analyzed.      |
-|**--max-threads**   | indicates the name of the .bed file to be analyzed.      |
-|**--bit-size**   | indicates the name of the .bed file to be analyzed.      |
+|**--elastic**    | Name of the outfile file of the elastic net model   |
+|**--bfile**   | Name of the .bed file to be analyzed.      |
+|**--LOCO**   | Indicator for Leave-One-Chromosome-Out prediction. The option `--LOCO YES` indicates that for every chromosome, an elastic net is fitted *excluding* SNPs on the chromosome, which is needed to run LDAK-KVIK. Conversely, `--LOCO NO` fits the elastic net for the whole genome.  |
+|**--pheno**   | Name of the phenotype file      |
+|**--covar**   | Name of the covariate file     |
+|**--ignore-weights**   | Indicates there are no SNP weightings for computing the elastic net model. Alternatively, these can be specified using `--weights <weightsfile>` |
+|**--fast**   | Indicator for faster, approximate computations of the elastic net. The option `--fast YES`   |
+|**--cv-proportion**   | Numerical value, speficying the proportion of the sample used to esitmate the optimal hyperparameters of the elastic net      |
+|**--power**   | Numerical value, specifying the scaling of predictors according to their minor allele frequency    |
+|**--max-threads**   | Integer value, specifying the number of available threads for fitting the elastic net      |
+|**--bit-size**   | Integer value, specifying how many SNPs are read in at the same time in the elastic net      |
 
-
-
-
-
-The `elastic` command indicates that we are fitting an elastic net polygenic risk score model. The `--bfile` command specifies the .bed file to be analysed (without .bed name extension).
+We recommend running LDAK-KVIK with `--power -0.25`. 
 
 
 ### Speficying SNP heritability
