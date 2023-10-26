@@ -4,17 +4,23 @@ title: LDAK-KVIK
 permalink: /
 ---
 
-# Welcome to LDAK-KVIK
+# Welcome to LDAK-KVIK!
 
-**LDAK-KVIK** is a method for mixed-model association analysis for genome-wide association studies. LDAK-KVIK is highly efficient, and offers a high power to detect trait-associated loci.
+**LDAK-KVIK** is a method for mixed-model association analysis for genome-wide association studies (GWAS). LDAK-KVIK is highly efficient, and offers a high power to detect trait-associated loci.
 
-## Features
+Features of LDAK-KVIK include:
 
-Why use LDAK-KVIK?
+ - Increased **statistical power** by jointly modelling all SNPs
+ - The LDAK-KVIK model naturally **accounts for relatedness** 
+ - Efficient **saddlepoint approximation** for robust association analysis of binary traits
+ - Improved **gene-based association analysis** by using polygenic risk scores as offset
+ - Option to specify the **heritability model** used in the model
 
- - *Accounts for relatedness.* The LDAK-KVIK model includes a Leave-One-Chromosome-Out predictor, which naturally accommodates for relatedness.
- - *Saddlepoint approximation* for robust association analysis of imbalanced binary traits.
- - *Gene-based association analysis* imprvoes
+## Recommendations
+
+We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). GWAS benefits the most from mixed-model association analysis when it is possible to predict the outcome using polygenic risk scores. Only when it is possible to predict phenotypes using GWAS data, it is possible to improve the statistical power of the analysis (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). In addition, LDAK-KVIK has not been tested on datasets of smaller sample sizes.
+
+When testing binary data of sample size smaller than 5000, it is still possible to make use of the [saddlepoint approximation](docs/assoc/spa). The saddlepoint approximation can assist in controlling the Type I error of binary GWAS, which is particularly useful when testing data with an imbalanced case:control ratio.
 
 ## Contact
 

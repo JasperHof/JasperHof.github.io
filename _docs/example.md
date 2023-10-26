@@ -5,11 +5,11 @@ description: Example code for running LDAK-KVIK
 
 # Example code for running LDAK-KVIK
 
-This page provides with example code to run LDAK-KVIK. It is possible to run LDAK-KVIK direclty on your own data, or first try it on simulated data. In case you wish to directly apply LDAK-KVIK to your own data, please skip to [Running LDAK-KVIK](docs/example#Running-LDAK-KVIK)
+This page includes example code to run **LDAK-KVIK**. It is possible to run LDAK-KVIK directly on your own data, or to first try it out on simulated data. In case you wish to directly apply LDAK-KVIK to your own data, please skip to [Running LDAK-KVIK](#Running-LDAK-KVIK).
 
 ## Generating genotypes and phenotypes
 
-LDAK can be used to generated genotype data using the command line:
+LDAK can be used to generated genotype data using the command line
 ```
 ./ldak5.2.linux --make-snps data --num-samples 10000 --num-snps 50000
 ```
@@ -21,11 +21,13 @@ awk 'NR==1{print; next} {$1 = int((NR-1)/2500) + 1; print}' data.bim > data2.bim
 mv data2.bim data.bim
 ``` 
 
-Next, it is possible to generate phenotype data using the command line:
+Next, it is possible to generate phenotype data using the command line
 ```
 ./ldak5.2.linux --make-phenos pheno --bfile data --ignore-weights YES --power -1 --her 0.5 --num-phenos 1 --num-causals 1000
 ```
 This command generates one phenotype using the previously generated SNP data. The generated phenotype is simulated under a SNP heritability of 0.5, based on 1000 SNPs that are randomly selected from the 50000 SNPs. The SNP effects are sampled from a normal distribution, and scaled to match the heritability. The argument `--power -1` indicates that the variance explained by the SNPs is independent of their minor allele frequency. Finally, the argument `--ignore weights YES` indicates that we do not assume a weighting of SNPs for simulating the phenotype data.   
+
+<a id="Running-LDAK-KVIK"></a>
 
 ## Running LDAK-KVIK
 
