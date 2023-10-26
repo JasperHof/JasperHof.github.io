@@ -18,10 +18,10 @@ Features of LDAK-KVIK include:
 
 ## Recommendations
 
-We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). GWAS benefits the most from mixed-model association analysis when it is possible to predict the outcome using polygenic risk scores. Only then, it is possible to improve the statistical power of the analysis (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). LDAK-KVIK has not been tested on datasets of smaller sample sizes.
+We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). Mixed-model association analysis is most beneficial when it is possible to predict phenotypes using polygenic risk scores. The power gain from mixed-model association analysis is directly linked to the prediction accuracy of the model (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). LDAK-KVIK has not been tested on datasets of smaller sample sizes.
 
-When testing data of sample size smaller than 5000, it is still possible to make use of the [saddlepoint approximation](docs/assoc/spa). The saddlepoint approximation can assist in controlling the Type I error of GWAS, which is particularly useful when testing binary data with an imbalanced case:control ratio.
+When analysing smaller sample sizes, it is still possible to make use of the [saddlepoint approximation](docs/assoc/spa). The saddlepoint approximation can assist in controlling the Type I error of GWAS, which is particularly useful when testing binary data with an imbalanced case:control ratio.
 
 ## Contact
 
-If you have any questions about LDAK-KVIK or the LDAK software, please contact [Doug Speed](mailto:doug@qgg.au.dk)
+If you have any questions about LDAK-KVIK or the LDAK software, please contact [Doug Speed](mailto:doug@qgg.au.dk).

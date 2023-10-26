@@ -13,7 +13,7 @@ In Step 1, an LDAK-KVIK fits an elastic net model to compute polygenic risk scor
 2. Determine the optimal hyperparameters for the elastic net using training samples
 3. Construct the best-fitting model and compute a polygenic risk score for every chromosome being tested
 
-An example command line of Step 1 in LDAK-KVIK is as follows:
+An example command line of Step 1 in LDAK-KVIK is given by:
 
 ```
 ./ldak5.2.linux --elastic kvik --bfile data --LOCO YES --pheno phenofile --covar covfile --ignore-weights YES \
