@@ -5,7 +5,7 @@ permalink: /download/
 
 ## Source code
 
-The **LDAK-KVIK** source code is hosted on [Github](https://github.com/dougspeed/LDAK)
+The **LDAK-KVIK** source code is hosted on [Github](https://github.com/dougspeed/LDAK).
 
 ## Downloading LDAK
 

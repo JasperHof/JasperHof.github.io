@@ -16,6 +16,8 @@ Features of LDAK-KVIK include:
  - Improved **gene-based association analysis** by using polygenic risk scores as offset
  - Option to specify the **heritability model**
 
+ **Please Note** that LDAK-KVIK is still under construction, and a preprint is in progress. To stay tuned about updates regarding LDAK software, please sign up for the [LDAK mailing list](https://dougspeed.com/downloads/).
+
 ## Recommendations
 
 We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). Mixed-model association analysis is most beneficial when it is possible to predict phenotypes using polygenic risk scores. The power gain from mixed-model association analysis is directly linked to the prediction accuracy of the mixed model (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). LDAK-KVIK has not been tested on datasets of smaller sample sizes.

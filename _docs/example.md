@@ -42,3 +42,9 @@ After computing the LOCO estimators, the association analysis can be run using t
 ./ldak5.2.linux --linear step2 --bfile data --pheno pheno.pheno --predictions step1
 ```
 
+## Viewing the Output
+
+The results of the association analysis can be viewed using
+```
+head step2.assoc
+```
