@@ -11,7 +11,7 @@ permalink: /
 Features of LDAK-KVIK include:
 
  - Increased **statistical power** by jointly modelling all SNPs
- - The LDAK-KVIK model naturally **accounts for relatedness** 
+ - The LDAK-KVIK model **accounts for relatedness** 
  - Efficient **saddlepoint approximation** for robust association analysis of binary traits
  - Improved **gene-based association analysis** by using polygenic risk scores as offset
  - Option to specify the **heritability model**
