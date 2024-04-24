@@ -62,7 +62,7 @@ For most commands, it is possible to filter on SNPs or filter on samples using t
 | Argument |  Description |
 |--------------------|--------|
 | `--extract <extractfile>`    | Tells LDAK to use only the predictors specified in `<extractfile>`   |
-| `--exclude <excludefile>` | Tells LDAK to not use the predictors specified in <excludefile>. Note that predictors in --exclude <excludefile> takes priority over predictors in --extract <extractfile> |
+| `--exclude <excludefile>` | Tells LDAK to not use the predictors specified in `<excludefile>`. Note that predictors in --exclude <excludefile> takes priority over predictors in --extract <extractfile> |
 | `--chr <integer>` | Tells LDAK to only use predictors on a particular chromosome. If you use --chr AUTO, LDAK will only use Chromosomes 1-22 (in humans, these are the autosomes) |
 | `--snp <predname>` | Tells LDAK to only use the named predictor |
 | `--keep <keepfile>` | Tells LDAK to only use the samples specified in <keepfile> |

@@ -9,7 +9,7 @@ The **LDAK-KVIK** source code is hosted on [Github](https://github.com/dougspeed
 
 ## Downloading LDAK
 
-LDAK-KVIK is included in the LDAK software, that can be run on either a Linux-base PC or a Mac. LDAK can be downloaded from the [LDAK webpage](http://dougspeed.com/downloads2/), or can be installed directly in Linux using the command lines
+LDAK-KVIK is part of the LDAK software, which can be run on either a Linux-base PC or a Mac. LDAK can be downloaded from the [LDAK webpage](http://dougspeed.com/downloads2/), or can be installed directly in Linux using the command lines
 
 ```
 wget https://dougspeed.com/wp-content/uploads/ldak5.2.linux_.zip
