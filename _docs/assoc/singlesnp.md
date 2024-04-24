@@ -31,13 +31,11 @@ This input options are as follows:
 |`--bfile`   | Name of the .bed file to be analyzed      |
 |`--pheno`   | Name of the phenotype file      |
 |`--covar`   | Name of the covariate file     |
-|`--max-threads`   | Integer value, specifying the number of available threads for fitting the elastic net. By default, LDAK assumes `--max-threads` = 1      |
+|`--max-threads`   | Integer value, specifying the number of available threads for fitting the elastic net. By default, LDAK assumes `--max-threads` equals 1      |
 
 LDAK-KVIK first searches for an optimal value of $$\alpha$$, which scales the elastic net prior of SNP effects based on their minor allele frequency (see [Overview of LDAK-KVIK](/docs/assoc)). For most real traits, this value lies between -0.5 and 0. This value can also be specified using the option `--power <alpha>`.
 
-We recommend running LDAK-KVIK with `--power -0.25`, since [previous works](https://www.nature.com/articles/ng.3865) have shown that this value is on average the best fit for constructing prediction models. We also recommend using a CV-proportion of 0.1, as we found that this generally suffices in accurately assessing the best hyperparameters for LDAK-KVIK.
-
-It is possible to use [SNP annotations](http://dougspeed.com/pre-computed-tagging-files/) for computing SNP heritabilities, which can improve the prediction model. When analysing imputed data, it is often unnecessary to analyse include all SNPs in the elastic net model. Instead, it is possible to restrict to a subset of SNPs in Step 1, for example the directly genotyped SNPs or SNPs that remain after pruning. This can be achieved by adding the option `--extract <extractfile>`. The elastic net model accounts for linkage disequilibrium between SNPs. 
+It is possible to specify [SNP annotations](http://dougspeed.com/pre-computed-tagging-files/) for computing SNP heritabilities, which can improve the prediction model. When analysing imputed data, it is often unnecessary to analyse include all SNPs in the elastic net model. Instead, it is possible to restrict to a subset of SNPs in Step 1, for example the directly genotyped SNPs or SNPs that remain after pruning. This can be achieved by adding the option `--extract <extractfile>`. The elastic net model accounts for linkage disequilibrium between SNPs. 
 
 # Step 2
 

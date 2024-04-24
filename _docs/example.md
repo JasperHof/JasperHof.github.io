@@ -33,7 +33,7 @@ This command generates one phenotype using the previously generated SNP data. Th
 
 **LDAK-KVIK** is run in two steps. In the first step, we compute the Leave-One-Chromosome-Out (LOCO) predictors using an elastic net model. This can be run using the command:
 ```
-./ldak5.2.linux --elastic step1 --bfile data --pheno pheno.pheno --power -0.25 --LOCO YES 
+./ldak5.2.linux --kvik step1 --bfile data --pheno pheno.pheno --power -0.25 
 ```
 This command first computes the optimal hyperparameters, and subsequently fits the elastic net model. The estimates SNP effects are saved in `step1.effects`, the LOCO estimators are saved in `step1.loco.prs`.
 
@@ -48,3 +48,4 @@ The results of the association analysis can be viewed using
 ```
 head step2.assoc
 ```
+    
