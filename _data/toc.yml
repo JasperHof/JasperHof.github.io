@@ -18,13 +18,15 @@
 - title: "Overview of LDAK-KVIK" 
   url: "docs/assoc"
   links:
-    - title: "Single-SNP analysis"
+    - title: "Steps of LDAK-KVIK"
       url: "docs/assoc/singlesnp" 
       children:
         - title: "Step 1"
           url: "docs/assoc/singlesnp#step-1"
         - title: "Step 2"
           url: "docs/assoc/singlesnp#step-2"
+        - title: "Step 3"
+          url: "docs/assoc/singlesnp#step-3"
     - title: "Gene-based testing"
       url: "docs/assoc/gene" 
     - title: "Saddlepoint approximation"
