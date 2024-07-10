@@ -15,10 +15,10 @@
         - title: "Data filtering"
           url: "docs/input#filtering"
 
-- title: "Overview of LDAK-KVIK" 
+- title: "LDAK-KVIK" 
   url: "docs/assoc"
   links:
-    - title: "Steps of LDAK-KVIK"
+    - title: "Overview"
       url: "docs/assoc/singlesnp" 
       children:
         - title: "Step 1"

@@ -7,6 +7,13 @@ description: Overview of LDAK-KVIK
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+THIS NEEDS TO BE UPDATED
+#
+#
+#
+
+
+
 # Overview of LDAK-KVIK
 
 LDAK-KVIK uses a two-step process to test SNPs for association with the phenotype. In Step 1, it computes Leave-One-Chromosome-Out (LOCO) predictors and, in case of high structure, a test statistic scaling factor. In Step 2, it regresses the phenotype on each SNP, including the corresponding LOCO predictor as offset. In case of high structure, the resulting test statistics are scaled. Here we summarize the two steps.
