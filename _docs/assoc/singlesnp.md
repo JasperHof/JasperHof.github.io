@@ -7,20 +7,30 @@ description: Single-SNP analysis
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-Here we describe how to run **LDAK-KVIK** for single SNP analysis. LDAK-KVIK can be broken down into two steps, which are executed by running two command lines.
+**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis.
+
+
+**Step 1.** Construct LOCO PRS and estimate $$\lambda$$
+   1. Test for structure
+   2. Estimate $$\alpha$$ and $$h^2_j$$ using partitioned randomized Haseman-Elston Regression
+   3. Revise the estimates of $$h^2_j$$ using Monte Carlo REML
+   4. Determine suitable elastic net hyperparameters via cross-validation
+   5. Contruct LOCO PRS and estimate $$\lambda$$
+
 
 # Step 1
 
-In Step 1, an LDAK-KVIK fits an elastic net model to compute polygenic risk scores, for every chromosome separately. This step can be broken down into the following sub-steps:
+In Step 1, an LDAK-KVIK fits an elastic net model to compute LOCO polygenic risk scores, for every chromosome separately. This step can be broken down into the following sub-steps:
 
-1. Compute the SNP heritabilities for the prediction model
-2. Determine the optimal hyperparameters for the elastic net using training samples
-3. Construct the best-fitting model and compute a polygenic risk score for every chromosome being tested
+1. Test the data for structure (e.g., relatedness) using 512 semi-randomly picked SNPs
+2. Compute the heritability and power parameter alpha using randomized, partitioned Haseman-Elston regression
+3. Determine the optimal hyperparameters for the elastic net using training samples
+4. Construct the best-fitting model and compute a polygenic risk score for every chromosome being tested
 
 An example command line of Step 1 in LDAK-KVIK is given by:
 
 ```
-./ldak5.2.linux --kvik step1 --bfile data --pheno phenofile --covar covfile  --max-threads 2
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile
 ```
 
 This input options are as follows:
@@ -42,8 +52,13 @@ It is possible to specify [SNP annotations](http://dougspeed.com/pre-computed-ta
 The LOCO predictions computed in Step 1 are subsequently used as offset when testing SNPs for association. Both quantitative traits and binary traits can be analysed using a linear regression, using the command line:
 
 ```
-./ldak.out --linear step2 --bfile data ----pheno phenofile --covar covfile --predictions step1 --max-threads 2
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile
 ```
 
 Here, the `--predictions` argument speficies the output files of the first step. The `--linear` argument specifies the name of the output file. For the analysis of binary traits, we recommend using a [saddlepoint approximation](/docs/assoc/spa), which can be achieved by including the option `--spa-test YES`. 
 
+# Step 3
+
+```
+./ldak6.linux --kvik-step3 kvik --bfile data --annot <annotfile>
+```

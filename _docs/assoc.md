@@ -9,7 +9,7 @@ description: Overview of LDAK-KVIK
 
 # Overview of LDAK-KVIK
 
-LDAK-KVIK uses a two-step process to test SNPs for association with the phenotype. In Step 1, it computes Leave-One-Chromosome-Out (LOCO) predictors of the genetic contribution for each individual. In Step 2, it regresses the phenotype on each SNP, including the corresponding LOCO predictor as offset. Here we summarize the two steps.
+LDAK-KVIK uses a two-step process to test SNPs for association with the phenotype. In Step 1, it computes Leave-One-Chromosome-Out (LOCO) predictors and, in case of high structure, a test statistic scaling factor. In Step 2, it regresses the phenotype on each SNP, including the corresponding LOCO predictor as offset. In case of high structure, the resulting test statistics are scaled. Here we summarize the two steps.
 
 Suppose we have $$n$$ individuals genotyped for $$m$$ SNPs and recorded for a quantitative or binary phenotype. Let the $$n\times m$$ matrix $$X$$ contain the genotypes (coded $$0,1,2$$), let the $$n\times p$$ matrix $$Z$$ contain covariates, and let the length $$n$$ vector $$Y$$ contain the phenotypes.
 
