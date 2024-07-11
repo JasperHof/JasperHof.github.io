@@ -1,12 +1,10 @@
 ---
 layout: page
-title: Getting started
+title: Documentation
 permalink: /docs/
 ---
 
-# Getting started
-
-Welcome to the **LDAK-KVIK** pages! 
+# Documentation 
 
 LDAK-KVIK is a method for mixed-model assocation analysis for genome-wide association studies. For more instructions about downloading, formatting, or running the assocation analysis, select a topic on the drop-down menu on the left.
 

@@ -24,7 +24,7 @@
 - title: "Overview LDAK-KVIK" 
   url: "docs/assoc"
   links:
-    - title: "Steps"
+    - title: "LDAK-KVIK steps"
       url: "docs/assoc/singlesnp" 
       children:
         - title: "Step 1"
