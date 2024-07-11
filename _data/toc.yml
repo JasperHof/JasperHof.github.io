@@ -3,7 +3,7 @@
   links:
     - title: "Downloads"
       url: "docs/downloads"
-    - title: File formats
+    - title: Input options
       url: "docs/input"
       children:
         - title: "Genotype format"
@@ -15,10 +15,16 @@
         - title: "Data filtering"
           url: "docs/input#filtering"
 
-- title: "LDAK-KVIK" 
+- title: "Example code"
+  url: "docs/example" 
+  children:
+    - title: "Running LDAK-KVIK"
+      url: "example#Running-LDAK-KVIK"
+
+- title: "Overview LDAK-KVIK" 
   url: "docs/assoc"
   links:
-    - title: "Overview"
+    - title: "Steps"
       url: "docs/assoc/singlesnp" 
       children:
         - title: "Step 1"
@@ -31,12 +37,6 @@
       url: "docs/assoc/gene" 
     - title: "Saddlepoint approximation"
       url: "docs/assoc/spa" 
-
-- title: "Example code"
-  url: "docs/example" 
-  children:
-    - title: "Running LDAK-KVIK"
-      url: "example#Running-LDAK-KVIK"
 
 - title: LDAK webpage
   external_url: https://www.ldak.org

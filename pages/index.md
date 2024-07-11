@@ -6,23 +6,25 @@ permalink: /
 
 # Welcome to LDAK-KVIK!
 
-**LDAK-KVIK** is a method for mixed-model association analysis for genome-wide association studies (GWAS). LDAK-KVIK is highly efficient, and offers a high power to detect trait-associated loci.
+**LDAK-KVIK** is a tool for mixed-model association analysis for genome-wide association studies (GWAS). LDAK-KVIK is highly efficient, and offers a high power to detect trait-associated loci.
 
 Features of LDAK-KVIK include:
 
- - Increased **statistical power** by jointly modelling all SNPs
- - The LDAK-KVIK model **accounts for relatedness** 
+ - **Highly efficient**, able to analyse 100,000s of individuals in hours
+ - Increased **statistical power** by jointly modelling all SNPs using an Elastic Net
+ - LDAK-KVIK enables analysis of structured data, including data with high **relatedness**
  - Efficient **saddlepoint approximation** for robust association analysis of binary traits
  - Improved **gene-based association analysis** by using polygenic risk scores as offset
- - Option to specify the **heritability model**
 
- **Please Note** that LDAK-KVIK is still under construction, and a preprint is in progress. To stay tuned about updates regarding LDAK software, please sign up for the [LDAK mailing list](https://dougspeed.com/downloads/).
+ To stay tuned about updates regarding LDAK software, please sign up for the [LDAK mailing list](https://dougspeed.com/downloads/).
 
 ## Recommendations
 
-We recommend using LDAK-KVIK for analysing GWAS data sets of larger sample sizes (N > 5000). Mixed-model association analysis is most beneficial when it is possible to predict phenotypes using polygenic risk scores. The power gain from mixed-model association analysis is directly linked to the prediction accuracy of the mixed model (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). 
+LDAK-KVIK can be validly applied to quantitative and binary traits, for both homogeneous datasets and structured datasets (e.g., data of multiple ancestries or high relatedness). 
 
-When analysing smaller data sets, it is still possible to make use of the [saddlepoint approximation](docs/assoc/spa). The saddlepoint approximation ensures control of type 1 error of GWAS when testing binary data with an imbalanced case:control ratio.
+When running LDAK-KVIK, the user has the option to specify the number of threads to facilitate parallel running of parts of the code. For optimal implementation of LDAK-KVIK, select the number of threads available in `--num-threads`.
+
+Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it is possible to apply LDAK-KVIK to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller power gain from using mixed-model association analysis, as it is harder to construct accurate LOCO PRS in Step 1 (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). For binary traits, it is still useful to use the [saddlepoint approximation](docs/assoc/spa) to overcome inflation due to case:control imbalance. 
 
 ## Contact
 

@@ -7,7 +7,7 @@ description: Overview of genotype, phenotype and covariate formatting options in
 
 # Genotype formats
 
-LDAK accepts genetic data in many formats, using one of the following arguments:
+LDAK accepts genetic data in three formats, using one of the following arguments:
 
 | Argument |  Description |
 |--------------------|--------|

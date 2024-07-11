@@ -16,7 +16,7 @@ Next, we ran LDAK-KVIK for every phenotype, and compared its performance with th
 
 All methods included the top ten principal components as covariates. The results are visualised in the Figure below.
 
-<img title="Run time" alt="Run time" src="/assets/img/sim_power_poster.png">
+<img title="Run time" alt="Run time" src="/assets/img/Figure1.png">
 
 LDAK-KVIK outperformed FastGWA, GCTA-LOCO and Regenie in terms of statistical power, but was beaten by Bolt-LMM.
 
