@@ -3,7 +3,7 @@ title: Run time
 description: Comparison of computational requirements between LDAK-KVIK and alternatives
 ---
 
-## Computational Requirements for a GWAS
+# Computational Requirements for a GWAS
 
 We compared the run time and memory requirements of LDAK-KVIK with Bolt-LMM and Regenie using data from the UK Biobank. We applied all methods to quantitative traits from the UK Biobank, and varied the sample size between 10k and 430k. For all sample sizes, we analysed 690k SNPs, that were included in both Step 1 (computing the LOCO estimator) and Step 2 (association analysis). The results are visualised below.
 
