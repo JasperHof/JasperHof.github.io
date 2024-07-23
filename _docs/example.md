@@ -38,7 +38,7 @@ LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) 
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno pheno.pheno
 ./ldak6.linux --kvik-step2 kvik --bfile data --pheno pheno.pheno
-./ldak6.linux --kvik-step3 kvik --bfile data --annot <gene annotation file>
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile <gene annotation file>
 ```
 
 In case a binary trait is analysed, the user should add the `--binary YES` flag in Step 1. Instructions for downloading the gene annotation file are described in the [gene-based analysis section](/docs/assoc/gene).

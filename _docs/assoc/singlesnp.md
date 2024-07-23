@@ -156,7 +156,7 @@ LDAK-KVIK reports three values for each SNP: an effect size estimate $$\epsilon_
 # Step 3
 
 ```
-./ldak6.linux --kvik-step3 kvik --bfile data --annot <annotfile>
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile>
 ```
 
 **Operation 3a - Run LDAK-GBAT using the results from single-SNP association analysis.** 

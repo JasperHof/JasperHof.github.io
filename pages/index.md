@@ -14,11 +14,27 @@ Features of LDAK-KVIK include:
  - Increased **statistical power** by jointly modelling all SNPs using an Elastic Net
  - LDAK-KVIK enables analysis of structured data, including data with high **relatedness**
  - Efficient **saddlepoint approximation** for robust association analysis of binary traits
- - Improved **gene-based association analysis** by using polygenic risk scores as offset
+ - Direct implementation of **gene-based association analysis**
 
 For instructions on downloading LDAK, please go to [downloads](/docs/downloads). Example code of LDAK-KVIK can be found in [example code](/docs/example). An overview of the steps involved in running LDAK-KVIK are included in the [LDAK-KVIK steps](/docs/assoc/singlesnp) page.
 
 To stay tuned about updates regarding LDAK software, please sign up for the [LDAK mailing list](https://dougspeed.com/downloads/).
+
+## Example code
+
+**LDAK-KVIK** is run in three steps:
+
+1. Compute PRS using an Elastic Net model
+2. Run single-SNP analysis with PRS as offset
+3. Perform gene-based analysis using summary statistics of single-SNP analysis
+
+Example command lines are:
+
+```
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile
+```
 
 ## Installation
 
