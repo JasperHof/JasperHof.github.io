@@ -38,5 +38,8 @@
     - title: "Saddlepoint approximation"
       url: "docs/assoc/spa" 
 
+- title: Recommendations
+  url: "docs/recommendations"
+
 - title: LDAK webpage
   external_url: https://www.ldak.org

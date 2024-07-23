@@ -18,9 +18,7 @@ title: LDAK-KVIK
 email: Jasper.Hof@radboudumc.nl
 author: Dinosaur Avocado
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  LDAK-KVIK: fast and powerful mixed-model association analysis for GWAS of quantitative and binary traits
 
 # Add your baseurl here (your repository) but DO NOT CHANGE THE LINE NUMBER without editing .circleci/circle_urls.sh
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -69,7 +67,7 @@ feedback: true
 # google-analytics: UA-XXXXXXXXXX
 # Image and (square) dimension for logo (don't start with /)
 # If commented, will use material hat theme
-# logo: "assets/img/logo/SRCC-square-red.png"
+logo: "assets/img/logo.png"
 logo_pixels: 34
 color: "#30638e"
 # color: "#8c1515" # primary color for header, buttons

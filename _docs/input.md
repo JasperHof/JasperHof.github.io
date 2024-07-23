@@ -5,7 +5,11 @@ description: Overview of genotype, phenotype and covariate formatting options in
 
 <a id="gen"></a>
 
-# Genotype formats
+# Input options
+
+Below, we discuss the genotype, phenotype and covariate data formatting for running LDAK-KVIK. We then list the arguments to use for running LDAK-KVIK on a subset of the genotype data.
+
+## Genotype format
 
 LDAK accepts genetic data in three formats, using one of the following arguments:
 
@@ -21,7 +25,7 @@ Notably, LDAK is not able to process data of `pgen` format and `vcf` format. For
 
 <a id="pheno"></a>
 
-# Phenotype format
+## Phenotype format
 
 Phenotype files should be in PLINK format. The first two columns should provide sample IDs, with subsequent columns providing the phenotype values. This can be one phenotype, or multiple phenotypes. An example phenotype input file looks like this:
 ```
@@ -41,7 +45,7 @@ When a phenotypic values is NA for a particular sample, then that sample is excl
 
 <a id="covar"></a>
 
-# Covariate format
+## Covariate format
 
 Similarly as phenotype files, covariate files should be in PLINK format. The first two columns provide the sample IDs, with subsequent columns providing covariate values. For example: 
 ```
@@ -55,7 +59,7 @@ There is no option to select a subset of covariates, all covariates will be used
 
 <a id="filtering"></a>
 
-# Data filtering
+## Data filtering
 
 For most commands, it is possible to filter on SNPs or filter on samples using the following arguments:
 
