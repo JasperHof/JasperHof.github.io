@@ -1,5 +1,5 @@
 ---
-title: File formats
+title: Input options
 description: Overview of genotype, phenotype and covariate formatting options in LDAK-KVIK
 ---
 

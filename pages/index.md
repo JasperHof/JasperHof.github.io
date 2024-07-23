@@ -31,9 +31,9 @@ To stay tuned about updates regarding LDAK software, please sign up for the [LDA
 Example command lines are:
 
 ```
-./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile
-./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
 ```
 
 ## Installation

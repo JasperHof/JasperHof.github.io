@@ -6,8 +6,9 @@
 
   <!-- Added analytics to view visits-->
   {% include analytics.html %}
-  
+  <!-- 
   {% include google-analytics.html %}
+  -->
   {% if site.version_params.versioning == true %}
     {% assign pageversion = page.url | append: "/"  | replace: '//', '/' | split: '/' %}
     {% assign currentpageversion = pageversion[3] %}

@@ -21,7 +21,7 @@
     - title: "Running LDAK-KVIK"
       url: "example#Running-LDAK-KVIK"
 
-- title: "Overview LDAK-KVIK" 
+- title: "LDAK-KVIK overview" 
   url: "docs/assoc"
   links:
     - title: "LDAK-KVIK steps"
@@ -37,6 +37,16 @@
       url: "docs/assoc/gene" 
     - title: "Saddlepoint approximation"
       url: "docs/assoc/spa" 
+
+- title: LDAK-KVIK output
+  url: "docs/output"
+  links:
+    - title: "Step 1"
+      url: "docs/output#step-1" 
+    - title: "Step 2"
+      url: "docs/output#step-2" 
+    - title: "Step 3"
+      url: "docs/output#step-3" 
 
 - title: Recommendations
   url: "docs/recommendations"

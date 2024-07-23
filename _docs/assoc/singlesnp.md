@@ -38,7 +38,7 @@ First we describe each operation in turn, then we explain some implementation de
 An example command line of Step 1 in LDAK-KVIK is given by:
 
 ```
-./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 2
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
 ```
 
 This input options are as follows:
@@ -99,7 +99,7 @@ The type of PRS and value of $$\lambda$$ depend on the outcome of the test for s
 An example command line of Step 2 in LDAK-KVIK is given by:
 
 ```
-./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
 ```
 
 This input options are as follows:
@@ -156,7 +156,7 @@ LDAK-KVIK reports three values for each SNP: an effect size estimate $$\epsilon_
 # Step 3
 
 ```
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile>
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 4
 ```
 
 **Operation 3a - Run LDAK-GBAT using the results from single-SNP association analysis.** 

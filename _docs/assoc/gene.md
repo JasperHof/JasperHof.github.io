@@ -8,10 +8,10 @@ description: Gene-based association analysis for genome-wide association studies
 
 # Gene-based association analysis
 
-We have previously developed [LDAK-GBAT](https://www.cell.com/ajhg/fulltext/S0002-9297(22)00501-8?dgcid=raven_jbs_aip_email), a tool for gene-based association analysis using GWAS summary statistics and a reference panel. LDAK-GBAT uses REML to solve the model
+We have previously developed [LDAK-GBAT](https://www.cell.com/ajhg/fulltext/S0002-9297(22)00501-8?dgcid=raven_jbs_aip_email), a tool for gene-based association analysis using GWAS summary statistics and a reference panel. LDAK-GBAT uses REstricted Maximum Likelihood (REML) to solve the model
 
 $$
-Y \sim N(0,K_S\sigma^2_S + I(1-\sigma^2_S))
+Y \sim N(0,K_S\sigma^2_S + I(1-\sigma^2_S)),
 $$
 
 where $$K_S$$ is a "genomic" relatedness matrix constructed using only SNPs within the gene being tested, then performs a likelihood ratio test of $$\sigma^2_S>0$$ (using permutations to estimate the null distribution of the likelihood ratio test statistic). When applied to 109 phenotypes from the UK Biobank, Million Veterans Program and Psychiatric Genomics Consortium, LDAK-GBAT found at least 19% more significant genes than the existing tools MAGMA, fastBat, SKAT-O, PCA and ACAT (the last three tools are contained within the sumFREGAT software).
