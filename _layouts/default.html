@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
-  <!-- Added analytics to view visits-->
-  {% include analytics.html %}
-
   <!-- Copyright 2019-2021 Vanessa Sochat-->
   {% include head.html %}
+
+  <!-- Added analytics to view visits-->
+  {% include analytics.html %}
+  
   {% include google-analytics.html %}
   {% if site.version_params.versioning == true %}
     {% assign pageversion = page.url | append: "/"  | replace: '//', '/' | split: '/' %}
