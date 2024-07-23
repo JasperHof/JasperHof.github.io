@@ -36,6 +36,8 @@ Example command lines are:
 ./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
 ```
 
+The main output files of LDAK-KVIK are `kvik.step2.assoc` and `kvik.step3.remls.all`, which contain the results from single-SNP and gene-based association analysis, respectively.
+
 ## Installation
 
 LDAK-KVIK can be run on both [Linux and Mac](/docs/downloads). It is also possible to install the Linux-version of LDAK via [conda](http://anaconda.org/genomedk/ldak5) using the command lines:
