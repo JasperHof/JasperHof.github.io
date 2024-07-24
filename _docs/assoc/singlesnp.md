@@ -89,7 +89,7 @@ LDAK-KVIK uses cross-validation to obtain suitable values for $$p$$ and $$F$$. B
 
 ---
 
-**Operation 1e - Construct LOCO PRS and estimate $\lambda$.**
+**Operation 1e - Construct LOCO PRS and estimate $$\lambda$$.**
 
 The type of PRS and value of $$\lambda$$ depend on the outcome of the test for structure in Operation 1a. In case the test found only weak structure, LDAK-KVIK constructs $$P_c$$, the $$c$$ th LOCO PRS, assuming the Elastic Net prior distribution for SNP effect sizes defined in Ooeration 1d, with $$p$$ and $$F$$ set to the best-fitting values. LDAK-KVIK sets $$\lambda=1$$. If the test in Operation 1a found strong structure, LDAK-KVAK instead constructs $P_c$ assuming the Ridge Regression prior distribution $$\gamma_j \sim N (0, \hat h^2_j)$$, then estimates $$\lambda$$ using the Grammar-Gamma Formula.
 

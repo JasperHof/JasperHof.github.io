@@ -6,10 +6,9 @@ permalink: /docs/
 
 # Getting started 
 
-The menu on the left lists several relevant topics for successfully running LDAK-KVIK. After [downloading](/docs/downloads) LDAK, it is possible to prepare your data using the [input options](/docs/input). If you do not (yet) have genotype or phenotype data available, it is still possible to try out LDAK-KVIK by generating your own data in [example code](/docs/example). A summary of the LDAK-KVIK algorithm is included in the [steps](/docs/assoc/singlesnp) of LDAK-KVIK, and the performance of LDAK-KVIK is showcased in [performance](/docs/performance/).
+The menu on the left lists several relevant topics for successfully running LDAK-KVIK. After [downloading](/docs/downloads) LDAK, it is possible to prepare your data using the [input options](/docs/input). The command lines used to run LDAK-KVIK are included in the [example code](/docs/example) page. The [example code](/docs/example) page also includes command lines for generating fake genotype and phenotype data, and demonstrates how these can be used to run LDAK-KVIK.
 
-
-It is also possible to directly jump to a topic using the menu below. In case you have any questions regarding LDAK-KVIK or the LDAK software, feel free to contact [Doug Speed](mailto:doug@qgg.au.dk) (doug@qgg.au.dk).
+ A summary of the LDAK-KVIK algorithm is included in the [steps](/docs/assoc/singlesnp) of LDAK-KVIK, and the performance of LDAK-KVIK is showcased in [performance](/docs/performance/) page. It is possible to directly jump to a topic using search bar or the menu below. In case you have any questions regarding LDAK-KVIK or the LDAK software, feel free to contact [Doug Speed](mailto:doug@qgg.au.dk) (doug@qgg.au.dk).
 
 <div class="section-index">
     <hr class="panel-line">

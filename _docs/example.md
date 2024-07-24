@@ -19,7 +19,7 @@ Next, a quantitative phenotype can be generated using the command line
 ```
 ./ldak6.linux --make-phenos pheno --bfile data --power -0.25 --her 0.5 --num-phenos 1 --num-causals 1000
 ```
-This command generates one phenotype using the previously generated SNP data. The phenotype is simulated under a SNP heritability of 0.5, based on 1000 randomly selected causals SNPs. The power parameter is set to -0.25, indicating that more common SNPs (with higher MAF) tend to explain more phenotypic variance (a phenomenon observed in human traits). SNP effect sizes are sampled from a normal distribution, and scaled to match the heritability.   
+This command generates one phenotype using the previously generated SNP data. The phenotype is simulated under a SNP heritability of 0.5, based on 1000 randomly selected causals SNPs. The power parameter is set to -0.25, indicating that common SNPs (with higher MAF) tend to explain more phenotypic variance (a phenomenon observed in human traits). SNP effect sizes are sampled from a normal distribution, and scaled to match the heritability.   
 
 To generate binary phenotypes, the user should add a flag indicating the prevalence:
 ```
@@ -31,9 +31,9 @@ This will generate a phenotype data with 20% cases, and a liability heritability
 
 ## Running LDAK-KVIK
 
-A more detailed explanation with input options of LDAK-KVIK can be found in the [overview of LDAK-KVIK](/docs/assoc/singlesnp). Here, we show the basic command lines used to run LDAK-KVIK.
+An explanation of the input options of LDAK-KVIK can be found in the [overview of LDAK-KVIK](/docs/assoc/singlesnp). Here, we demonstrate the basic command lines used to run LDAK-KVIK.
 
-LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) PRS are computed using an Elastic Net model. Step 2 runs the single-SNP analysis, and Step 3 runs the gene-based associatiòn analysis. These steps are subsequently run using the following commands:
+LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) PRS are computed using an Elastic Net model. Step 2 runs the single-SNP analysis, and Step 3 runs the gene-based associatiòn analysis. These steps are consecutively run using the following commands:
 
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno pheno.pheno --covar data.covar --max-threads 4
@@ -42,8 +42,6 @@ LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) 
 ```
 
 In case a binary trait is analysed, the user should add the `--binary YES` flag in Step 1. Instructions for downloading the gene annotation file are described in the [gene-based analysis section](/docs/assoc/gene).
-
-
 
 ## Viewing the Output
 
