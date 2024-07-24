@@ -5,7 +5,7 @@ description: Getting started with LDAK-KVIK
 
 # Downloading LDAK
 
-LDAK-KVIK is included in the LDAK software, that can be run on either a Linux-base PC or a Mac. LDAK can be downloaded from the [LDAK webpage](http://dougspeed.com/downloads2/), or can be installed directly in Linux using the command lines:
+LDAK-KVIK is included in the LDAK software, which can be run on either a Linux-base PC or a Mac. LDAK can be downloaded from the [LDAK webpage](http://dougspeed.com/downloads2/), or can be installed directly in Linux using the command lines:
 
 ```
 wget https://dougspeed.com/wp-content/uploads/ldak6.beta_.zip

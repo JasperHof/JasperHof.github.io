@@ -2,7 +2,9 @@
 title: Input options
 description: Overview of genotype, phenotype and covariate formatting options in LDAK-KVIK
 ---
-
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 <a id="gen"></a>
 
 # Input options
@@ -47,7 +49,7 @@ When a phenotypic values is NA for a particular sample, then that sample is excl
 
 ## Covariate format
 
-Similarly as phenotype files, covariate files should be in PLINK format. The first two columns provide the sample IDs, with subsequent columns providing covariate values. For example: 
+Covariate files should be in PLINK format. The first two columns should provide the sample FIDs and IIDs, with subsequent columns providing covariate values. For example: 
 ```
 FID IID PC1 PC2 PC3 Age Sex
 1 1 0.42 -0.12 1.23 41 0
@@ -75,3 +77,21 @@ For most commands, it is possible to filter on SNPs or filter on samples using t
 In addition, for many commands, you can add `--pheno <phenofile>` and LDAK will only consider samples for which phenotypes are available.
 
 Note that if you would like to filter predictors based on minor allele frequency, variance, missingness or information score, you must first remake the data (this filtering can not be done on-the-fly).
+
+<a id="kvik"></a>
+
+## LDAK-KVIK options
+
+Default parameters in LDAK-KVIK can be modified by adding options to the command line.
+
+| Step | Argument |  Description |
+|--------|--------------------|--------|
+|1    | `--num-pedigree-predictors`    |  The number of SNPs used when testing for structure (default: 512)   |
+| | `–-check-pedigree NO`   |  Indicates that there will be no check for structure. In this case, it is assumed that there is structure    |
+|   | `-–num-MCMC`   | Number of random vectors used to compute the heritability estimate in randomized Haseman-Elston regression (default: ten if $$n$$ < 40000, three if $$n$$ > 40000)     |
+|   | `-–num-divide`   | Number of partitions used to compute the heritability estimate in randomized Haseman-Elston regression (default: 40)    |
+|   | `-–num-scans`   | Number of scans performed by the Variational Bayes algorithm to construct PRS   |
+|   | `-–cv-proportion`   | Proportion of individuals used to determine elastic net hyperparameters   |
+|   | `-–tolerance`   | This number is multiplied by $$n$$, this specifies the threshold for convergence for the likelihood in the Variational Bayes algorithm (default: $$10^{-6}$$).   |
+|   | `–-num-calibration-predictors`   | Number of SNPs used to compute the Grammar-Gamma scaling factor (default: 20).  |
+| 2  | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes.  |

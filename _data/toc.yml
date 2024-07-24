@@ -14,6 +14,8 @@
           url: "docs/input#covar"
         - title: "Data filtering"
           url: "docs/input#filtering"
+        - title: "LDAK-KVIK options"
+          url: "docs/input#kvik"
 
 - title: "Example code"
   url: "docs/example" 
