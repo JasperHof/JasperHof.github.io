@@ -5,7 +5,8 @@ description: Single-SNP analysis
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-## **Overview of LDAK-KVIK**
+
+# LDAK-KVIK steps
 
 **LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. These steps should be run consecutively; each next step is dependent on the results of the previous step. 
 
