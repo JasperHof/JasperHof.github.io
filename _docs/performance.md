@@ -2,6 +2,9 @@
 title: Performance of LDAK-KVIK
 description: Performance of LDAK-KVIK
 ---
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 # Performance
 
@@ -37,7 +40,7 @@ We applied LDAK-KVIK to 40 quantiative traits from the UK Biobank, and compared 
 
 For every trait, we first evaluated the number of independent significantly associated loci for each method. This was compated to the number of significant loci using linear regression, and plotted against the estimated SNP heritability of the trait.
 
-<img title="UK Biobank application" alt="UK Biobank application" src="/assets/img/Figure3.png" style="display: block; margin: 0 auto; width: 600px">
+<img title="UK Biobank application - single SNP" alt="UK Biobank application single SNP" src="/assets/img/Figure3.png" style="display: block; margin: 0 auto; width: 600px">
 
 LDAK-KVIK found 16% more significant loci than classical linear regression, whereas BOLT-LMM
 and REGENIE found 15% and 11% more, respectively. 
@@ -48,14 +51,32 @@ Note that we compare LDAK-KVIK with 'BOLT-LMM-Unscaled', which is based on BOLT-
 
 We applied the gene-based analysis of LDAK-KVIK to 40 quantiative and 20 binary traits from the UK Biobank, and compared its performance to LDAK-GBAT. 
 
-<img title="UK Biobank application" alt="UK Biobank application" src="/assets/img/gene_based.png" style="display: block; margin: 0 auto; width: 500px">
-
+<img title="UK Biobank application - gene-based" alt="UK Biobank application gene-based" src="/assets/img/gene_based.png" style="display: block; margin: 0 auto; width: 500px">
 
 
 <a id="sim"></a>
 
 ## Simulation study
 
+We simulated quantitative and binary phenotypes for various data sets:
+   - 'Homogeneous' dataset (63k unrelated White British individuals)
+   - 'Twins' dataset (Constructed by duplicating genotypes of 31,500 individuals of homogeneous dataset))
+   - 'Multi-ancestry' dataset (63k individuals of various ethnic backgrounds)
+
+The generated phenotypes were also generated under different heritabilities (0.2 and 0.5) and number of causal SNPs (5k and 20k). Causal SNPs were randomly selected from the start of each chromosome, SNPs located on the end of each chromosome served as null SNPs to evaluate type 1 error. For binary traits, we also varied the prevalance (10% and 1%).
+
 ## Type 1 error
 
+We evaluated the type 1 error of LDAK-KVIK for all scenarios as the mean $$\chi^2(1)$$ statistic of null SNPs, and as the fraction of SNPs exceeding P value thresholds 0.05, 0.001 and 0.00005.
+
+<img title="Simulation study - type 1 error" alt="Simulation study type 1 error" src="/assets/img/type1.png" style="display: block; margin: 0 auto; width: 700px">
+
+LDAK-KVIK offers good control of type 1 error across all scenarios, although a slight deflation can be observed when analysing the multi-ancestry data set for binary traits with prevalence 10%.
+
 ## Power
+
+We compared the power of classical regression, fastGWA, GCTA-LOCO, REGENIE, BOLT-LMM and LDAK-KVIK by evaluating the mean $$\chi^2(1)$$ statistics of causal SNPs.
+
+<img title="Simulation study - power" alt="Simulation study power" src="/assets/img/power.png" style="display: block; margin: 0 auto; width: 400px">
+
+For the quantitative phenotypes, LDAK-KVIK and BOLT-LMM are the two most powerful MMAA tools, ahead of REGENIE and GCTA-LOCO, while fastGWA generally has lowest power. For the binary phenotypes, the three MMAA tools often have very similar power.

@@ -9,7 +9,7 @@ Below, we list some recommendations for running LDAK-KVIK.
 
 ## Analysing imputed data
 
-When analysing imputed data, it is often not necessary to include all SNPs in step 1 of LDAK-KVIK. Including only directly genotyped SNPs will reduce computational time, and typically results in a similar PRS accuracy as when including all imputed SNPs.
+When analysing imputed data, it is often not necessary to include all SNPs in step 1 of LDAK-KVIK. Including only directly genotyped SNPs will reduce computational time, and often results in a similar PRS accuracy compared to when including all imputed SNPs.
 
 To restrict to directly genotyped SNPs in step 1 of LDAK-KVIK, the user should create a list of directly genotyped SNP IDs. It is then possible to restrict to these SNPs in step 1 using the `--extract` flag:
 
