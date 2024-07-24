@@ -86,12 +86,13 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 
 | Step | Argument |  Description |
 |--------|--------------------|--------|
-|1    | `--num-pedigree-predictors`    |  The number of SNPs used when testing for structure (default: 512)   |
+|1    | `--binary YES`    |  Indicates that the analysed phenotype is binary |
+|   | `--num-pedigree-predictors`    |  The number of SNPs used when testing for structure (default: 512)   |
 | | `–-check-pedigree NO`   |  Indicates that there will be no check for structure. In this case, it is assumed that there is structure    |
 |   | `-–num-MCMC`   | Number of random vectors used to compute the heritability estimate in randomized Haseman-Elston regression (default: ten if $$n$$ < 40000, three if $$n$$ > 40000)     |
 |   | `-–num-divide`   | Number of partitions used to compute the heritability estimate in randomized Haseman-Elston regression (default: 40)    |
 |   | `-–num-scans`   | Number of scans performed by the Variational Bayes algorithm to construct PRS   |
 |   | `-–cv-proportion`   | Proportion of individuals used to determine elastic net hyperparameters   |
-|   | `-–tolerance`   | This number is multiplied by $$n$$, this specifies the threshold for convergence for the likelihood in the Variational Bayes algorithm (default: $$10^{-6}$$).   |
+|   | `-–tolerance`   | This number is multiplied by $$n$$, this specifies the threshold for convergence for the likelihood in the Variational Bayes algorithm (default: $$10^{-6}$$)   |
 |   | `–-num-calibration-predictors`   | Number of SNPs used to compute the Grammar-Gamma scaling factor (default: 20).  |
-| 2  | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes.  |
+| 2  | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes  |

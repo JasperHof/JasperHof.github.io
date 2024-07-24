@@ -12,7 +12,7 @@ wget https://dougspeed.com/wp-content/uploads/ldak6.beta_.zip
 unzip ldak6.beta_.zip
 ```
 
-If compatible with your system, you should be able to see a list of options by running `./ldak6.beta`. If you do not have permission to run the file, then first run `chmod a+x ldak6.beta`.
+If compatible with your system, running `./ldak6.beta` shows a list of options in LDAK. If you do not have permission to run the file, then first run `chmod a+x ldak6.beta`.
 
 It is also possible to install the Linux-version of LDAK via [conda](http://anaconda.org/genomedk/ldak5) using the command lines:
 ```

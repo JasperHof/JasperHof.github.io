@@ -11,4 +11,4 @@ The SPA is included in LDAK by default when running `--logistic`, for example:
 ```
 ./ldak.out --logistic out --bfile data ----pheno phenofile --covar covfile
 ``` 
-The SPA can be turned off by `--spa-test NO`, in this case LDAK switches to classical logistic regression.
+The SPA can be turned off by specifying `--spa-test NO`, in this case LDAK switches to classical logistic regression.

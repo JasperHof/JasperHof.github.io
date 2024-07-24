@@ -41,7 +41,4 @@ The regression coefficients and standard errors are respectively given in the `E
 
 ## Step 3
 
-.
-.
-.
-more files
+The third step of LDAK-KVIK generates results from gene-based association analysis.
