@@ -1,4 +1,6 @@
 - title: Documentation
   url: docs
 - title: Technical Details
-  url: docs/technical 
+  url: docs/technical
+- title: Performance
+  url: docs/performance 

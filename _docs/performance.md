@@ -1,18 +1,18 @@
 ---
-title: Performance of LDAK-KVIK
+title: Performance
 description: Performance of LDAK-KVIK
 ---
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-# Performance
+# Performance of LDAK-KVIK
 
 We assessed the performance of LDAK-KVIK based on run time, type 1 error and power using both simulated data and data from the UK Biobank.
 
 <a id="runtime"></a>
 
-## Run time of LDAK-KVIK
+## Run time
 
 We compared the run time and memory requirements of LDAK-KVIK with BOLT-LMM, Regenie, fastGWA and GCTA-LOCO when applied to 690k SNPs, using either 63k or 368k individuals. Regenie and fastGWA were used for both quantitative and binary phenotypes, while BOLT-LMM and GCTA-LOCO were only applied to quantitative traits. The results are presented in the table below:
 
