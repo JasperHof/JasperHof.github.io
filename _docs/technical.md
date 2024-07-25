@@ -6,9 +6,9 @@ description: Technical details of LDAK-KVIK
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-# Technical details
+# Technical details of LDAK-KVIK
 
-**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we describe the LDAK-KVIK algorithm for each step, and detail the input options.
+**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we summarize the LDAK-KVIK algorithm for each step. For an extensive overview of the LDAK-KVIK algorithm, we refer to the LDAK-KVIK publication (preprint soon online).
 
 ---
 
@@ -98,12 +98,12 @@ LDAK-KVIK reports three values for each SNP: an effect size estimate $$\epsilon_
 
 # Step 3
 
-An example command line of Step 3 in LDAK-KVIK is given by:
-
-```
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 4
-```
-
 **Operation 3a - Run LDAK-GBAT using the results from single-SNP association analysis.** 
 
-LDAK-GBAT requires four inputs, a file containing gene annotations, a value for $$\alpha$$, GWAS summary statistics, and a reference panel. The gene annotations must be provided by the user (if analyzing human data, the user can download annotations from \url{www.dougspeed.com/resources}). LDAK-KVIK uses the estimate of $$\alpha$$ from Operation 1b and the summary statistics from Operation 2b. Finally, LDAK-KVIK randomly picks 5000 of the $$n$$ individuals, and uses their genotypes as an (in-sample) reference panel.\\
+LDAK-KVIK uses the summary statistics of single-SNP analysis to run [LDAK-GBAT](https://www.cell.com/ajhg/fulltext/S0002-9297(22)00501-8?dgcid=raven_jbs_aip_email). LDAK-GBAT performs gene-based association analysis using GWAS summary statistics and a reference panel, and uses REstricted Maximum Likelihood (REML) to solve the model:
+
+$$
+Y \sim N(0,K_S\sigma^2_S + I(1-\sigma^2_S))
+$$
+
+Here, $$K_S$$ is a "genomic" relatedness matrix constructed using only SNPs within the gene being tested. LDAK-GBAT performs a likelihood ratio test on the alternative hypothesis that $$\sigma^2_S>0$$.
