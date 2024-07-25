@@ -9,13 +9,13 @@ It is possible to run LDAK-KVIK directly on your own data, or to first try it ou
 
 ## Creating genotypes and phenotypes
 
-Genotype data can be generated using the command line
+Genotype data can be generated using the command line:
 ```
 ./ldak6.linux --make-snps data --num-samples 10000 --num-snps 50000
 ```
 This generates the files `data.bed`, `data.bim` and `data.fam`, containing SNP data for 10000 individuals and 50000 genetic variants. The generated SNPs are evenly distributed across 22 chromosomes, with minor allele frequencies randomly sampled from the [0, 0.5] interval. Note that SNPs are generated in linkage equilibrium. The `--make-snps` command also generates the toy covariate file `data.covar`. 
 
-Next, a quantitative phenotype can be generated using the command line
+Next, a quantitative phenotype can be generated using the command line:
 ```
 ./ldak6.linux --make-phenos pheno --bfile data --power -0.25 --her 0.5 --num-phenos 1 --num-causals 1000
 ```
