@@ -8,13 +8,13 @@ description: Performance of LDAK-KVIK
 
 # Performance
 
-We assessed the performance of LDAK-KVIK based on run time, type 1 error and power. Both simulated data and UK Biobank data were used.
+We assessed the performance of LDAK-KVIK based on run time, type 1 error and power using both simulated data and data from the UK Biobank.
 
 <a id="runtime"></a>
 
 ## Run time of LDAK-KVIK
 
-We compared the run time and memory requirements of LDAK-KVIK with Bolt-LMM, Regenie, fastGWA and GCTA-LOCO when applied to 690k SNPs, using either 63k or 368k individuals. Note that Regenie and fastGWA were used for both quantitative and binary phenotypes, while BOLT-LMM and GCTA-LOCO were only applied to quantitative traits. The results are presented in the table below:
+We compared the run time and memory requirements of LDAK-KVIK with BOLT-LMM, Regenie, fastGWA and GCTA-LOCO when applied to 690k SNPs, using either 63k or 368k individuals. Regenie and fastGWA were used for both quantitative and binary phenotypes, while BOLT-LMM and GCTA-LOCO were only applied to quantitative traits. The results are presented in the table below:
 
 |   |                         |  63k individuals |   | 368k individuals  | |
 |---|-------------------------|---|---|---|---|
@@ -38,7 +38,7 @@ All analyses were performed on AMD/"EPYC Genoa" 9654 CPU processors, using eithe
 
 We applied LDAK-KVIK to 40 quantiative traits from the UK Biobank, and compared its performance to BOLT-LMM, Regenie, fastGWA, and classical regression. 
 
-For every trait, we first evaluated the number of independent significantly associated loci for each method. This was compated to the number of significant loci using linear regression, and plotted against the estimated SNP heritability of the trait.
+For every trait, we evaluated the number of independent significantly associated loci per method. This was compared to the number of significant loci using linear regression, and plotted against the estimated SNP heritability of the trait.
 
 <img title="UK Biobank application - single SNP" alt="UK Biobank application single SNP" src="/assets/img/Figure3.png" style="display: block; margin: 0 auto; width: 600px">
 
@@ -56,11 +56,13 @@ We applied the gene-based analysis of LDAK-KVIK to 40 quantiative and 20 binary 
 
 <a id="sim"></a>
 
+We see that LDAK-KVIK-GBAT has improved power over LDAK-GBAT when analysing quantitative traits. For binary traits, LDAK-KVIK-GBAT and LDAK-GBAT detect a similar number of significant genes. This reflects that for binary phenotypes, there is a smaller power gain when using mixed-model association analysis.
+
 ## Simulation study
 
 We simulated quantitative and binary phenotypes for various data sets:
    - 'Homogeneous' dataset (63k unrelated White British individuals)
-   - 'Twins' dataset (Constructed by duplicating genotypes of 31,500 individuals of homogeneous dataset)
+   - 'Twins' dataset (constructed by duplicating the genotypes of 31,500 individuals of homogeneous dataset)
    - 'Multi-ancestry' dataset (63k individuals of various ethnic backgrounds)
 
 Phenotypes were generated under different heritabilities (0.2 and 0.5) and number of causal SNPs (5k and 20k), with ten replicates for each scenario. Causal SNPs were randomly selected from the start of each chromosome, while SNPs located on the end of each chromosome served as null SNPs to evaluate type 1 error. For binary traits, we also varied the prevalance (10% and 1%).
@@ -79,4 +81,4 @@ We compared the power of classical regression, fastGWA, GCTA-LOCO, REGENIE, BOLT
 
 <img title="Simulation study - power" alt="Simulation study power" src="/assets/img/power.png" style="display: block; margin: 0 auto; width: 400px">
 
-For the quantitative phenotypes, LDAK-KVIK and BOLT-LMM are the two most powerful MMAA tools, ahead of REGENIE and GCTA-LOCO, while fastGWA generally has lowest power. For the binary phenotypes, the three MMAA tools often have very similar power.
+For the quantitative phenotypes, LDAK-KVIK and BOLT-LMM are the two most powerful MMAA tools, ahead of REGENIE and GCTA-LOCO, while fastGWA generally has lowest power. For the binary phenotypes, the three MMAA tools have similar power.

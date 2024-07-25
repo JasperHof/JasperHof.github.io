@@ -17,7 +17,7 @@ An example run of LDAK-KVIK is as follows:
 ./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
 ```
 
-An overview of the LDAK-KVIK algorithm is included in the [Technical Details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the [LDAK-KVIK options](/docs/input).
+An overview of the LDAK-KVIK algorithm is included in the [Technical Details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the [input options](/docs/input).
 
 ---
 
@@ -29,7 +29,7 @@ An example command line of Step 1 in LDAK-KVIK is given by:
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
 ```
 
-This input options are as follows:
+This main input options are as follows:
 
 | Argument |  Description | 
 |------------|--------|
