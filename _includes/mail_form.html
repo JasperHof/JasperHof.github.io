@@ -1,11 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
 
-
-<form action="https://YOUR_MAILCHIMP_URL" method="post" target="_blank" novalidate>
-    <div>
-      <label for="mce-EMAIL">Email Address</label>
-      <input type="email" name="EMAIL" class="required email" id="mce-EMAIL">
-    </div>
-    <div>
-      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-    </div>
-  </form>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+     
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('BX20lKoPLLiewzHCq');
+        })();
+        
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            
+            emailjs.send("service_sb2thza", "template_ln9856y", {
+                user_email: email
+            })
+            .then((response) => {
+                console.log('SUCCES', response.status, response.text);
+                alert('Thanks for subscribing!');
+            }, (error) => {
+                console.error('FAILED', error);
+                alert('Failed to subscribe, please contact Doug Speed');
+            });
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="sendEmail(event)">
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
