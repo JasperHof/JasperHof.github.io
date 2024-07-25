@@ -41,8 +41,4 @@ LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) 
 ./ldak6.linux --kvik-step3 kvik --bfile data --genefile <gene annotation file> --max-threads 4
 ```
 
-In case a binary trait is analysed, the user should add the `--binary YES` flag in Step 1. Instructions for downloading the gene annotation file are described in the [gene-based analysis section](/docs/assoc/gene).
-
-## Viewing the Output
-
-There are two main output files of LDAK-KVIK. The file 'kvik.step2.assoc' contains results from single-SNP association analysis, and the file 'kvik.step3.remls.all' contains results from gene-based association analysis.
+In case a binary trait is analysed, the user should add the `--binary YES` flag in Step 1. Instructions for downloading the gene annotation file are described in the [gene-based analysis section](/docs/assoc/gene). An explanation of the generated output files is included in the [LDAK-KVIK output](/docs/output) page.

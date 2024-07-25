@@ -20,3 +20,7 @@ conda install genomedk::ldak5
 ```
 
 **Please note** that it might be helpful to also sign up on the [LDAK mailing list](https://dougspeed.com/downloads). This mailing list will only be used to inform users of important updates, or upcoming workshops.
+
+<!-- 
+{% include mail_form.html %}
+-->

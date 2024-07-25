@@ -10,10 +10,10 @@ permalink: /
 
 Key Features of LDAK-KVIK:
  - **High efficiency**: Capable of analysing 100,000s of individuals within hours
- - **High statistical power**: Accurately models the phenotype using all SNPs with an elastic net
- - **Structured data**: Robustly analyses data with high relatedness or multiple ancestries
- - **Saddlepoint approximation**: Robust association analysis of imbalanced binary traits
- - **Gene-based association analysis**: Direct implementation of gene-based testing
+ - **High statistical power**: Improved detection of associated loci using an elastic net model
+ - **Structured data**: Robust analysis of data with high relatedness or multiple ancestries
+ - **Saddlepoint approximation**: Control of type 1 error when testing rare diseases or variants
+ - **Gene-based association analysis**: Leverage summary statistics in a gene-based test
 
 To download LDAK, please visit our [downloads](/docs/downloads) page. Example code of LDAK-KVIK can be found in the [example code](/docs/example) page. An overview of the steps involved in the LDAK-KVIK algorithm are included in the [LDAK-KVIK steps](/docs/assoc/singlesnp) page.
 
@@ -41,11 +41,14 @@ The main output files are:
 
 ## Installation
 
-LDAK-KVIK is compatible with both [Linux and Mac](/docs/downloads). It is also possible to install the Linux-version of LDAK via [conda](http://anaconda.org/genomedk/ldak5) using the following command:
+LDAK is compatible with both Linux and Mac, and can be found in [Downloads](/docs/downloads). We will soon release a conda version of LDAK.
+
+<!-- 
+It is also possible to install the Linux-version of LDAK via [conda](http://anaconda.org/genomedk/ldak5) using the following command:
 ```
 conda install genomedk::ldak5
 ```
+-->
+## Questions or issues
 
-## Contact
-
-For any questions about LDAK-KVIK or the LDAK software, please contact [Doug Speed](mailto:doug@qgg.au.dk).
+For any questions or issues about LDAK-KVIK or the LDAK software, please [Raise an Issue](https://github.com/dougspeed/LDAK/issues).

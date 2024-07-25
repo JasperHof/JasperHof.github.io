@@ -60,10 +60,10 @@ We applied the gene-based analysis of LDAK-KVIK to 40 quantiative and 20 binary 
 
 We simulated quantitative and binary phenotypes for various data sets:
    - 'Homogeneous' dataset (63k unrelated White British individuals)
-   - 'Twins' dataset (Constructed by duplicating genotypes of 31,500 individuals of homogeneous dataset))
+   - 'Twins' dataset (Constructed by duplicating genotypes of 31,500 individuals of homogeneous dataset)
    - 'Multi-ancestry' dataset (63k individuals of various ethnic backgrounds)
 
-The generated phenotypes were also generated under different heritabilities (0.2 and 0.5) and number of causal SNPs (5k and 20k). Causal SNPs were randomly selected from the start of each chromosome, SNPs located on the end of each chromosome served as null SNPs to evaluate type 1 error. For binary traits, we also varied the prevalance (10% and 1%).
+Phenotypes were generated under different heritabilities (0.2 and 0.5) and number of causal SNPs (5k and 20k), with ten replicates for each scenario. Causal SNPs were randomly selected from the start of each chromosome, while SNPs located on the end of each chromosome served as null SNPs to evaluate type 1 error. For binary traits, we also varied the prevalance (10% and 1%).
 
 ## Type 1 error
 
