@@ -15,19 +15,25 @@ This will only be used to inform about major updates to LDAK (which happens less
 
 LDAK-KVIK is included in **LDAK**, a command-line software, that can be run on either Linux or a Mac. We strongly recommend the Linux version, as it will often be much faster than the Mac version. Note that LDAK does not run on Windows, so we suggest using a Linux server (for example, you can use putty to ssh into your local computer cluster). 
 
-There are **four** ways to obtain LDAK: you can install LDAK via a command line, you can manually download the LDAK executable, you can install LDAK via conda, or you can compile your own version of LDAK from the source code.**Please note** that LDAK-KVIK is currently only released on the Linux version of LDAK, the MAC version will soon be released.
+There are **four** ways to obtain LDAK: you can install LDAK via a command line, you can manually download the LDAK executable, you can install LDAK via conda, or you can compile your own version of LDAK from the source code. 
+
+**Please note** that LDAK-KVIK is currently only released on the Linux version of LDAK, the MAC version will soon be released.
+
+--- 
 
 ## 1. Download via command line
 
-The Linux executable of LDAK can be installed via the command line:
+For Linux, open a terminal window (go to Applications / System Tools / Terminal), then install the Linux executable of LDAK using the command line:
 ```
 wget https://github.com/dougspeed/LDAK/raw/main/ldak6.linux
 ``` 
-The MAC executable of LDAK can be installed via the command line:
+For MAC, open a terminal window (go to Finder / Applications / Utilities), then install the Mac executable of LDAK using the command line:
 ```
 wget https://github.com/dougspeed/LDAK/raw/main/ldak5.2.mac
 ```
-Note that it might be necessary to grant permission to run the file using `chmod a+x ldak6.linux` (Linux) or `chmod a+x ldak5.2.mac` (Mac).
+Note that it might be necessary to grant permission to run the file using `chmod a+x ldak6.linux` (for Linux) or `chmod a+x ldak5.2.mac` (for Mac).
+
+--- 
 
 ## 2a. Download the Linux executable
 
@@ -38,20 +44,22 @@ Note that it might be necessary to grant permission to run the file using `chmod
  
  Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak6.linux`
 
----
-
 ## 2b. Download the MAC executable
 
- - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK/blob/main/ldak5.2.mac) (https://github.com/dougspeed/LDAK/blob/main/ldak5.2.mac). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-doted box.
+- Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK/blob/main/ldak5.2.mac) (https://github.com/dougspeed/LDAK/blob/main/ldak5.2.mac). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-doted box.
 
- - Open a terminal window (go to Finder / Applications / Utilities)
- - Type the name of the file (for example, Downloads/ldak5.2.mac), or if you are in the same folder as the executable file, you can simply type ./ldak5.2.mac. If compatible with your system, this should produce the LDAK welcome screen. 
- 
- Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak5.2.mac`
+- Open a terminal window (go to Finder / Applications / Utilities)
+- Type the name of the file (for example, Downloads/ldak5.2.mac), or if you are in the same folder as the executable file, you can simply type ./ldak5.2.mac. If compatible with your system, this should produce the LDAK welcome screen. 
+
+Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak5.2.mac`
+
+--- 
 
 ## 3. Install LDAK via conda
 
 (details to come)
+
+--- 
 
 ## 4a. Compile LDAK from source code (Linux)
 
