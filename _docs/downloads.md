@@ -15,33 +15,45 @@ This will only be used to inform about major updates to LDAK (which happens less
 
 LDAK-KVIK is included in **LDAK**, a command-line software, that can be run on either Linux or a Mac. We strongly recommend the Linux version, as it will often be much faster than the Mac version. Note that LDAK does not run on Windows, so we suggest using a Linux server (for example, you can use putty to ssh into your local computer cluster). 
 
-There are three ways to obtain LDAK; you can download the LDAK executable, you can install LDAK via conda, or you can compile your own version of LDAK from the source code.
+There are **four** ways to obtain LDAK: you can install LDAK via a command line, you can manually download the LDAK executable, you can install LDAK via conda, or you can compile your own version of LDAK from the source code.**Please note** that LDAK-KVIK is currently only released on the Linux version of LDAK, the MAC version will soon be released.
 
-## 1a. Download the Linux executable
+## 1. Download via command line
+
+The Linux executable of LDAK can be installed via the command line:
+```
+wget https://github.com/dougspeed/LDAK/raw/main/ldak6.linux
+``` 
+The MAC executable of LDAK can be installed via the command line:
+```
+wget https://github.com/dougspeed/LDAK/raw/main/ldak5.2.mac
+```
+Note that it might be necessary to grant permission to run the file using `chmod a+x ldak6.linux` (Linux) or `chmod a+x ldak5.2.mac` (Mac).
+
+## 2a. Download the Linux executable
 
  - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK/blob/main/ldak6.linux) (https://github.com/dougspeed/LDAK/blob/main/ldak6.linux). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-doted box.
 
  - Open a terminal window (on my Linux, I go to Applications / System Tools / Terminal)
  - Type the name of the file (for example, /home/doug/Downloads/ldak6.linux), or if you are in the same folder as the executable file, you can simply type ./ldak6.linux. If compatible with your system, this should produce the LDAK welcome screen. 
  
- Note that if your computer tells you that you do not have permission to run the file, then first run chmod a+x ldak6.linux
+ Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak6.linux`
 
 ---
 
-## 1b. Download the MAC executable
+## 2b. Download the MAC executable
 
  - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK/blob/main/ldak5.2.mac) (https://github.com/dougspeed/LDAK/blob/main/ldak5.2.mac). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-doted box.
 
  - Open a terminal window (go to Finder / Applications / Utilities)
  - Type the name of the file (for example, Downloads/ldak5.2.mac), or if you are in the same folder as the executable file, you can simply type ./ldak5.2.mac. If compatible with your system, this should produce the LDAK welcome screen. 
  
- Note that if your computer tells you that you do not have permission to run the file, then first run chmod a+x ldak5.2.mac
+ Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak5.2.mac`
 
-## 2. Install LDAK via conda
+## 3. Install LDAK via conda
 
 (details to come)
 
-## 3a. Compile LDAK from source code (Linux)
+## 4a. Compile LDAK from source code (Linux)
 
 The pre-compiled Linux version uses the Intel MKL Libraries. We use the command:
 
@@ -58,7 +70,7 @@ chmod a+x ldak6
 
 The exact command will depend on which libraries you have installed. This should take less than a minute to complete. Note that if you do not have Intel MKL Libraries installed, you will be required to turn off the MKL libraries, by editing Line 63 of `ldak.c` (replace #define MKL 1 with #define MKL 0). If you are required to do this, then your self-compiled version will likely be slower than the pre-compiled version.
 
-## 3a. Compile LDAK from source code (Mac)
+## 4b. Compile LDAK from source code (Mac)
 
 Should you wish to compile a Linux version yourself, please download and unzip the [source code](https://github.com/dougspeed/LDAK) (https://github.com/dougspeed/LDAK), then from inside that folder run a command similar to
 
