@@ -7,7 +7,7 @@ description: Example code for running LDAK-KVIK
 
 It is possible to run LDAK-KVIK directly on your own data, or to first try it out on simulated data. In case you wish to directly apply LDAK-KVIK to your own data, please jump to [Running LDAK-KVIK](#Running-LDAK-KVIK).
 
-## Creating genotypes and phenotypes
+## Simulating genotypes and phenotypes
 
 Genotype data can be generated using the command line:
 ```

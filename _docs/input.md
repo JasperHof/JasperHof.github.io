@@ -42,7 +42,7 @@ Missing values should be denoted by NA. Note that whereas PLINK also treats -9 a
 - 0 (control), 1 (case) or NA; or
 - 1 (control), 2 (case) or NA
 
-When a phenotypic values is NA for a particular sample, then that sample is excluded from the analysis; however, if a covariate is NA, its value is replaced by the mean.
+When a phenotypic values is NA for a particular sample, then that sample is excluded from the analysis.
 
 <a id="covar"></a>
 
@@ -57,6 +57,8 @@ FID IID PC1 PC2 PC3 Age Sex
 ...
 ```
 There is no option to select a subset of covariates, all covariates will be used. Therefore, the user should make a separate covariate file in case not all covariates should be included in analysis.
+
+Note that if a covariate is NA, its value is replaced by the mean.
 
 <a id="gene"></a>
 
