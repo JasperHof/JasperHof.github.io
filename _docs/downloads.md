@@ -3,7 +3,7 @@ title: Downloads
 description: Getting started with LDAK-KVIK
 ---
 
-# Downloading LDAK
+# Download LDAK
 
 **Please note** that it might be helpful to sign up for the LDAK mailing list:
 

@@ -1,21 +1,21 @@
 - title: "Getting started"
   url: docs
   links:
-    - title: "Downloads"
+    - title: "Download LDAK"
       url: "docs/downloads"
-    - title: Input options
+    - title: Data format
       url: "docs/input"
       children:
-        - title: "Genotype format"
+        - title: "Genotypes"
           url: "docs/input#gen"
-        - title: "Phenotype format"
+        - title: "Phenotypes"
           url: "docs/input#pheno"
-        - title: "Covariate format"
+        - title: "Covariates"
           url: "docs/input#covar"
+        - title: "Gene annotations"
+          url: "docs/input#gene"
         - title: "Data filtering"
           url: "docs/input#filtering"
-        - title: "LDAK-KVIK options"
-          url: "docs/input#kvik"
 
 - title: "Example code"
   url: "docs/example" 
@@ -23,22 +23,25 @@
     - title: "Running LDAK-KVIK"
       url: "example#Running-LDAK-KVIK"
 
-- title: "LDAK-KVIK overview" 
-  url: "docs/assoc"
+- title: "LDAK-KVIK steps" 
+  url: "docs/assoc/singlesnp"
   links:
-    - title: "LDAK-KVIK steps"
-      url: "docs/assoc/singlesnp" 
-      children:
-        - title: "Step 1"
-          url: "docs/assoc/singlesnp#step-1"
-        - title: "Step 2"
-          url: "docs/assoc/singlesnp#step-2"
-        - title: "Step 3"
-          url: "docs/assoc/singlesnp#step-3"
-    - title: "Gene-based testing"
-      url: "docs/assoc/gene" 
-    - title: "Saddlepoint approximation"
-      url: "docs/assoc/spa" 
+    - title: "Step 1"
+      url: "docs/assoc/singlesnp#step-1"
+    - title: "Step 2"
+      url: "docs/assoc/singlesnp#step-2"
+    - title: "Step 3"
+      url: "docs/assoc/singlesnp#step-3"
+
+- title: "LDAK-KVIK options" 
+  url: "docs/options"
+  links:
+    - title: "Step 1"
+      url: "docs/options#step-1"
+    - title: "Step 2"
+      url: "docs/options#step-2"
+    - title: "Step 3"
+      url: "docs/options#step-3"
 
 - title: LDAK-KVIK output
   url: "docs/output"

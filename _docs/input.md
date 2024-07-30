@@ -7,11 +7,11 @@ description: Overview of genotype, phenotype and covariate formatting options in
 </script>
 <a id="gen"></a>
 
-# Input options
+# Data format
 
 Below, we discuss the genotype, phenotype and covariate data formatting for running LDAK-KVIK. We then list the arguments to use for running LDAK-KVIK on a subset of the genotype data.
 
-## Genotype format
+## Genotypes
 
 LDAK accepts genetic data in three formats, using one of the following arguments:
 
@@ -27,7 +27,7 @@ Notably, LDAK is not able to process data of `pgen` format and `vcf` format. For
 
 <a id="pheno"></a>
 
-## Phenotype format
+## Phenotypes
 
 Phenotype files should be in PLINK format. The first two columns should provide sample IDs, with subsequent columns providing the phenotype values. This can be one phenotype, or multiple phenotypes. An example phenotype input file looks like this:
 ```
@@ -47,7 +47,7 @@ When a phenotypic values is NA for a particular sample, then that sample is excl
 
 <a id="covar"></a>
 
-## Covariate format
+## Covariates
 
 Covariate files should be in PLINK format. The first two columns should provide the sample FIDs and IIDs, with subsequent columns providing covariate values. For example: 
 ```
@@ -58,6 +58,19 @@ FID IID PC1 PC2 PC3 Age Sex
 ...
 ```
 There is no option to select a subset of covariates, all covariates will be used. Therefore, the user should make a separate covariate file in case not all covariates should be included in analysis.
+
+<a id="gene"></a>
+
+## Gene annotations
+
+Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contains one row for each gene, and four columns, that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. For the gene-based association analyses of UK Biobank data in the LDAK-KVIK publication, we tested 17,332 genes defined based on RefSeq annotations (the corresponding annotations file is provided at [resources](http://www.dougspeed.com/resources)).
+
+It is possible to download gene annotation files (hg37 and hg38) in a Linux terminal using:
+``` 
+wget https://dougspeed.com/wp-content/uploads/RefSeq_GRCh37.txt
+wget https://dougspeed.com/wp-content/uploads/RefSeq_GRCh38.txt
+```
+The gene annotations files can also be downloaded from [GitHub](https://github.com/dougspeed/LDAK).
 
 <a id="filtering"></a>
 
@@ -77,22 +90,3 @@ For most commands, it is possible to filter on SNPs or filter on samples using t
 In addition, for many commands, you can add `--pheno <phenofile>` and LDAK will only consider samples for which phenotypes are available.
 
 Note that if you would like to filter predictors based on minor allele frequency, variance, missingness or information score, you must first remake the data (this filtering can not be done on-the-fly).
-
-<a id="kvik"></a>
-
-## LDAK-KVIK options
-
-Default parameters in LDAK-KVIK can be modified by adding options to the command line.
-
-| Step | Argument |  Description |
-|--------|--------------------|--------|
-|1    | `--binary YES`    |  Indicates that the analysed phenotype is binary |
-|   | `--num-pedigree-predictors`    |  The number of SNPs used when testing for structure (default: 512)   |
-| | `–-check-pedigree NO`   |  Indicates that there will be no check for structure. In this case, it is assumed that there is structure    |
-|   | `-–num-MCMC`   | Number of random vectors used to compute the heritability estimate in randomized Haseman-Elston regression (default: ten if $$n$$ < 40000, three if $$n$$ > 40000)     |
-|   | `-–num-divide`   | Number of partitions used to compute the heritability estimate in randomized Haseman-Elston regression (default: 40)    |
-|   | `-–num-scans`   | Number of scans performed by the Variational Bayes algorithm to construct PRS   |
-|   | `-–cv-proportion`   | Proportion of individuals used to determine elastic net hyperparameters   |
-|   | `-–tolerance`   | This number is multiplied by $$n$$, this specifies the threshold for convergence for the likelihood in the Variational Bayes algorithm (default: $$10^{-6}$$)   |
-|   | `–-num-calibration-predictors`   | Number of SNPs used to compute the Grammar-Gamma scaling factor (default: 20).  |
-| 2  | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes  |

@@ -8,7 +8,13 @@ description: Single-SNP analysis
 
 # LDAK-KVIK steps
 
-**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. These steps should be run consecutively; each next step is dependent on the results of the previous step. 
+**LDAK-KVIK** uses a three-step process to test SNPs and genes for association with the phenotype:
+
+1. Compute a Leave-One-Chromosome-Out (LOCO) PRS using an Elastic Net model
+2. Use the PRS as offset in single-SNP analysis 
+3. Use the summary statistics of single-SNP analysis to run a gene-based association analysis LDAK-GBAT
+
+These steps should be run consecutively; each next step is dependent on the results of the previous step. 
 
 An example run of LDAK-KVIK is as follows:
 ```
@@ -17,7 +23,7 @@ An example run of LDAK-KVIK is as follows:
 ./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
 ```
 
-An overview of the LDAK-KVIK algorithm is included in the [Technical Details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the [input options](/docs/input).
+An overview of the LDAK-KVIK algorithm is included in the [technical details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the the [data format](/docs/input) page.
 
 ---
 
@@ -29,7 +35,7 @@ An example command line of Step 1 in LDAK-KVIK is given by:
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
 ```
 
-This main input options are as follows:
+The main input options are as follows:
 
 | Argument |  Description | 
 |------------|--------|
@@ -52,11 +58,11 @@ An example command line of Step 2 in LDAK-KVIK is given by:
 ./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
 ```
 
-This main input options are as follows:
+The main input options are as follows:
 
 | Argument |  Description | 
 |------------|--------|
-|`--kvik-step2`    | Name of the output files of Step 2   |
+|`--kvik-step2`    | Name of the output files of Step 2. Note that this should have the same name as Step 1.   |
 |`--bfile`   | Name of the .bed file to be analyzed      |
 |`--pheno`   | Name of the phenotype file      |
 |`--covar`   | Name of the covariate file     |
@@ -72,5 +78,13 @@ An example command line of Step 3 in LDAK-KVIK is given by:
 ```
 ./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 4
 ```
+
+The main input options are as follows:
+
+| Argument |  Description | 
+|------------|--------|
+|`--kvik-step3`    | Name of the output files of Step 3. Note that this should have the same name as Step 1 and Step 2.   |
+|`--bfile`   | Name of the .bed file to be analyzed      |
+|`--genefile`   | Name of the gene annotation file      |
 
 Note that a gene annotation file is needed to specify the locations of the genes on the genome. The [gene-based](/docs/assoc/gene) testing page includes command lines for downloading gene annotation files.
