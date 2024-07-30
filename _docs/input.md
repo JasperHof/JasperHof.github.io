@@ -9,17 +9,16 @@ description: Overview of genotype, phenotype and covariate formatting options in
 
 # Data format
 
-Below, we discuss the genotype, phenotype and covariate data formatting for running LDAK-KVIK. We then list the arguments to use for running LDAK-KVIK on a subset of the genotype data.
+To run LDAK, you require genotypes and phenotypes, while it is common to also include covariates. When performing gene-based analysis, you additionally require a gene annotations file.
 
 ## Genotypes
 
-LDAK accepts genetic data in three formats, using one of the following arguments:
+LDAK accepts genetic data in two formats, using one of the following arguments:
 
 | Argument |  Description |
 |--------------------|--------|
 | `--bfile`    | Binary PLINK (.bed) format, which accomodates hard-coded SNP genotypes. LDAK will then expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
-| `--gen`   |  Gen format (sometimes referred to as Oxford or Chiamo format), which is designed for reading genotype probabilities created by IMPUTE2. As well as specifying the genotype file, the sample IDs should be provided using `--sample <samplefile>` or `--fam <famfile>`.    |
-| `--sp`   | Spare Partitioning format. This is a (space delimited) text file containing the SNP values, having one row per predictor and one column per sample. LDAK expects to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`.       |
+| `--speed`    | Speed (.sp) format, which requires data in a large matrix in binary format. LDAK will then expect to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`   |
 
 To filter either samples or predictors, see [Data Filtering](/docs/input#filtering). LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
 
@@ -63,7 +62,7 @@ There is no option to select a subset of covariates, all covariates will be used
 
 ## Gene annotations
 
-Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contains one row for each gene, and four columns, that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. For the gene-based association analyses of UK Biobank data in the LDAK-KVIK publication, we tested 17,332 genes defined based on RefSeq annotations (the corresponding annotations file is provided at [resources](http://www.dougspeed.com/resources)).
+Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contains one row for each gene, and four columns, that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. 
 
 It is possible to download gene annotation files (hg37 and hg38) in a Linux terminal using:
 ``` 

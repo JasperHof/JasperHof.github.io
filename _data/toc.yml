@@ -55,6 +55,15 @@
 
 - title: Recommendations
   url: "docs/recommendations"
+  links:
+    - title: "Imputed data"
+      url: "docs/recommendations#analysing-imputed-data" 
+    - title: "Parallelization"
+      url: "docs/recommendations#parallelization" 
+    - title: "Analyzing multiple phenotypes"
+      url: "docs/recommendations#analysing-multiple-phenotypes"
+    - title: "Analyzing small sample sizes"
+      url: "docs/recommendations#analysing-small-sample-sizes"
 
 - title: LDAK webpage
   external_url: https://www.ldak.org

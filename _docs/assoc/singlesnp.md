@@ -46,7 +46,7 @@ The main input options are as follows:
 |`--max-threads`   | Integer value, specifying the number of available threads for fitting the elastic net. By default, LDAK assumes `--max-threads` equals 1      |
 |`--binary` | Indicates that the analysed trait is binary |
 
-When analysing binary traits, the user should add `--binary YES` to the command. All operations in Step 1 will then be based on weighted linear regression, instead of linear regression. When analysing imputed data, it is not necessary to include all SNPs in Step 1. To reduce computational time, it is possible to run Step 1 with all directly genotyped SNPs, which typically yields a similar PRS accuracy compared to all SNPs. A more extensive list of options can be found in [data filtering](/docs/input#filtering) and [LDAK-KVIK options](/docs/input#kvik).
+When analysing binary traits, the user should add `--binary YES` to the command. All operations in Step 1 will then be based on weighted linear regression, instead of linear regression. When analysing imputed data, it is not necessary to include all SNPs in Step 1 (see [Recommendations](/docs/recommendations/#analysing-imputed-data) for alternative options). A more extensive list of options can be found in [data format](/docs/input).
 
 ---
 

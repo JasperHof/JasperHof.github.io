@@ -28,7 +28,7 @@ description: Technical details of LDAK-KVIK
 
 ---
 
-First we describe each operation in turn, then we explain some implementation details. As a reminder, all regressions use residual genotypes and phenotypes, because this removes the need to include the covariate matrix Z. The residual phenotypes (genotypes) are obtained by computing $$Y = HY^{\top} (X = HX^{\top})$$, where $$H = I − Z(Z^{\top}Z)^{−1}Z^{\top}$$, then scaling Y (columns of X) to have variance one.
+First we describe each operation in turn, then we explain some implementation details. As a reminder, all regressions use residual genotypes and phenotypes, because this removes the need to include the covariate matrix $$Z$$. The residual phenotypes (genotypes) are obtained by computing $$Y = HY^{\top} (X = HX^{\top})$$, where $$H = I − Z(Z^{\top}Z)^{−1}Z^{\top}$$, then scaling $$Y$$ (columns of $$X$$) to have variance one.
 
 ---
 

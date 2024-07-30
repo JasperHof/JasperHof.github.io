@@ -31,7 +31,7 @@ This will generate a phenotype data with 20% cases, and a liability heritability
 
 ## Running LDAK-KVIK
 
-An explanation of the input options of LDAK-KVIK can be found in the [overview of LDAK-KVIK](/docs/assoc/singlesnp). Here, we demonstrate the basic command lines used to run LDAK-KVIK.
+An explanation of the input options of LDAK-KVIK can be found in the [LDAK-KVIK steps](/docs/assoc/singlesnp). Here, we demonstrate the basic command lines used to run LDAK-KVIK.
 
 LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) PRS are computed using an Elastic Net model. Step 2 runs the single-SNP analysis, and Step 3 runs the gene-based associatiòn analysis. These steps are consecutively run using the following commands:
 

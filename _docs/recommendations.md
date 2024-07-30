@@ -9,9 +9,25 @@ Below, we list some recommendations for running LDAK-KVIK.
 
 ## Analysing imputed data
 
-When analysing imputed data, it is often not necessary to include all SNPs in step 1 of LDAK-KVIK. Including only directly genotyped SNPs reduces computational time, and often results in a similar PRS accuracy compared to when including all imputed SNPs.
+When analysing imputed data, it is often not necessary to include all SNPs in step 1 of LDAK-KVIK. For example,  including only directly genotyped SNPs reduces computational time, and often results in a similar PRS accuracy compared to when including all imputed SNPs.
 
-To restrict to directly genotyped SNPs in step 1 of LDAK-KVIK, the user should create a list of directly genotyped SNP IDs. It is then possible to restrict to these SNPs in step 1 using the `--extract` flag:
+To restrict to fewer SNPs in Step 1 and speed up the run time, we recommend running `--thin-common` prior to LDAK-KVIK Step 1:
+
+```
+./ldak6.linux --thin-common thin --bfile data --max-threads 4
+```
+
+This function identifies SNPs with MAF > 0.01, that have been filtered so there are no SNPs within 100kb that have a squared correlation above 0.5. It is then possible to restrict to the resulting SNPs using the `--extract` flag in LDAK-KVIK Step 1:
+
+```
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --extract thin.in --max-threads 4
+```
+
+The next steps of LDAK-KVIK can be done as usual, without the `--extract` flag.
+
+---
+
+Alternatively, to restrict to directly genotyped SNPs in step 1 of LDAK-KVIK, the user can create a list of directly genotyped SNP IDs. It is then possible to restrict to these SNPs in step 1 using the `--extract` flag:
 
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --extract <snpfile> --max-threads 4
@@ -19,7 +35,7 @@ To restrict to directly genotyped SNPs in step 1 of LDAK-KVIK, the user should c
 
 Step 2 and step 3 can subsequently be run without the `--extract` flag, to include all SNPs for single-SNP association analysis and gene-based association analysis.
 
-## Paralellization
+## Parallelization
 
 When running LDAK-KVIK, the user has the option to specify the number of threads. This facilitates the parallel run of parts of the LDAK-KVIK algorithm and decreases run time. For optimal implementation of LDAK-KVIK, the user should select the available number of threads in `--num-threads`.
 
@@ -61,7 +77,7 @@ The resulting summary statistics will be saved in `kvik.pheno1.assoc`, `kvik.phe
 
 ## Analysing small sample sizes
 
-Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis, as it is harder to construct accurate LOCO PRS in Step 1 (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). For binary traits, it is still useful to use the [saddlepoint approximation](docs/assoc/spa) to overcome inflation due to case:control imbalance. 
+Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis, as it is harder to construct accurate LOCO PRS in Step 1 (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). For binary traits, it is still useful to apply the saddlepoint approximation to overcome inflation due to case:control imbalance. 
 
 It is possible to run classical linear regression using the command lines:
 
