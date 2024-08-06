@@ -45,7 +45,7 @@ For every trait, we evaluated the number of independent significantly associated
 LDAK-KVIK found 16% more significant loci than classical linear regression, whereas BOLT-LMM
 and REGENIE found 15% and 11% more, respectively. 
 
-Note that we compare LDAK-KVIK with 'BOLT-LMM-Unscaled', which is based on BOLT-LMM results, except we force the test statistic scaling factor to be 1. This is, because the the BOLT-LMM tends to overestimate the test statistic scaling scaling factor, leading to inflation of type 1 error (see LDAK-KVIK publication). 
+Note that we compare LDAK-KVIK with 'BOLT-LMM-Unscaled', which is based on BOLT-LMM results, except we force the test statistic scaling factor to be 1. This is, because the the BOLT-LMM tends to overestimate the test statistic scaling scaling factor, leading to inflation of type 1 error (see [preprint](https://www.medrxiv.org/content/10.1101/2024.07.25.24311005v1)). 
 
 ### Gene-based analysis
 
