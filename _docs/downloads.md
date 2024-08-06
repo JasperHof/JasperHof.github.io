@@ -57,7 +57,20 @@ Note that if your computer tells you that you do not have permission to run the 
 
 ## 3. Install LDAK via conda
 
-(details to come)
+LDAK can be installed via conda as follows:
+
+```
+# create a new environment and install ldak 6
+conda create -n ldak_env -c genomedk ldak6
+
+# load the new environment 
+conda activate ldak_env
+
+# check LDAK starts
+ldak6
+```
+
+The final command should display an overview of the LDAK commands. Note that all our examples use `ldak6.linux` to run LDAK-KVIK, which should be replaced by `ldak6` if downloaded via conda.
 
 --- 
 
