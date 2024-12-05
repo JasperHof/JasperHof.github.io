@@ -35,6 +35,12 @@ Alternatively, to restrict to directly genotyped SNPs in step 1 of LDAK-KVIK, th
 
 Step 2 and step 3 can subsequently be run without the `--extract` flag, to include all SNPs for single-SNP association analysis and gene-based association analysis.
 
+**Please note** that although it is beneficial to restrict to a smaller genotype data set (such as directly genotyped SNPs) in LDAK-KVIK Step 1, it is not beneficial to further reduce the number of SNPs used in Step 1. We found that using 500k - 1M SNPs in LDAK-KVIK Step 1 offers a good statistical power while maintaining high computational efficiency.  Meanwhile, further reducion of the number of Step 1 SNPs results in a noticeable reduction in detection power, and thus we advise against this approach.
+
+## Genotype data format
+
+LDAK accepts genotype data of both `.bed` format (using flag `--bfile`) and `.bgen` format (using flag `--bgen` and `--sample`), however, LDAK processes `.bed` files faster than `.bgen` files due to simpler genotype coding. To optimize LDAK-KVIK run time, it is therefore beneficial to convert `.bgen` files to `.bed` files prior to GWAS analyses. Although converting `.bgen` files to `.bed` files loses part of the genotype information (hardcoding dosage values), we find that the resulting outcomes are highly similar. 
+
 ## Parallelization
 
 When running LDAK-KVIK, the user has the option to specify the number of threads. This facilitates the parallel run of parts of the LDAK-KVIK algorithm and decreases run time. For optimal implementation of LDAK-KVIK, the user should select the available number of threads in `--num-threads`.
@@ -57,7 +63,7 @@ FID IID Pheno1 Pheno2 Pheno3
 
 In case one of the phenotypes should analysed, the user can specify the phenotype using the `--mpheno` flag. For example, `--mpheno 3` indicates that the third phenotype of the phenotype should be analysed.
 
-It is also possible to simultaneously analyse all phenotypes in step 1 by adding `--mpheno ALL`. This feature reduces computational demands, and is recommended when analysing multiple phenotypes. An example command line for analysing multiple phenotypes is:
+It is also possible to simultaneously analyse all phenotypes in step 1 by adding `--mpheno ALL`. This feature reduces the total computational demands, and is recommended when analysing multiple phenotypes. An example command line for analysing multiple phenotypes is:
 
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --mpheno ALL --max-threads 4
@@ -77,9 +83,9 @@ The resulting summary statistics will be saved in `kvik.pheno1.assoc`, `kvik.phe
 
 ## Analysing small sample sizes
 
-Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis, as it is harder to construct accurate LOCO PRS in Step 1 (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). For binary traits, it is still useful to apply the saddlepoint approximation to overcome inflation due to case:control imbalance. 
+Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis. This is, because it is harder to construct accurate LOCO PRS in Step 1 and thus there is a lower benefit in statistical power (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). However, in smaller data sets with high degrees of relatedness, LDAK-KVIK still offers control of type 1 error (which would be inflated using classical regression). For binary traits, it is still useful to apply the saddlepoint approximation to overcome inflation due to case:control imbalance. 
 
-It is possible to run classical linear regression using the command lines:
+It is possible to run classical linear regression in LDAK using the command lines:
 
 ```
 ./ldak6.linux --linear kvik --bfile data --pheno phenofile --covar covfile --max-threads 4

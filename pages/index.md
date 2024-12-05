@@ -11,13 +11,13 @@ permalink: /
 Key Features of LDAK-KVIK:
  - **High efficiency**: Capable of analysing 100,000s of individuals within hours
  - **High statistical power**: Improved detection of associated loci using an elastic net model
- - **Structured data**: Robust analysis of data with high relatedness or multiple ancestries
+ - **Structured data**: Robust analysis of data with high levels of relatedness or multiple ancestries
  - **Saddlepoint approximation**: Control of type 1 error when testing rare diseases or variants
- - **Gene-based association analysis**: Leverage summary statistics in a gene-based test
+ - **Gene-based association analysis**: Leverage summary statistics in a gene-based association test
 
-To download LDAK, please visit our [downloads](/docs/downloads) page. Example code of LDAK-KVIK can be found in the [example code](/docs/example) page. An overview of the steps involved in the LDAK-KVIK algorithm are included in the [LDAK-KVIK steps](/docs/assoc/singlesnp) page.
+To download LDAK, please visit our [downloads](/docs/downloads) page. Example code of LDAK-KVIK can be found on the [example code](/docs/example) page. An overview of the steps involved in the LDAK-KVIK algorithm is included on the [LDAK-KVIK steps](/docs/assoc/singlesnp) page.
 
-Stay tuned with the latest developments regarding LDAK software by signing up for the [LDAK mailing list](https://dougspeed.com/downloads/).
+Stay updated with the latest developments regarding LDAK software by signing up for the [LDAK mailing list](https://dougspeed.com/downloads/).
 
 ## Example code
 
@@ -25,7 +25,7 @@ Stay tuned with the latest developments regarding LDAK software by signing up fo
 
 1. Compute PRS using an Elastic Net model
 2. Run single-SNP analysis with PRS as an offset
-3. Conduct gene-based analysis using summary statistics of single-SNP analysis
+3. Conduct gene-based analysis using summary statistics from the single-SNP analysis
 
 Example command lines are:
 
@@ -41,7 +41,7 @@ The main output files are:
 
 ## Installation
 
-LDAK is compatible with both Linux and Mac, and can be found in [Downloads](/docs/downloads). We will soon release a conda version of LDAK.
+LDAK is compatible with both Linux and Mac. On the [Downloads](/docs/downloads) page, we list several options for loading or installing the LDAK software.
 
 <!-- 
 It is also possible to install the Linux-version of LDAK via [conda](http://anaconda.org/genomedk/ldak5) using the following command:

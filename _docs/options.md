@@ -16,6 +16,8 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 |--------------------|--------|
 |`--kvik-step1`    | Name of the output files of the step 1   |
 |`--bfile`   | Name of the .bed file to be analyzed      |
+|`--bgen`   | Name of the .bgen file to be analyzed      |
+|`--sample`   | Name of the .sample file corresponding to the .bgen file      |
 |`--pheno`   | Name of the phenotype file      |
 |`--covar`   | Name of the covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |

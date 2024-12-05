@@ -55,12 +55,12 @@ Note that if your computer tells you that you do not have permission to run the 
 
 --- 
 
-## 3. Install LDAK via conda
+## 3. Install LDAK via conda (Linux systems only)
 
 LDAK can be installed via conda as follows:
 
 ```
-# create a new environment and install ldak 6
+# create a new environment and install LDAK
 conda create -n ldak_env -c genomedk ldak6
 
 # load the new environment 

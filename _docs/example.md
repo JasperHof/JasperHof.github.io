@@ -36,9 +36,9 @@ An explanation of the input options of LDAK-KVIK can be found in the [LDAK-KVIK 
 LDAK-KVIK is run in three steps. In Step 1, the Leave-One-Chromosome-Out (LOCO) PRS are computed using an Elastic Net model. Step 2 runs the single-SNP analysis, and Step 3 runs the gene-based associatiòn analysis. These steps are consecutively run using the following commands:
 
 ```
-./ldak6.linux --kvik-step1 kvik --bfile data --pheno pheno.pheno --covar data.covar --max-threads 4
-./ldak6.linux --kvik-step2 kvik --bfile data --pheno pheno.pheno --covar data.covar --max-threads 4
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile <gene annotation file> --max-threads 4
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno pheno.pheno --covar data.covar --max-threads 2
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno pheno.pheno --covar data.covar --max-threads 2
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile <gene annotation file> --max-threads 2
 ```
 
 In case a binary trait is analysed, the user should add the `--binary YES` flag in Step 1. Instructions for downloading the gene annotation file are described in the [gene-based analysis section](/docs/assoc/gene). An explanation of the generated output files is included in the [LDAK-KVIK output](/docs/output) page.
