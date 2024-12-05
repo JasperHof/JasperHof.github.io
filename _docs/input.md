@@ -15,9 +15,9 @@ To run LDAK, you require genotypes and phenotypes, while it is common to also in
 
 LDAK accepts genetic data in three formats, using one of the following arguments:
 
-| Argument    |  Description |
+| Option Pair |  Description |
 |-----------------------------|--------|
-| `--bfile <datastem>`    | BED (binary PLINK) format, which accomodates hard-coded SNP genotypes. LDAK will expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
+| `--bfile <datastem>` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  | BED (binary PLINK) format, which accomodates hard-coded SNP genotypes. LDAK will expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
 | `--bgen <datafile>`    | BGEN format, which accomodates genotype probabilties. Note then if `<datastem>` does not include sample IDs, it necessary to provide these separately using `--sample`.   |
 | `--speed <datastem>`    | LDAK binary format (see https://dougspeed.com/file-formats for details). LDAK will expect to find the files `<datastem>.speed`, `<datastem>.bim` and `<datastem>.fam`   |
 
