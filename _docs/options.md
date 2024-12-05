@@ -19,7 +19,10 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 |`--bgen`   | Name of the .bgen file to be analyzed      |
 |`--sample`   | Name of the .sample file corresponding to the .bgen file      |
 |`--pheno`   | Name of the phenotype file      |
-|`--covar`   | Name of the covariate file     |
+|`--covar`   | Name of the quantitative covariate file     |
+|`--covar-numbers`   | Specify a subset of covariates by number. For example, `--covar-numbers 1,2,4-6,8`     |
+|`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-numbers PC1,PC3,age`     |
+|`--factor`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
 | `--binary YES`    |  Indicates that the analysed phenotype is binary |
 | `--num-pedigree-predictors`    |  The number of SNPs used when testing for structure (default: 512)   |
@@ -33,12 +36,19 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 
 ## Step 2
 
+Please note that the arguments must match those used in Step 1 (i.e., you must use the same output filename, provide the same data and phenotype files, and if you used covariates in Step 1, you must also use them in Step 2).
+
 | Argument |  Description |
 |--------------------|--------|
 |`--kvik-step2`    | Name of the output files of Step 2. Note that this should have the same name as Step 1.   |
 |`--bfile`   | Name of the .bed file to be analyzed      |
+|`--bgen`   | Name of the .bgen file to be analyzed      |
+|`--sample`   | Name of the .sample file corresponding to the .bgen file      |
 |`--pheno`   | Name of the phenotype file      |
-|`--covar`   | Name of the covariate file     |
+|`--covar`   | Name of the quantitative covariate file     |
+|`--covar-numbers`   | Specify a subset of covariates by number. For example, `--covar-numbers 1,2,4-6,8`     |
+|`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-numbers PC1,PC3,age`     |
+|`--factor`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
 | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes  |
 
@@ -48,5 +58,5 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 |------------|--------|
 |`--kvik-step3`    | Name of the output files of Step 3. Note that this should have the same name as Step 1 and Step 2.   |
 |`--bfile`   | Name of the .bed file to be analyzed      |
-|`--genefile`   | Name of the gene annotation file      |
+|`--genefile`   | Name of the gene annotation file. Instructions for downloading this can be found on the [input](input) page       |
 | `--max-threads` | Number of threads (used for parallel computing) |

@@ -18,9 +18,9 @@ These steps should be run consecutively; each next step is dependent on the resu
 
 An example run of LDAK-KVIK is as follows:
 ```
-./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
-./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 2
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 2
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 2
 ```
 
 An overview of the LDAK-KVIK algorithm is included in the [technical details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the the [data format](/docs/input) page.
@@ -32,7 +32,7 @@ An overview of the LDAK-KVIK algorithm is included in the [technical details](/d
 An example command line of Step 1 in LDAK-KVIK is given by:
 
 ```
-./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 2
 ```
 
 The main input options are as follows:
@@ -55,7 +55,7 @@ When analysing binary traits, the user should add `--binary YES` to the command.
 An example command line of Step 2 in LDAK-KVIK is given by:
 
 ```
-./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 2
 ```
 
 The main input options are as follows:
@@ -76,7 +76,7 @@ Note that the input argument of `--kvik-step2` (in this case, 'kvik') should mat
 An example command line of Step 3 in LDAK-KVIK is given by:
 
 ```
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 4
+./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 2
 ```
 
 The main input options are as follows:

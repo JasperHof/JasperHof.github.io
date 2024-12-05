@@ -13,12 +13,12 @@ To run LDAK, you require genotypes and phenotypes, while it is common to also in
 
 ## Genotypes
 
-LDAK accepts genetic data in two formats, using one of the following arguments:
+LDAK accepts genetic data in three formats, using one of the following arguments:
 
 | Argument |  Description |
 |--------------------|--------|
 | `--bfile`    | Binary PLINK (.bed) format, which accomodates hard-coded SNP genotypes. LDAK will then expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
-| `--bgen`    | Oxford (.bgen) format, which accomodates dosage values. Note then LDAK requires an associated samplefile specifying the sample IDs using the `--sample` flag.   |
+| `--bgen`    | BGEN format, which accomodates genotype probabilties. Note then if `<datastem>` does not include sample IDs, it is necessary to provide these separately using `--sample`.   |
 | `--speed`    | Speed (.sp) format, which requires data in a large matrix in binary format. LDAK will then expect to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`   |
 
 To filter either samples or predictors, see [Data Filtering](/docs/input#filtering). LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
@@ -57,9 +57,11 @@ FID IID PC1 PC2 PC3 Age Sex
 3 3 0.21 -0.14 -0.23 27 0
 ...
 ```
-There is no option to select a subset of covariates, all covariates will be used. Therefore, the user should make a separate covariate file in case not all covariates should be included in analysis.
+If you have quantitative covariates, you should use `--covar`, while if you have categorical covariates, you should use `--factors`. Note that if a categorical covariate has U unique values, LDAK will (internally) replace it with U-1 indicator variables (LDAK will give an error if the total number of indicator variables is greater than half the sample size).
 
-Note that if a covariate is NA, its value is replaced by the mean.
+If providing quantitative covariates, you can use `--covar-numbers` to specify a subset of covariates (using commas and/or dashes to specify multiple covariates). For example, `--covar-numbers 1,2,4-6,8` tells LDAK to retain Covariates 1, 2, 4, 5, 6 and 8. If the covariate file has a header name, you can instead use `--covar-names` (use commas to specify multiple covariates).
+
+Missing covariate values should be denoted by NA (missing values are replaced by the mean value of the corresponding covariate).
 
 <a id="gene"></a>
 

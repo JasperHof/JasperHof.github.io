@@ -101,4 +101,4 @@ for i in {1..22}; do
 done
 ```
 
-Note that we also convert these `.bgen` format to `.bed` format, which enables faster analyses in LDAK-KVIK Step 1. In case the `.bgen` format is preferred for association analysis, consider running PLINK with `--write-snplist` and  `--write-samples` to get a list of SNPs and sample IDs that passed QC. These can be used in combination with the original .bgen file to run LDAK-KVIK Step 2 on the cleaned genotype subset.
+Note that we also convert these `.bgen` format to `.bed` format, which enables faster analyses in LDAK-KVIK Step 2. In case the `.bgen` format is preferred for association analysis, consider running PLINK with `--write-snplist` and  `--write-samples` to get a list of SNPs and sample IDs that passed QC. These can be used in combination with the original .bgen file to run LDAK-KVIK Step 2 on the cleaned genotype subset.

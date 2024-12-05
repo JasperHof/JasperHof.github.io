@@ -58,6 +58,8 @@
   links:
     - title: "Imputed data"
       url: "docs/recommendations#analysing-imputed-data" 
+    - title: "Genotype data format"
+      url: "docs/recommendations#genotype-data-format"
     - title: "Parallelization"
       url: "docs/recommendations#parallelization" 
     - title: "Analyzing multiple phenotypes"

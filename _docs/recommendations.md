@@ -9,26 +9,24 @@ Below, we list some recommendations for running LDAK-KVIK.
 
 ## Analysing imputed data
 
-When analysing imputed data, it is often not necessary to include all SNPs in step 1 of LDAK-KVIK. For example,  including only directly genotyped SNPs reduces computational time, and often results in a similar PRS accuracy compared to when including all imputed SNPs.
+Step 1 of LDAK-KVIK can be slow when there are very many predictors. Therefore, if your dataset contains over one million predictors, we recommend you only use a subset of these in Step 1 (e.g., 500,000 predictors). Doing so will have a limited impact on power, but will greatly reduce runtime. Note that you should continue to use all predictors in Step 2.
+
+You may already have a suitable subset of predictors (e.g., you may have a list of directly-genotyped SNPs, or those passing stringent quality control). Otherwise, we you can obtain the SNP subset by performing a moderate thinning of the common predictors (e.g., if analyzing SNP data, we suggest identifying SNPs with MAF > 0.01, then filtering so there are no predictors within 100kb with squared correlation above 0.5).
 
 To restrict to fewer SNPs in Step 1 and speed up the run time, we recommend running `--thin-common` prior to LDAK-KVIK Step 1:
 
 ```
 ./ldak6.linux --thin-common thin --bfile data --max-threads 4
 ```
-
 This function identifies SNPs with MAF > 0.01, that have been filtered so there are no SNPs within 100kb that have a squared correlation above 0.5. It is then possible to restrict to the resulting SNPs using the `--extract` flag in LDAK-KVIK Step 1:
-
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --extract thin.in --max-threads 4
 ```
-
 The next steps of LDAK-KVIK can be done as usual, without the `--extract` flag.
 
 ---
 
 Alternatively, to restrict to directly genotyped SNPs in step 1 of LDAK-KVIK, the user can create a list of directly genotyped SNP IDs. It is then possible to restrict to these SNPs in step 1 using the `--extract` flag:
-
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --extract <snpfile> --max-threads 4
 ```
@@ -73,9 +71,7 @@ The single-SNP analysis and gene-based analysis in step 2 and step 3 cannot be r
 
 ```
 for i in {1..10}; do
-
-./ldak6.linux --linear kvik.pheno${i} --bfile data --phenofile phenofile --covar covfile --mpheno ${i} --PRS kvik.step1.pheno${i} --max-threads 4
-
+  ./ldak6.linux --linear kvik.pheno${i} --bfile data --phenofile phenofile --covar covfile --mpheno ${i} --PRS kvik.step1.pheno${i} --max-threads 4
 done
 ```
 
