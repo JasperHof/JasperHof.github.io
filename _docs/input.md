@@ -13,13 +13,13 @@ To run LDAK, you require genotypes and phenotypes, while it is common to also in
 
 ## Genotypes
 
-LDAK accepts genetic data in two formats, using one of the following arguments:
+LDAK accepts genetic data in three formats, using one of the following arguments:
 
 | Argument |  Description |
 |--------------------|--------|
-| `--bfile`    | Binary PLINK (.bed) format, which accomodates hard-coded SNP genotypes. LDAK will then expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
-| `--bgen`    | Oxford (.bgen) format, which accomodates dosage values. Note then LDAK requires an associated samplefile specifying the sample IDs using the `--sample` flag.   |
-| `--speed`    | Speed (.sp) format, which requires data in a large matrix in binary format. LDAK will then expect to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`   |
+| `--bfile <datastem>`    | BED (binary PLINK) format, which accomodates hard-coded SNP genotypes. LDAK will expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
+| `--bgen <datafile>`    | BGEN format, which accomodates genotype probabilties. Note then if `<datastem>´ does not include sample IDs, it necessary to provide these separately using `--sample`.   |
+| `--speed <datastem>`    | LDAK binary format (see https://dougspeed.com/file-formats for details). LDAK will expect to find the files `<datastem>.speed`, `<datastem>.bim` and `<datastem>.fam`   |
 
 To filter either samples or predictors, see [Data Filtering](/docs/input#filtering). LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
 
