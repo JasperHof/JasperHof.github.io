@@ -22,7 +22,7 @@ A summary of the each step is included in the [LDAK-KVIK steps](/docs/assoc/sing
 
 LDAK-KVIK never needs to store genotypes for more than 512 SNPs, and thus has **low memory demands**. LDAK-KVIK constructs PRS in Step 1 using a chunk-based variational Bayes solver that requires 5-20 times fewer updates than conventional variational Bayes solvers. This step is also used to efficiently compute a test statistic scaling factor.
 
-LDAK-KVIK increases detection power, relative to existing MMAA tools, by using more **realistic models** for how SNP effect sizes vary across the genome (specifically, the dependency between SNP heritability and MAF). An **Elastic Net** prior distribution is used for SNP effect sizes (i.e., a mixture of a Gaussian and a Laplace distribution), whereas existing MMAA tools generally restrict to mixtures of Gaussian distributions.
+LDAK-KVIK increases statistical power, relative to existing MMAA tools, by using more **realistic models** for how SNP effect sizes vary across the genome (specifically, the dependency between SNP heritability and MAF). An **Elastic Net** prior distribution is used for SNP effect sizes (i.e., a mixture of a Gaussian and a Laplace distribution), whereas existing MMAA tools generally restrict to mixtures of Gaussian distributions.
 
 LDAK-KVIK includes a fast empirical algorithm for computing the **saddlepoint approximation** (SPA), which is used for controlling type 1 errors when testing binary traits with case:control imbalance. 
 
