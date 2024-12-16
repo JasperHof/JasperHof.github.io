@@ -17,6 +17,7 @@ On this web page, we present summarize the results of analysing 62 quantitative 
 
 
 | Index | Name | Field_ID | Sample_Size | h2_SNP | Num_Sig | Num_Clump | PRS_R2 | [Manhattan](Manhattan) | Summary_Stats | PGS_Weights |
+| ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | 1 | Standing_Height | 50 | 458079 | 0.6679 | 386876 | 5256 | 0.416541 | [Manhattan](https://genetics.ghpc.au.dk/doug/Manhattans/GWAS1.Standing_Height.jpeg) | https://genetics.ghpc.au.dk/doug/SumStats/GWAS1.Standing_Height.assoc.gz | https://genetics.ghpc.au.dk/doug/PRS/GWAS1.Standing_Height.effects.gz |
 | 2 | White_Blood_Cell_Leukocyte_Count | 30000 | 445363 | 0.3654 | 69821 | 688 | 0.0890426 | [Manhattan](https://genetics.ghpc.au.dk/doug/Manhattans/GWAS2.White_Blood_Cell_Leukocyte_Count.jpeg) | https://genetics.ghpc.au.dk/doug/SumStats/GWAS2.White_Blood_Cell_Leukocyte_Count.assoc.gz | https://genetics.ghpc.au.dk/doug/PRS/GWAS2.White_Blood_Cell_Leukocyte_Count.effects.gz |
 | 3 | Urea | 30670 | 437426 | 0.3654 | 25271 | 390 | 0.0589033 | [Manhattan](https://genetics.ghpc.au.dk/doug/Manhattans/GWAS3.Urea.jpeg) | https://genetics.ghpc.au.dk/doug/SumStats/GWAS3.Urea.assoc.gz | https://genetics.ghpc.au.dk/doug/PRS/GWAS3.Urea.effects.gz |
