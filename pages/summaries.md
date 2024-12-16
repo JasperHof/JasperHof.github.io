@@ -1,5 +1,6 @@
 ---
 title: Summary statistics
+permalink: /summaries/
 description: LDAK-KVIK results for 62 quantitative traits from the UK Biobank
 ---
 
