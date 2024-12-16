@@ -6,7 +6,7 @@ description: LDAK-KVIK results for 62 quantitative traits from the UK Biobank
 
 # Summary statistics from LDAK-KVIK
 
-On this web page, we present summarize the results of analysing 62 quantitative traits from the UK Biobank using LDAK-KVIK.
+On this web page, we present the GWAS results of 62 quantitative traits from the UK Biobank using LDAK-KVIK.
 
 | Index | Name | Field_ID | Sample_Size | h2_SNP | Num_Sig | Num_Clump | PRS_R2 | Manhattan | Summary_Stats | PGS_Weights |
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
