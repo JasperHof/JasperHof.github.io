@@ -25,7 +25,7 @@ There are **four** ways to obtain LDAK: you can install LDAK via a command line,
 
 For Linux, open a terminal window (go to Applications / System Tools / Terminal), then install the Linux executable of LDAK using the command line:
 ```
-wget https://github.com/dougspeed/LDAK/raw/main/ldak6.linux
+wget https://github.com/dougspeed/LDAK/raw/refs/heads/main/ldak6.1.linux
 ``` 
 For MAC, open a terminal window (go to Finder / Applications / Utilities), then install the Mac executable of LDAK using the command line:
 ```
@@ -37,7 +37,7 @@ Note that it might be necessary to grant permission to run the file using `chmod
 
 ## 2a. Download the Linux executable
 
- - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK/blob/main/ldak6.linux) (https://github.com/dougspeed/LDAK/blob/main/ldak6.linux). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-dotted box.
+ - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK/blob/main/ldak6.1.linux) (https://github.com/dougspeed/LDAK/blob/main/ldak6.1.linux). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-dotted box.
 
  - Open a terminal window (on my Linux, I go to Applications / System Tools / Terminal)
  - Type the name of the file (for example, /home/doug/Downloads/ldak6.linux), or if you are in the same folder as the executable file, you can simply type ./ldak6.linux. If compatible with your system, this should produce the LDAK welcome screen. 
