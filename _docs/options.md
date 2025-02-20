@@ -21,7 +21,7 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 |`--pheno`   | Name of the phenotype file      |
 |`--covar`   | Name of the quantitative covariate file     |
 |`--covar-numbers`   | Specify a subset of covariates by number. For example, `--covar-numbers 1,2,4-6,8`     |
-|`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-numbers PC1,PC3,age`     |
+|`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-names PC1,PC3,age`     |
 |`--factor`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
 | `--binary YES`    |  Indicates that the analysed phenotype is binary |
