@@ -36,7 +36,7 @@ First we describe each operation in turn, then we explain some implementation de
 
 **Operation 1a - Test for structure.**
 
-LDAK-KVIK picks 512 SNPs semi-randomly from across the genome, then computes $$\bar \rho^2$$, the average squared correlation between pairs of SNPs on different chromosomes. LDAK-KVIK determines there is strong structure if both $$\bar \rho^2$$ is significantly greater than $$1/(n-1)$$, its expectation when the data are homogeneous, and $$n \bar \rho^2>0.1$$ (this is an estimate of the maximum average inflation of test statistics due to structure).
+LDAK-KVIK picks 512 SNPs semi-randomly from across the genome, then computes $$\bar \rho^2$$, the average squared correlation between pairs of SNPs on different chromosomes. LDAK-KVIK determines there is strong structure if both $$\bar \rho^2$$ is significantly greater than 0, and $$n \bar \rho^2>0.1$$ (this is an estimate of the maximum average inflation of test statistics due to structure).
 
 ---
 
@@ -54,7 +54,7 @@ LDAK-KVIK computes the REML estimate of $$h^2$$ by iteratively solving equations
 
 **Operation 1d - Determine suitable elastic net hyperparameters via cross-validation** 
 
-Note that LDAK-KVIK only performs this step in case Operation 1a found weak structure. When constructing Elastic Net PRS, LDAK-KVIK assumes a prior for SNP effect sizes:
+When constructing Elastic Net PRS, LDAK-KVIK assumes a prior for SNP effect sizes:
 
 $$
 \gamma_j \sim p DE\left ( \left[\frac{2p}{(1-F)\hat h^2_j} \right ]^{0.5} \right ) + (1-p)N\left(0,\frac{F\hat h^2_j}{1-p}\right )~~~~ \mbox{and} ~~~~ e\sim N(0,1-\hat h^2).
@@ -68,7 +68,9 @@ LDAK-KVIK uses cross-validation to obtain suitable values for $$p$$ and $$F$$. B
 
 **Operation 1e - Construct LOCO PRS and estimate $$\lambda$$.**
 
-The type of PRS and value of $$\lambda$$ depend on the outcome of the test for structure in Operation 1a. In case the test found only weak structure, LDAK-KVIK constructs $$P_c$$, the $$c$$ th LOCO PRS, assuming the Elastic Net prior distribution for SNP effect sizes defined in Ooeration 1d, with $$p$$ and $$F$$ set to the best-fitting values. LDAK-KVIK sets $$\lambda=1$$. If the test in Operation 1a found strong structure, LDAK-KVAK instead constructs $P_c$ assuming the Ridge Regression prior distribution $$\gamma_j \sim N (0, \hat h^2_j)$$, then estimates $$\lambda$$ using the Grammar-Gamma Formula.
+LDAK-KVIK constructs $$P_c$$, the $$c$$th LOCO PRS, assuming the elastic net prior distribution with optimal hyperparameters estimated in step 1d. The SNPs on chromosome $$c$$ are omitted when computing $$P_c$$, such that a different PRS is constructing for each chromosome.
+
+If operation 1a determines there is low structure, LDAK-KVIK sets $$\lambda=1$$. If the test in Operation 1a found strong structure, LDAK-KVAK instead constructs a LOCO PRS $$P_c$$ assuming the ridge regression prior distribution. It then uses least-squares regression using the model $$E(Y - P_c) = X_j \beta_j$$ to compute two sets of unscaled $$\chi^2 (1)$$ statistics for 65,000 randomly-picked SNPs: one set of statistics for $$P_c$$ constructed using the elastic net prior (denoted by $$U_j$$), and one set of statistics for $$P_c$$ constructed using the ridge regression prior (denoted by $$T_j$$). LDAK-KVIK uses the Grammar-Gamma formula to compute $$\lambda'$$, the scaling factor corresponding to the set of statistics corresponding to ridge regression. Finally, $$\lambda$$ is computed such that the mean of the statistics obtained from the elastic net matches those of the scaled statistics from ridge regression: $$\lambda \sum_{j \in S} T_j == \lambda' \sum_{j \in S} U_j$$. Here S is the subset of SNPs such that $$\lambda U_j < 6$$ and $$\lambda' T_j < 6$$, selecting only weakly-associated SNPs.
 
 ---
 
