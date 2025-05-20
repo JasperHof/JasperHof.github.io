@@ -8,27 +8,17 @@ description: Performance of LDAK-KVIK
 
 # Performance of LDAK-KVIK
 
-We assessed the performance of LDAK-KVIK based on run time, type 1 error and power using both simulated data and data from the UK Biobank.
+We assessed the performance of **LDAK-KVIK** based on run time, type 1 error and power using both simulated data and data from the UK Biobank.
 
 <a id="runtime"></a>
 
-## Run time
+## Computational costs
 
-We compared the run time and memory requirements of LDAK-KVIK with BOLT-LMM, Regenie, fastGWA and GCTA-LOCO when applied to 690k SNPs, using either 63k or 368k individuals. Regenie and fastGWA were used for both quantitative and binary phenotypes, while BOLT-LMM and GCTA-LOCO were only applied to quantitative traits. The results are presented in the table below:
+We compared the run time and memory requirements of LDAK-KVIK with those of REGENIE when applied to 690k SNPs, using various sample sizes.
 
-|   |                         |  63k individuals |   | 368k individuals  | |
-|---|-------------------------|---|---|---|---|
-|   |      **MMAA Tool**      | **CPU hours**  | **Memory (Gb)**  | **CPU hours**  | **Memory (Gb)** |
-|  **Quantitative phenotypes** | BOLT-LMM  |  18 | 12  | 452 | 61 |
-|   |      Regenie                     |  2.4 | 3  | 11  |  16 | 
-|   |      fastGWA                     | 0.2 (24)  | 1 (1) | 0.3 (763) | 3 (3) | 
-|   |      GCTA-LOCO                   | 488 | 167 | Not Feasible  | | 
-|   |      LDAK-KVIK                   | 2.5 | 2 | 15 | 6 | 
-| **Binary phenotypes**  |   REGENIE       | 3.3 | 3 | 15  | 16 | 
-|   |      fastGWA                     | 0.3 (24) | 1 (46) | 1.8 (764) | 3 (3) | 
-|   |      LDAK-KVIK                   | 2.7 | 2 | 19 | 6 | 
+<img title="UK Biobank application - single SNP" alt="UK Biobank application single SNP" src="/assets/img/REBUTTAL_runtime_1M.pdf" style="display: block; margin: 0 auto; width: 900px">
 
-All analyses were performed on AMD/"EPYC Genoa" 9654 CPU processors, using either 4 CPUs (LDAK-KVIK, REGENIE and fastGWA) or 12 CPUs (BOLT-LMM and GCTA-LOCO). Values report the mean CPU hours and memory usage across either the five quantitative or five binary phenotypes. We report two sets of values for fastGWA, depending on whether we exclude or include the computation of the genomic-relatedness matrix (which only needs to be done once per dataset).
+These results indicate that it is feasible to apply LDAK-KVIK to very large datasets (e.g., a million individuals). In general, we find that LDAK-KVIK is faster than REGENIE for all sample sizes, and for both quantitative and binary phenotypes. While the two tools have similar memory requirements for small samples sizes, LDAK-KVIK uses noticeably less memory than REGENIE for larger sample sizes (e.g., more than 50\,k individuals).
 
 <a id="ukbb"></a>
 
@@ -36,16 +26,12 @@ All analyses were performed on AMD/"EPYC Genoa" 9654 CPU processors, using eithe
 
 ### Single-SNP analysis
 
-We applied LDAK-KVIK to 40 quantiative traits from the UK Biobank, and compared its performance to BOLT-LMM, Regenie, fastGWA, and classical regression. 
+We applied LDAK-KVIK to 40 quantiative traits from the UK Biobank, and compared its performance to BOLT-LMM, Regenie, fastGWA, and classical regression. For every trait, we evaluated the number of independent significantly associated loci for each method, and compared those the number of significant loci obtained using fastGWA. The relative differences are plotted against the estimated SNP heritability of the trait.
 
-For every trait, we evaluated the number of independent significantly associated loci per method. This was compared to the number of significant loci using linear regression, and plotted against the estimated SNP heritability of the trait.
+<img title="UK Biobank application - single SNP" alt="UK Biobank application single SNP" src="/assets/img/ukbb_power_poster_with_bolt.pdf" style="display: block; margin: 0 auto; width: 900px">
 
-<img title="UK Biobank application - single SNP" alt="UK Biobank application single SNP" src="/assets/img/Figure3.png" style="display: block; margin: 0 auto; width: 600px">
-
-LDAK-KVIK found 16% more significant loci than classical linear regression, whereas BOLT-LMM
-and REGENIE found 15% and 11% more, respectively. 
-
-Note that we compare LDAK-KVIK with 'BOLT-LMM-Unscaled', which is based on BOLT-LMM results, except we force the test statistic scaling factor to be 1. This is, because the the BOLT-LMM tends to overestimate the test statistic scaling scaling factor, leading to inflation of type 1 error (see [preprint](https://www.medrxiv.org/content/10.1101/2024.07.25.24311005v1)). 
+LDAK-KVIK found 17% more significant loci than fastGWA, whereas BOLT-LMM
+and REGENIE found 16% and 11% more, respectively. 
 
 ### Gene-based analysis
 
