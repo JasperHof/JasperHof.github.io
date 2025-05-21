@@ -19,7 +19,7 @@ LDAK accepts genetic data in three formats, using one of the following arguments
 |--------------------|--------|
 | `--bfile`    | Binary PLINK (.bed) format, which accomodates hard-coded SNP genotypes. LDAK will then expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
 | `--bgen`    | Oxford (.bgen) format, which accomodates dosage values. Note then LDAK requires an associated samplefile specifying the sample IDs using the `--sample` flag.   |
-| `--speed`    | Speed (.sp) format, which requires data in a large matrix in binary format. LDAK will then expect to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`   |
+| `--sp`    | SP format, which requires data in a large matrix in text format. LDAK will then expect to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`   |
 
 To filter either samples or predictors, see [Data Filtering](/docs/input#filtering). LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
 
@@ -43,7 +43,7 @@ Missing values should be denoted by NA. Note that whereas PLINK also treats -9 a
 - 0 (control), 1 (case) or NA; or
 - 1 (control), 2 (case) or NA
 
-When a phenotypic values is NA for a particular sample, then that sample is excluded from the analysis.
+When a phenotypic value is NA for a particular sample in the analysis of a single phenotype, then that sample is excluded from the analysis. When ananlysing multiple phenotypes, the NA values are imputed to the mean.
 
 <a id="covar"></a>
 
