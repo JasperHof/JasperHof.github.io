@@ -17,19 +17,17 @@ LDAK-KVIK is included in **LDAK**, a command-line software, that can be run on e
 
 There are **four** ways to obtain LDAK: you can install LDAK via a command line, you can manually download the LDAK executable, you can install LDAK via conda, or you can compile your own version of LDAK from the source code. 
 
-**Please note** that LDAK-KVIK is currently only released on the Linux version of LDAK, the MAC version will soon be released.
-
 --- 
 
 ## 1. Download via command line
 
-For Linux, open a terminal window (go to Applications / System Tools / Terminal), then install the Linux executable of LDAK using the command line:
+For Linux, open a terminal window (e.g., go to Applications / System Tools / Terminal), then install the Linux executable of LDAK using the command line:
 ```
 wget https://github.com/dougspeed/LDAK/raw/refs/heads/main/ldak6.1.linux
 ``` 
 For MAC, open a terminal window (go to Finder / Applications / Utilities), then install the Mac executable of LDAK using the command line:
 ```
-wget https://github.com/dougspeed/LDAK/raw/main/ldak6.mac
+curl -O https://github.com/dougspeed/LDAK/raw/main/ldak6.mac
 ```
 Note that it might be necessary to grant permission to run the file using `chmod a+x ldak6.linux` (for Linux) or `chmod a+x ldak6.mac` (for Mac).
 
@@ -79,7 +77,9 @@ The final command should display an overview of the LDAK commands. Note that all
 The pre-compiled Linux version uses the Intel MKL Libraries. We use the command:
 
 ```
-gcc --static -O3 -o ldak6.linux ldak/ldak.c ldak/libqsopt.linux.a -m64 -Wl,--start-group ${MKLROOT}/lib/libmkl_intel_lp64.a ${MKLROOT}/lib/libmkl_gnu_thread.a ${MKLROOT}/lib/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -lz -I${MKLROOT}/include -fopenmp -L/home/doug/opt/lib -I/home/doug/opt/include
+gcc --static -O3 -o ldak6.linux ldak/ldak.c ldak/libqsopt.linux.a -m64 -Wl,--start-group ${MKLROOT}/lib/libmkl_intel_lp64.a \
+${MKLROOT}/lib/libmkl_gnu_thread.a ${MKLROOT}/lib/libmkl_core.a -Wl,--end-group -lgomp -lpthread -lm -ldl -lz -I${MKLROOT}/include \ 
+-fopenmp -L/home/doug/opt/lib -I/home/doug/opt/include
 ```
 
 Should you wish to compile a Linux version yourself, please download and unzip the [source code](https://github.com/dougspeed/LDAK) (https://github.com/dougspeed/LDAK), then from inside that folder run a command similar to

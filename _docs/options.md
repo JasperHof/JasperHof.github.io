@@ -36,7 +36,7 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 
 ## Step 2
 
-Please note that the arguments must match those used in Step 1 (i.e., you must use the same output filename, provide the same data and phenotype files, and if you used covariates in Step 1, you must also use them in Step 2).
+Please note that several arguments must match those used in Step 1 (i.e., you must use the same output filename, provide the same data and phenotype files, and if you used covariates in Step 1, you must also use them in Step 2).
 
 | Argument |  Description |
 |--------------------|--------|

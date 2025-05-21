@@ -37,14 +37,38 @@ An example command line of Step 1 in LDAK-KVIK is given by:
 
 The main input options are as follows:
 
-| Argument |  Description | 
-|------------|--------|
-|`--kvik-step1`    | Name of the output files of the step 1   |
-|`--bfile`   | Name of the .bed file to be analyzed      |
-|`--pheno`   | Name of the phenotype file      |
-|`--covar`   | Name of the covariate file     |
-|`--max-threads`   | Integer value, specifying the number of available threads for fitting the elastic net. By default, LDAK assumes `--max-threads` equals 1      |
-|`--binary` | Indicates that the analysed trait is binary |
+<table>
+  <tr>
+    <th style="width: 20%;">Argument</th>
+    <th style="width: 80%;">Description</th>
+  </tr>
+  <tr>
+    <td><code>--kvik-step1</code></td>
+    <td>Name of the output files of the step 1</td>
+  </tr>
+  <tr>
+    <td><code>--bfile</code></td>
+    <td>Name of the .bed file to be analyzed</td>
+  </tr>
+  <tr>
+    <td><code>--pheno</code></td>
+    <td>Name of the phenotype file</td>
+  </tr>
+  <tr>
+    <td><code>--covar</code></td>
+    <td>Name of the covariate file</td>
+  </tr>
+  <tr>
+    <td><code>--max-threads</code></td>
+    <td>Integer value, specifying the number of available threads for fitting the elastic net. By default, LDAK assumes <code>--max-threads</code> equals 1</td>
+  </tr>
+  <tr>
+    <td><code>--binary</code></td>
+    <td>Indicates that the analysed trait is binary</td>
+  </tr>
+</table>
+
+
 
 When analysing binary traits, the user should add `--binary YES` to the command. All operations in Step 1 will then be based on weighted linear regression, instead of linear regression. When analysing imputed data, it is not necessary to include all SNPs in Step 1 (see [Recommendations](/docs/recommendations/#analysing-imputed-data) for alternative options). A more extensive list of options can be found in [data format](/docs/input).
 
