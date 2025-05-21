@@ -18,7 +18,8 @@ Prior to running LDAK-KVIK, the user should extract phenotypes and covariates fr
 
 After loading the Bulk data in the RAP-environment, the function `dx extract_dataset` can be used to extract specific phenotype fields from the dataset. For example:
 ```
-dx extract_dataset [app_id].dataset --fields "participant.eid,participant.eid,participant.p50_i0" -o "data"
+dx extract_dataset [app_id].dataset --fields "participant.eid,participant.eid,participant.p50_i0" \ 
+  -o "data"
 ```
 loads the variables `participant.eid` (participant ID number) and `participant.p50_i0` (height) into a comma-separated file called `data`. It is possible to load additional phenotypes by including them in the `--fields` string. An overview of all possible phenotypes is displayed by running `dx extract_dataset [app_id].dataset --list-fields`.
 

@@ -9,9 +9,9 @@ Below, we list some recommendations for running LDAK-KVIK.
 
 ## Analysing imputed data
 
-Step 1 of LDAK-KVIK can be slow when there are very many predictors. Therefore, if your dataset contains over one million predictors, we recommend you only use a subset of these in Step 1 (e.g., 500,000 predictors). Doing so will have a limited impact on power, but will greatly reduce runtime. Note that you should continue to use all predictors in Step 2.
+Step 1 of LDAK-KVIK can be slow when there are very many predictors. Therefore, if your dataset contains over one million predictors, we recommend you only use a subset of these in Step 1 (e.g., 500,000 predictors). This has a limited impact on statistical power, but will greatly reduce runtime. Note that you should continue to use all predictors in Step 2.
 
-You may already have a suitable subset of predictors (e.g., you may have a list of directly-genotyped SNPs, or those passing stringent quality control). Otherwise, we you can obtain the SNP subset by performing a moderate thinning of the common predictors (e.g., if analyzing SNP data, we suggest identifying SNPs with MAF > 0.01, then filtering so there are no predictors within 100kb with squared correlation above 0.5).
+You may already have a suitable subset of predictors (e.g., you may have a list of directly-genotyped SNPs, or those passing stringent quality control). Otherwise, we you can obtain a SNP subset for LDAK-KVIK step 1 by performing a moderate thinning of the common predictors (e.g., if analyzing SNP data, we suggest identifying SNPs with MAF > 0.01, then filtering so there are no predictors within 100kb with squared correlation above 0.5).
 
 To restrict to fewer SNPs in Step 1 and speed up the run time, we recommend running `--thin-common` prior to LDAK-KVIK Step 1:
 
@@ -79,9 +79,9 @@ The resulting summary statistics will be saved in `kvik.pheno1.assoc`, `kvik.phe
 
 ## Analysing small sample sizes
 
-Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis. This is, because it is harder to construct accurate LOCO PRS in Step 1 and thus there is a lower benefit in statistical power (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). However, in smaller data sets with high degrees of relatedness, LDAK-KVIK still offers control of type 1 error (which would be inflated using classical regression). For binary traits, it is still useful to apply the saddlepoint approximation to overcome inflation due to case:control imbalance. 
+Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis. This is, because it is harder to construct accurate LOCO PRS in Step 1 and thus there is a lower benefit in statistical power (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). However, in smaller data sets with high degrees of relatedness, LDAK-KVIK still offers control of type 1 error (which would be inflated using classical regression). When analysing binary traits, it is still useful to apply the saddlepoint approximation to overcome inflation due to case:control imbalance. 
 
-It is possible to run classical linear regression in LDAK using the command lines:
+It is also possible to run classical linear regression in LDAK using the command lines:
 
 ```
 ./ldak6.linux --linear kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
