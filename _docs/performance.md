@@ -18,7 +18,7 @@ We compared the run time and memory requirements of LDAK-KVIK with those of REGE
 
 <img title="UK Biobank application - single SNP" alt="UK Biobank application single SNP" src="/assets/img/REBUTTAL_runtime_1M-1.png" style="display: block; margin: 0 auto; width: 900px">
 
-These results indicate that it is feasible to apply LDAK-KVIK to very large datasets (e.g., a million individuals). In general, we find that LDAK-KVIK is faster than REGENIE for all sample sizes, and for both quantitative and binary phenotypes. While the two tools have similar memory requirements for small samples sizes, LDAK-KVIK uses noticeably less memory than REGENIE for larger sample sizes (e.g., more than 50\,k individuals).
+These results indicate that it is feasible to apply LDAK-KVIK to very large datasets (e.g., a million individuals). In general, we find that LDAK-KVIK is faster than REGENIE for all sample sizes, and for both quantitative and binary phenotypes. While the two tools have similar memory requirements for small samples sizes, LDAK-KVIK uses noticeably less memory than REGENIE for larger sample sizes (e.g., more than 50k individuals).
 
 <a id="ukbb"></a>
 
