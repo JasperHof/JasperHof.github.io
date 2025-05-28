@@ -65,7 +65,7 @@ We find that LDAK-KVIK controls type 1 error for all datasets and scenarios cons
 
 We compared the power of fastGWA, GCTA-LOCO, REGENIE, BOLT-LMM and LDAK-KVIK for quantitative traits by evaluating the mean $$\chi^2(1)$$ statistics of causal SNPs (located at the start of each chromosome in our simulations).
 
-<img title="Simulation study - power" alt="Simulation study power" src="/assets/img/sim_power_quant.pdf" style="display: block; margin: 0 auto; width: 800px">
+<img title="Simulation study - power" alt="Simulation study power" src="/assets/img/sim_power_quant-1.png" style="display: block; margin: 0 auto; width: 800px">
 
 Note that the marks "*" and "+" indicate whether the MMAA tool has significant deflation (average chi squared statistic < 0.98) or inflation (average chi squared statistic > 1.02) for the corresponding simulation scenario.
 
