@@ -18,16 +18,19 @@ After the data has been prepared, it is possible to run **LDAK-KVIK** on the UKB
 
 The following example command runs LDAK-KVIK Step 1 using the Swiss-Army-Knife:
 ```
+project="Basic GWAS"                                        # Name of the project 
 data_file_dir="data"                                        # Name of the working directory
 
 # Specify the command line to install LDAK and run LDAK-KVIK Step 1
-run_ldak="wget https://github.com/dougspeed/LDAK/raw/main/ldak6.linux;\ 
-        chmod a+x ldak6.linux;\
-        ./ldak6.linux --kvik-step1 kvik --bfile ukb_merged --pheno data_height_tab --covar data_pcs_tab --max-threads 4"
+run_ldak="wget https://github.com/dougspeed/LDAK/raw/refs/heads/main/ldak6.1.linux;\ 
+        chmod a+x ldak6.1.linux;\
+        ./ldak6.1.linux --kvik-step1 kvik --bfile ukb_merged --pheno data_height_tab --covar data_pcs_tab --max-threads 4"
 
 # Run using Swiss-Army-Knife
 dx run swiss-army-knife  \
-  -iin="${data_file_dir}/ukb_merged" \
+  -iin="${data_file_dir}/ukb_merged.bed" \
+  -iin="${data_file_dir}/ukb_merged.bim" \
+  -iin="${data_file_dir}/ukb_merged.fam" \
   -iin="${data_file_dir}/data_height_tab" \
   -iin="${data_file_dir}/data_pcs_tab" \
   -icmd="${run_ldak}" \
