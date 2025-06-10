@@ -19,18 +19,18 @@ Prior to running LDAK-KVIK, the user should extract phenotypes and covariates fr
 After loading the Bulk data in the RAP-environment, the function `dx extract_dataset` can be used to extract specific phenotype fields from the dataset. For example:
 ```
 dx extract_dataset [app_id].dataset --fields "participant.eid,participant.eid,participant.p50_i0" \ 
-  -o "data"
+  -o "data_height"
 ```
-loads the variables `participant.eid` (participant ID number) and `participant.p50_i0` (height) into a comma-separated file called `data`. It is possible to load additional phenotypes by including them in the `--fields` string. An overview of all possible phenotypes is displayed by running `dx extract_dataset [app_id].dataset --list-fields`.
+loads the variables `participant.eid` (participant ID number) and `participant.p50_i0` (height) into a comma-separated file called `data_height`. It is possible to load additional phenotypes by including them in the `--fields` string. An overview of all possible phenotypes is displayed by running `dx extract_dataset [app_id].dataset --list-fields`.
 
-Note that the header of `data` contains the original fields name, and should be converted to PLINK format before running LDAK. Moreover, LDAK only accepts space- or tab-separated files, so we should convert the comma-separated data file (coding double comma as missing value 'NA'):
+Note that the header of `data_height` contains the original fields name, and should be converted to PLINK format before running LDAK. Moreover, LDAK only accepts space- or tab-separated files, so we should convert the comma-separated data file (coding double comma as missing value 'NA'):
 ```
-sed -i '1s/.*/FID,IID,Pheno/' data
-sed -E 's/(^|,)(,|$)/\1NA\2/g' data | sed -E 's/(^|,)(,|$)/\1NA\2/g' | awk 'gsub(",","\t",$0)' > data_tab
+sed -i '1s/.*/FID,IID,Pheno/' data_height
+sed -E 's/(^|,)(,|$)/\1NA\2/g' data_height | sed -E 's/(^|,)(,|$)/\1NA\2/g' | awk 'gsub(",","\t",$0)' > data_height_tab
 ```
 The phenotype file is now suitable for analysis in LDAK. It should be uploaded from the local directory to the RAP enviroment:
 ```
-dx upload "data_tab"
+dx upload "data_height_tab"
 ```
 
 ### Constructing covariates
@@ -63,9 +63,9 @@ data_field="22418"          # Data number corresponding to the .bed files
 data_file_dir="data"        # Name of the output directory (make sure to create this before running)
 
 # Specify the command line to run
-run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb${data_field}_c[0-9]* . ;\     # Copy files 
-    ls *bed | sed -e 's/.bed//g' > files_to_merge.txt ;\                                            # Create a list of genotype files to merge
-    plink --merge-list files_to_merge.txt --make-bed --maf 0.01 --mind 0.1 --geno 0.1 \             # Merge + QC using plink
+run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb${data_field}_c[0-9]* . ;\     
+    ls *bed | sed -e 's/.bed//g' > files_to_merge.txt ;\                                            
+    plink --merge-list files_to_merge.txt --make-bed --maf 0.01 --mind 0.1 --geno 0.1 \            
     --hwe 1e-15 --out ukb_merged"
 
 # Run using Swiss-Army-Knife
@@ -87,9 +87,9 @@ data_file_dir="data"                                        # Name of the output
 for i in {1..22}; do
 
     # Specify the command line
-    run_plink_bgen="plink2 --bgen ukb${data_field}_c${i}_b0_v3.bgen 'ref-first' \       # Input .bgen data
-    --sample ukb${data_field}_c${i}_b0_v3.samples \                                     # Sample file
-    --maf 0.001 --mac 20 --geno 0.1 --hwe 1e-15 --mind 0.1 --rm-dup 'force-first' \     # QC options
+    run_plink_bgen="plink2 --bgen ukb${data_field}_c${i}_b0_v3.bgen 'ref-first' \       
+    --sample ukb${data_field}_c${i}_b0_v3.sample \                                     
+    --maf 0.001 --mac 20 --geno 0.1 --hwe 1e-15 --mind 0.1 --rm-dup 'force-first' \     
     --make-bed --out imp_chr${i}" \                                                                                            
     
 
