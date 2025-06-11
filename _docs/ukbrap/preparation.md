@@ -60,7 +60,8 @@ To prepare the **directly genotyped** data for LDAK-KVIK Step 1, we recommend us
 ```
 ### Perform QC and merge .bed files for Step 1 ###
 data_field="22418"          # Data number corresponding to the .bed files
-data_file_dir="data"        # Name of the output directory (make sure to create this before running)
+project="Basic GWAS"        # Example name of the project
+data_file_dir="data"        # Name of the output directory (create this before running)
 
 # Specify the command line to run
 run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb${data_field}_c[0-9]* . ;\     
@@ -72,7 +73,7 @@ run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb${data_fiel
 dx run swiss-army-knife  \
   -icmd="${run_merge}" \
   --instance-type "mem1_ssd1_v2_x16" 
-  --destination=${project}:${data_file_dir}
+  --destination="${project}:${data_file_dir}"
 ```
 
 To prepare the **imputed** data for LDAK-KVIK Step 2, we recommend using the Swiss-Army-Knife to perform quality control for each chromosome:
@@ -81,7 +82,8 @@ To prepare the **imputed** data for LDAK-KVIK Step 2, we recommend using the Swi
 ### Perform QC and create .bed files for Step 2 ###
 file_dir="/Bulk/Imputation/UKB imputation from genotype"    # Directory of imputed genotype data
 data_field="22828"                                          # Data number corresponding to the .bgen files
-data_file_dir="data"                                        # Name of the output directory
+project="Basic GWAS"                                        # Name of the project 
+data_file_dir="data"                                        # Name of the working directory
 
 # Perform QC for each chromosome
 for i in {1..22}; do
@@ -98,7 +100,7 @@ for i in {1..22}; do
     -iin="${file_dir}/ukb${data_field}_c${i}_b0_v3.bgen.bgi" \
     -iin="${file_dir}/ukb${data_field}_c${i}_b0_v3.sample" \
     -icmd="${run_plink_bgen}" --tag="make_bed" --instance-type "mem1_ssd1_v2_x36" \
-    --destination=${project}:${data_file_dir} --brief --yes
+    --destination="${project}:${data_file_dir}" --brief --yes
 done
 ```
 

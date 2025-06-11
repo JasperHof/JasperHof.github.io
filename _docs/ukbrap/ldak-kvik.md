@@ -33,24 +33,27 @@ dx run swiss-army-knife  \
   -iin="${data_file_dir}/ukb_merged.fam" \
   -iin="${data_file_dir}/data_height_tab" \
   -iin="${data_file_dir}/data_pcs_tab" \
-  -icmd="${run_ldak}" \
+  -icmd="${run_ldak}" --tag="kvik_step1" \
   --instance-type "mem3_ssd1_v2_x4" \
-  --destination=${project}:${data_file_dir}
+  --destination="${project}:${data_file_dir}"
 ```
 The commands produce several files with prefix `kvik.step1`, including the LOCO PRS estimates and a root file, which are uploaded to the `data` folder.
 
 ### LDAK-KVIK Step 2
 
-It is possible to run **LDAK-KVIK** Step 2 for each chromosome separately, or using a combined genotype file. LDAK accepts both `.bed` files (using the `--bfile` flag) and `.bgen` files (using the `--bgen` and `--sample` flags). Is it possible to run LDAK-KVIK using chromosome-specific `.bed` files using the following commands:
+It is possible to run **LDAK-KVIK** Step 2 for each chromosome separately, or using a combined genotype file. LDAK accepts both `.bed` files (using the `--bfile` flag) and `.bgen` files (using the `--bgen` and `--sample` flags). 
+
+Here, we demonstrate how to run LDAK-KVIK Step 2 using chromosome-specific `.bed` files (which we generated earlier in [Preparation](/docs/ukbrap/preparation)):
 
 ```
+project="Basic GWAS"                                        # Name of the project 
 data_file_dir="data"                                        # Name of the working directory
 
 for i in {1..22}; do
 
 # Specify the command line to run LDAK-KVIK Step 2 for each chromosome
-run_ldak="chmod a+x ldak6.linux ;\
-  ./ldak6.linux --kvik-step2 kvik --bfile imp_chr${i} --pheno data_height_tab \
+run_ldak="chmod a+x ldak6.1.linux ;\
+  ./ldak6.1.linux --kvik-step2 kvik --bfile imp_chr${i} --pheno data_height_tab \
   --covar data_pcs_tab --max-threads 4"
 
 # Run using Swiss-Army-Knife 
@@ -63,9 +66,9 @@ dx run swiss-army-knife -iin="data_height_tab" \
   -iin="${data_file_dir}/kvik.step1.loco.prs" \
   -iin="${data_file_dir}/kvik.step1.effects" \
   -iin="${data_file_dir}/kvik.step1.root" \
-  -iin="${data_file_dir}/ldak6.linux" \
-  -icmd="${run_ldak}" --tag="kvik_step2_bed" --instance-type "mem1_ssd1_v2_x16" \
-  --destination=${project}:${data_file_dir} --brief --yes
+  -iin="${data_file_dir}/ldak6.1.linux" \
+  -icmd="${run_ldak}" --tag="kvik_step2" --instance-type "mem1_ssd1_v2_x16" \
+  --destination="${project}:${data_file_dir}" --brief --yes
 done
 ```
 This command returns chromosome-specific GWAS results with prefix `kvik.step2.chr<chromosome_number>`. 
