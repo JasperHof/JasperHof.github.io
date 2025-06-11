@@ -16,7 +16,7 @@ LDAK-KVIK is a method for performing mixed-model association analysis (MMAA) for
 2. Use the PRS as offset in single-SNP analysis 
 3. Use the summary statistics of single-SNP analysis to run a gene-based association analysis LDAK-GBAT.
 
-A summary of the each step is included in the [LDAK-KVIK steps](/docs/assoc/singlesnp), and a detailed description of LDAK-KVIK is included in the LDAK-KVIK publication (see [preprint](https://www.medrxiv.org/content/10.1101/2024.07.25.24311005v1)). Below, we list some innovations of LDAK-KVIK.
+A summary of the each step is included in the [LDAK-KVIK steps](/docs/assoc/singlesnp), and a detailed description of LDAK-KVIK is included in the LDAK-KVIK publication (see [preprint](https://www.medrxiv.org/content/10.1101/2024.07.25.24311005v2)). Below, we list some innovations of LDAK-KVIK.
 
 ## Key innovations of LDAK-KVIK
 

@@ -54,11 +54,12 @@ for i in {1..22}; do
 # Specify the command line to run LDAK-KVIK Step 2 for each chromosome
 run_ldak="chmod a+x ldak6.1.linux ;\
   ./ldak6.1.linux --kvik-step2 kvik --bfile imp_chr${i} --pheno data_height_tab \
-  --covar data_pcs_tab --max-threads 4"
+  --covar data_pcs_tab --keep ukb_merged.fam --max-threads 4"
 
 # Run using Swiss-Army-Knife 
 dx run swiss-army-knife -iin="data_height_tab" \
   -iin="data_pcs_tab" \
+  -iin="${data_file_dir}/ukb_merged.fam" \
   -iin="${data_file_dir}/imp_chr${i}.bed" \
   -iin="${data_file_dir}/imp_chr${i}.bim" \
   -iin="${data_file_dir}/imp_chr${i}.fam" \

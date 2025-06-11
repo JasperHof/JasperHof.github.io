@@ -64,7 +64,7 @@ project="Basic GWAS"        # Example name of the project
 data_file_dir="data"        # Name of the output directory (create this before running)
 
 # Specify the command line to run
-run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb${data_field}_c[0-9]* . ;\     
+run_merge="cp /mnt/project/Bulk/Genotype\ Results/Genotype\ calls/ukb${data_field}_c{1..22}_b0_v2.{bed,bim,fam} . ;\     
     ls *bed | sed -e 's/.bed//g' > files_to_merge.txt ;\                                            
     plink --merge-list files_to_merge.txt --make-bed --maf 0.01 --mind 0.1 --geno 0.1 \            
     --hwe 1e-15 --out ukb_merged"
