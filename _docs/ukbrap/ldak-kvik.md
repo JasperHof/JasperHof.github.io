@@ -45,6 +45,8 @@ It is possible to run **LDAK-KVIK** Step 2 for each chromosome separately, or us
 
 Here, we demonstrate how to run LDAK-KVIK Step 2 using chromosome-specific `.bed` files (which we generated earlier in [Preparation](/docs/ukbrap/preparation)):
 
+
+
 ```
 project="Basic GWAS"                                        # Name of the project 
 data_file_dir="data"                                        # Name of the working directory
