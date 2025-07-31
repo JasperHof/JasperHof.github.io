@@ -27,7 +27,7 @@ An overview of the LDAK-KVIK algorithm is included in the [technical details](/d
 
 ---
 
-# Step 1
+## Step 1
 
 An example command line of Step 1 in LDAK-KVIK is given by:
 
@@ -74,7 +74,7 @@ When analysing binary traits, the user should add `--binary YES` to the command.
 
 ---
 
-# Step 2
+## Step 2
 
 An example command line of Step 2 in LDAK-KVIK is given by:
 
@@ -95,7 +95,7 @@ Note that the input argument of `--kvik-step2` (in this case, 'kvik') should mat
 
 ---
 
-# Step 3
+## Step 3
 
 An example command line of Step 3 in LDAK-KVIK is given by:
 

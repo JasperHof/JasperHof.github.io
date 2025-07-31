@@ -11,7 +11,7 @@ description: Overview of genotype, phenotype and covariate formatting options in
 
 To run LDAK, you require genotypes and phenotypes, while it is common to also include covariates. When performing gene-based analysis, you additionally require a gene annotations file.
 
-## Genotypes
+### Genotypes
 
 LDAK accepts genetic data in three formats, using one of the following arguments:
 
@@ -27,7 +27,7 @@ Notably, LDAK is not able to process data of `pgen` format and `vcf` format. For
 
 <a id="pheno"></a>
 
-## Phenotypes
+### Phenotypes
 
 Phenotype files should be in PLINK format. The first two columns should provide sample IDs, with subsequent columns providing the phenotype values. This can be one phenotype, or multiple phenotypes. An example phenotype input file looks like this:
 ```
@@ -47,7 +47,7 @@ When a phenotypic value is NA for a particular sample in the analysis of a singl
 
 <a id="covar"></a>
 
-## Covariates
+### Covariates
 
 Covariate files should be in PLINK format. The first two columns should provide the sample FIDs and IIDs, with subsequent columns providing covariate values. For example: 
 ```
@@ -65,7 +65,7 @@ Missing covariate values should be denoted by NA (missing values are replaced by
 
 <a id="gene"></a>
 
-## Gene annotations
+### Gene annotations
 
 Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contains one row for each gene, and four columns, that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. 
 
@@ -78,7 +78,7 @@ The gene annotations files can also be downloaded from [GitHub](https://github.c
 
 <a id="filtering"></a>
 
-## Data filtering
+### Data filtering
 
 For most commands, it is possible to filter on SNPs or filter on samples using the following arguments:
 
