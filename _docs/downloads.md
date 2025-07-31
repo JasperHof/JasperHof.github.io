@@ -5,17 +5,15 @@ description: Getting started with LDAK-KVIK
 
 # Download LDAK
 
-**Please note** that it might be helpful to sign up for the LDAK mailing list:
+For first time users, **please note** that it might be helpful to sign up for the [LDAK mailing list](https://dougspeed.com/downloads/). This will only be used to inform about major updates to LDAK (which happens less than once a year). 
 
-{% include mail_form.html %}
-
-This will only be used to inform about major updates to LDAK (which happens less than once a year). 
+<!--{% include mail_form.html %}-->
 
 --- 
 
 LDAK-KVIK is included in **LDAK**, a command-line software, that can be run on either Linux or a Mac. We strongly recommend the Linux version, as it will often be much faster than the Mac version. Note that LDAK does not run on Windows, so we suggest using a Linux server (for example, you can use putty to ssh into your local computer cluster). 
 
-There are **four** ways to obtain LDAK: you can install LDAK via a command line, you can manually download the LDAK executable, you can install LDAK via conda, or you can compile your own version of LDAK from the source code. 
+There are **four** ways to obtain LDAK, which are listed below.
 
 --- 
 

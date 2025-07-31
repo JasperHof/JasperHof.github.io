@@ -1,5 +1,7 @@
-- title: Documentation
-  url: docs
+#- title: Documentation
+#  url: docs
+- title: Home
+  url: index.html
 - title: Technical Details
   url: docs/technical
 - title: Performance
