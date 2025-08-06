@@ -50,7 +50,7 @@ Please note that several arguments must match those used in Step 1 (i.e., you mu
 |`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-numbers PC1,PC3,age`     |
 |`--factor`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
-| `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes  |
+| `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes. Conversely, it is possible to specify `--spa-test YES` for quantative traits to analyze using SPA  |
 
 ## Step 3
 
@@ -58,5 +58,7 @@ Please note that several arguments must match those used in Step 1 (i.e., you mu
 |------------|--------|
 |`--kvik-step3`    | Name of the output files of Step 3. Note that this should have the same name as Step 1 and Step 2.   |
 |`--bfile`   | Name of the .bed file to be analyzed      |
+|`--bgen`   | Name of the .bgen file to be analyzed      |
+|`--sample`   | Name of the .sample file corresponding to the .bgen file      |
 |`--genefile`   | Name of the gene annotation file. Instructions for downloading this can be found on the [input](input) page       |
 | `--max-threads` | Number of threads (used for parallel computing) |
