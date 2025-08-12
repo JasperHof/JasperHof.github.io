@@ -6,7 +6,7 @@ permalink: /
 
 # Welcome to LDAK-KVIK
 
-**LDAK-KVIK** is a powerful and computationally efficient method for mixed-model association analysis in genome-wide association studies (GWAS). It is part of the [LDAK](http://www.dougspeed.com) software, which is written in C. A [preprint](https://www.medrxiv.org/content/10.1101/2024.07.25.24311005v2) of LDAK-KVIK is now online.
+**LDAK-KVIK** is a powerful and computationally efficient method for mixed-model association analysis in genome-wide association studies (GWAS). It is part of the [LDAK](http://www.dougspeed.com) software, which is written in C. LDAK-KVIK has been published in [Nature Genetics](https://www.nature.com/articles/s41588-025-02286-z).
 
 ### 🚀 Why use LDAK-KVIK?
  - **Scalability**: Analyzes hundreds of thousands of individuals within hours
