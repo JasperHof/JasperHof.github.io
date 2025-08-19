@@ -8,7 +8,7 @@ description: Technical details of LDAK-KVIK
 
 # Technical details of LDAK-KVIK
 
-**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we summarize the LDAK-KVIK algorithm for each step. For an extensive overview of the LDAK-KVIK algorithm, we refer to the LDAK-KVIK publication (see [preprint](https://www.medrxiv.org/content/10.1101/2024.07.25.24311005v1)).
+**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we summarize the LDAK-KVIK algorithm for each step. For an extensive overview of the LDAK-KVIK algorithm, we refer to the [LDAK-KVIK publication](https://www.nature.com/articles/s41588-025-02286-z).
 
 ---
 
