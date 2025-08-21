@@ -5,11 +5,18 @@ description: Recommendations for running LDAK-KVIK
 
 # Recommendations
 
-Below, we list some recommendations for running LDAK-KVIK. 
+Below, we list some recommendations for running LDAK-KVIK:
 
-## Analysing imputed data
 
-Step 1 of LDAK-KVIK can be slow when there are very many predictors. Therefore, if your dataset contains over one million predictors, we recommend you only use a subset of these in Step 1 (e.g., 500,000 predictors). This has a limited impact on statistical power, but will greatly reduce runtime. Note that you should continue to use all predictors in Step 2.
+- [Analysing imputed data](#analysing-imputed-data)  
+- [Genotype data format](#genotype-data-format)  
+- [Parallelization](#parallelization)  
+- [Analysing multiple phenotypes](#analysing-multiple-phenotypes)  
+- [Analysing small sample sizes](#analysing-small-sample-sizes)  
+
+### Analysing imputed data
+
+Step 1 of LDAK-KVIK can be slow when there are very many predictors. Therefore, if your dataset contains over one million predictors, we recommend you only use a subset of these in Step 1 (e.g., 500,000 predictors). This has a limited impact on statistical power, but will greatly reduce runtime. Note that you should continue to use all predictors in Step 2 for association analysis.
 
 You may already have a suitable subset of predictors (e.g., you may have a list of directly-genotyped SNPs, or those passing stringent quality control). Otherwise, we you can obtain a SNP subset for LDAK-KVIK step 1 by performing a moderate thinning of the common predictors (e.g., if analyzing SNP data, we suggest identifying SNPs with MAF > 0.01, then filtering so there are no predictors within 100kb with squared correlation above 0.5).
 
@@ -18,7 +25,7 @@ To restrict to fewer SNPs in Step 1 and speed up the run time, we recommend runn
 ```
 ./ldak6.linux --thin-common thin --bfile data --max-threads 4
 ```
-This function identifies SNPs with MAF > 0.01, that have been filtered so there are no SNPs within 100kb that have a squared correlation above 0.5. It is then possible to restrict to the resulting SNPs using the `--extract` flag in LDAK-KVIK Step 1:
+This function identifies SNPs with MAF > 0.01, that have been filtered so there are no SNPs within 100kb that have a squared correlation above 0.5. The resulting SNPs can be used for LDAK-KVIK Step 1 by including `--extract` flag:
 ```
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --extract thin.in --max-threads 4
 ```
@@ -35,11 +42,11 @@ Step 2 and step 3 can subsequently be run without the `--extract` flag, to inclu
 
 **Please note** that although it is beneficial to restrict to a smaller genotype data set (such as directly genotyped SNPs) in LDAK-KVIK Step 1, it is not beneficial to further reduce the number of SNPs used in Step 1. We found that using 500k - 1M SNPs in LDAK-KVIK Step 1 offers a good statistical power while maintaining high computational efficiency.  Meanwhile, further reducion of the number of Step 1 SNPs results in a noticeable reduction in detection power, and thus we advise against this approach.
 
-## Genotype data format
+### Genotype data format
 
 LDAK accepts genotype data of both `.bed` format (using flag `--bfile`) and `.bgen` format (using flag `--bgen` and `--sample`), however, LDAK processes `.bed` files faster than `.bgen` files due to simpler genotype coding. To optimize LDAK-KVIK run time, it is therefore beneficial to convert `.bgen` files to `.bed` files prior to GWAS analyses. Although converting `.bgen` files to `.bed` files loses part of the genotype information (hardcoding dosage values), we find that the resulting outcomes are highly similar. 
 
-## Parallelization
+### Parallelization
 
 When running LDAK-KVIK, the user has the option to specify the number of threads. This facilitates the parallel run of parts of the LDAK-KVIK algorithm and decreases run time. For optimal implementation of LDAK-KVIK, the user should select the available number of threads in `--num-threads`.
 
@@ -48,7 +55,9 @@ For example, if the user has 16 threads available, it is best to run LDAK-KVIK u
 ./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 16
 ```
 
-## Analysing multiple phenotypes
+However, please note that the performance improvement of LDAK-KVIK by using multiple threads is limited. When using cloud-based analyses such as the UKB-RAP, where additional costs are incurred when using more threads, we recommend using 4 or fewer threads.
+
+### Analysing multiple phenotypes
 
 LDAK-KVIK can analyse multiple phenotypes simultaneously. The input phenotype file should contain the FIDs and IIDs in the first two columns, followed by their phenotypic values. For example:
 ```
@@ -77,7 +86,7 @@ done
 
 The resulting summary statistics will be saved in `kvik.pheno1.assoc`, `kvik.pheno2.assoc`, etc.
 
-## Analysing small sample sizes
+### Analysing small sample sizes
 
 Although LDAK-KVIK is primarily tested on data sets of size > 50,000, it can validly be applied to smaller data sets. It should be noted that when analysing smaller data sets, there is likely a smaller benefit from using mixed-model association analysis. This is, because it is harder to construct accurate LOCO PRS in Step 1 and thus there is a lower benefit in statistical power (see [Campos et al.](https://www.nature.com/articles/s41588-023-01500-0)). However, in smaller data sets with high degrees of relatedness, LDAK-KVIK still offers control of type 1 error (which would be inflated using classical regression). When analysing binary traits, it is still useful to apply the saddlepoint approximation to overcome inflation due to case:control imbalance. 
 

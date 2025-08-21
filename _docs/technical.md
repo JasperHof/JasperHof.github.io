@@ -10,6 +10,8 @@ description: Technical details of LDAK-KVIK
 
 **LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we summarize the LDAK-KVIK algorithm for each step. For an extensive overview of the LDAK-KVIK algorithm, we refer to the [LDAK-KVIK publication](https://www.nature.com/articles/s41588-025-02286-z).
 
+**Please note**: It is not needed to use the full genotype data in LDAK-KVIK Step 1. Instead, we recommend using a subset of SNPs to compute LOCO PRS and estimate $$\lambda$$, which substantially reduces run time with minimal impact on statistical performance. The [Recommendations](/docs/recommendations) page provides example code for reducing the number of SNPs used in Step 1. 
+
 ---
 
 **Step 1.** Construct LOCO PRS and estimate $$\lambda$$
@@ -46,7 +48,7 @@ LDAK-KVIK obtains $$\hat \alpha$$ and $$\hat h^2$$, estimates of the power param
 
 ---
 
-**Operation 1c - Operation 1c - Revise the estimates of $$h^2_j$$ using Monte Carlo REML.**  
+**Operation 1c - Revise the estimates of $$h^2_j$$ using Monte Carlo REML.**  
 
 LDAK-KVIK computes the REML estimate of $$h^2$$ by iteratively solving equations involving the heritability estimate, covariance matrix and phenotype (see the LDAK-KVIK publication for more details). The Haseman-Elston estimate of $$h^2$$ is used in the first iteration, and updated until converged to an approximate solution of the system of equations. Finally, LDAK-KVIK recomputes the estimates of $$h^2_j$$ using the revised estimate of $$h^2$$ (continuing to use the estimate of $$\alpha$$ from randomized Haseman-Elston Regression).
 

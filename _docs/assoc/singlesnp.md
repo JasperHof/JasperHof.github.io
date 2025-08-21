@@ -23,11 +23,13 @@ An example run of LDAK-KVIK is as follows:
 ./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 2
 ```
 
-An overview of the LDAK-KVIK algorithm is included in the [technical details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the the [data format](/docs/input) page.
+An overview of the LDAK-KVIK algorithm is included in the [technical details](/docs/technical). Here, we describe the command lines used the the main input options. Note that a more extensive list of input options is included in the the [data format](/docs/input) page. 
 
 ---
 
 ## Step 1
+
+**Please note** that it is not necessary to use the full genotype data in LDAK-KVIK Step 1. Instead, we recommend using a subset of SNPs to compute LOCO PRS and estimate $$\lambda$$, which substantially reduces run time with minimal impact on statistical performance. The [Recommendations](/docs/recommendations) page provides example code for reducing the number of SNPs used in Step 1.
 
 An example command line of Step 1 in LDAK-KVIK is given by:
 
