@@ -3,9 +3,21 @@ title: LDAK-KVIK on UKB-RAP
 description: Running LDAK-KVIK on the UK Biobank Research Analysis Platform
 ---
 
-These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which enables command-line executables on the RAP server.
+These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
 
-The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
+The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, note that is is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation), which is also used in our [YouTube tutorial](https://www.youtube.com/watch?v=e8hSDNR-Edw). In this case, a local environment is set up in which you can download and analyse UKB data, and upload to your project after.
+
+---------------
+
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/e8hSDNR-Edw" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    style="display: block; margin: 0 auto;">
+</iframe>
+
 
 ---------------
 # Running LDAK-KVIK on UKB-RAP

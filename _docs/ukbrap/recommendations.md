@@ -3,14 +3,18 @@ title: Recommendations
 description: Recommendations for using LDAK-KVIK on the UK Biobank Research Analysis Platform
 ---
 
-These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which enables command-line executables on the RAP server.
+These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
 
-The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
+The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, note that is is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation). In this case, a local environment is set up in which you can download and analyse UKB data, and upload to your project after.
 
 ---------------
 # Recommendations
 
 There are several ways to optimize the use of **LDAK-KVIK** on the RAP, enabling more computionally efficient and cheaper GWAS analyses.
+
+### Swiss-Army-Knife
+
+When performing analyses using LDAK that have larger computational demands (e.g., processing imputed data, running a GWAS on the full UK Biobank data set), we recommend using the Swiss-Army-Knife. This provides an easy way to run any LDAK command on the background in a Linux Virtual Machine.
 
 ### Input genotype files
 

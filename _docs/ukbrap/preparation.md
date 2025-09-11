@@ -3,11 +3,24 @@ title: Preparation
 description: Preparing your data for using LDAK-KVIK on the UK Biobank Research Analysis Platform
 ---
 
-These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which enables command-line executables on the RAP server.
+These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
 
-The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
+The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, note that is is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation), which is also used in our [YouTube tutorial](https://www.youtube.com/watch?v=e8hSDNR-Edw). In this case, a local environment is set up in which you can download and analyse UKB data, and upload to your project after.
 
 ---------------
+
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/e8hSDNR-Edw" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    style="display: block; margin: 0 auto;">
+</iframe>
+
+
+---------------
+
 # Preparing data
 
 Before running **LDAK-KVIK**, you will need to install the [`dx-toolkit`](https://documentation.dnanexus.com/downloads). Moreover, you need to have a RAP project with data dispensed, and log in using `dx login`. The example command lines below assume you have a working directory `data` which can be constructed using `dx mkdir data`.
@@ -28,6 +41,8 @@ Note that the header of `data_height` contains the original fields name, and sho
 sed -i '1s/.*/FID,IID,Pheno/' data_height
 sed -E 's/(^|,)(,|$)/\1NA\2/g' data_height | sed -E 's/(^|,)(,|$)/\1NA\2/g' | awk 'gsub(",","\t",$0)' > data_height_tab
 ```
+Note that it is also possible to load phenotype data directly as tab-seperated file by adding `--delim '\t'` to `dx extract_dataset`, however, our approach ensures that missing values are coded as NA instead of blank entries.
+
 The phenotype file is now suitable for analysis in LDAK. It should be uploaded from the local directory to the RAP enviroment:
 ```
 dx upload "data_height_tab"
