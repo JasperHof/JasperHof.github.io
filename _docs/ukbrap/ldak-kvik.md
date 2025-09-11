@@ -5,21 +5,28 @@ description: Running LDAK-KVIK on the UK Biobank Research Analysis Platform
 
 These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
 
-The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, note that is is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation), which is also used in our [YouTube tutorial](https://www.youtube.com/watch?v=e8hSDNR-Edw). In this case, a local environment is set up in which you can download and analyse UKB data, and upload to your project after.
+The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, note that is is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation), which is also used in our [YouTube tutorial](https://www.youtube.com/watch?v=e8hSDNR-Edw). In this case, a virtual environment is set up in which you can download and analyse UKB data, and upload to your project after.
 
 ---------------
 
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/e8hSDNR-Edw" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-    style="display: block; margin: 0 auto;">
-</iframe>
-
+<div style="text-align: center;">
+  <iframe 
+      width="560" 
+      height="315"
+      src="https://www.youtube.com/embed/e8hSDNR-Edw"
+      title="YouTube video player"
+      style="border: none;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+  </iframe>
+  <p style="font-size: 0.8em; color: #666; margin-top: 8px;">
+    Some browsers may block this embedded YouTube video.  
+    If the video doesn’t load, <a href="https://www.youtube.com/watch?v=e8hSDNR-Edw" target="_blank">watch it directly on YouTube</a>.
+  </p>
+</div>
 
 ---------------
+
 # Running LDAK-KVIK on UKB-RAP
 
 After the data has been prepared, it is possible to run **LDAK-KVIK** on the UKB-RAP using the Swiss-Army-Knife app. The example commands lines included in this page build upon the genotype and phenotype data that have been prepared on the [Preparation](/docs/ukbrap/preparation) page.
