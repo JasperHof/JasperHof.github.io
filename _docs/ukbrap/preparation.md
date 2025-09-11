@@ -25,9 +25,6 @@ The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](
   </p>
 </div>
 
-
-
-
 ---------------
 
 # Preparing data
