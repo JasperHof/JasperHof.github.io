@@ -25,9 +25,9 @@ wget https://github.com/dougspeed/LDAK/raw/refs/heads/main/ldak6.1.linux
 ``` 
 For MAC, open a terminal window (go to Finder / Applications / Utilities), then install the Mac executable of LDAK using the command line:
 ```
-curl -O https://github.com/dougspeed/LDAK/blob/main/ldak6.1.mac
+curl -L -o ldak6.1.mac https://github.com/dougspeed/LDAK/raw/main/ldak6.1.mac
 ```
-Note that it might be necessary to grant permission to run the file using `chmod a+x ldak6.linux` (for Linux) or `chmod a+x ldak6.mac` (for Mac).
+Note that it might be necessary to grant permission to run the file using `chmod a+x ldak6.1.linux` (for Linux) or `chmod a+x ldak6.1.mac` (for Mac).
 
 --- 
 
@@ -36,18 +36,18 @@ Note that it might be necessary to grant permission to run the file using `chmod
  - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK) (https://github.com/dougspeed/LDAK/blob/main/ldak6.1.linux). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-dotted box.
 
  - Open a terminal window (on my Linux, I go to Applications / System Tools / Terminal)
- - Type the name of the file (for example, /home/doug/Downloads/ldak6.linux), or if you are in the same folder as the executable file, you can simply type ./ldak6.linux. If compatible with your system, this should produce the LDAK welcome screen. 
+ - Type the name of the file (for example, /home/doug/Downloads/ldak6.1.linux), or if you are in the same folder as the executable file, you can simply type ./ldak6.1.linux. If compatible with your system, this should produce the LDAK welcome screen. 
  
- Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak6.linux`
+ Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak6.1.linux`
 
 ### 2b. Download the MAC executable
 
 - Download the Linux executable file from [GitHub](https://github.com/dougspeed/LDAK) (https://github.com/dougspeed/LDAK/blob/main/ldak6.1.mac). The file can be downloaded using the hotkey `ctrl+shift+s`, or by selecting 'download' in the three-dotted box.
 
 - Open a terminal window (go to Finder / Applications / Utilities)
-- Type the name of the file (for example, Downloads/ldak6.mac), or if you are in the same folder as the executable file, you can simply type ./ldak6.mac. If compatible with your system, this should produce the LDAK welcome screen. 
+- Type the name of the file (for example, Downloads/ldak6.1.mac), or if you are in the same folder as the executable file, you can simply type ./ldak6.1.mac. If compatible with your system, this should produce the LDAK welcome screen. 
 
-Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak6.mac`
+Note that if your computer tells you that you do not have permission to run the file, then first run `chmod a+x ldak6.1.mac`
 
 --- 
 
@@ -66,7 +66,7 @@ conda activate ldak_env
 ldak6
 ```
 
-The final command should display an overview of the LDAK commands. Note that all our examples use `ldak6.linux` to run LDAK-KVIK, which should be replaced by `ldak6` if downloaded via conda.
+The final command should display an overview of the LDAK commands. Note that all our examples use `ldak6.1.linux` to run LDAK-KVIK, which should be replaced by `ldak6` if downloaded via conda.
 
 --- 
 
