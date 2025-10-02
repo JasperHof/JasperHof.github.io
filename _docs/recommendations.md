@@ -76,7 +76,7 @@ It is also possible to simultaneously analyse all phenotypes in step 1 by adding
 ./ldak6.1.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --mpheno ALL --max-threads 4
 ./ldak6.1.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --mpheno ALL --max-threads 4
 ```
-The resulting summary statistics will be saved in `kvik.pheno1.assoc`, `kvik.pheno2.assoc`, etc.
+The resulting summary statistics will be saved in `kvik.step2.pheno1.assoc`, `kvik.step2.pheno2.assoc`, etc.
 
 **Please note** that the gene-based analysis in step 3 cannot be run simultaneously for all phenotypes, and should be performed for seperately. For example, when analysing 10 phenotypes, this can be achieved using a for loop:
 
