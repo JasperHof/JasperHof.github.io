@@ -30,9 +30,9 @@ Stay updated with the latest developments regarding LDAK software by signing up 
 Example command lines are:
 
 ```
-./ldak6.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
-./ldak6.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
+./ldak6.1.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./ldak6.1.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./ldak6.1.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
 ```
 
 The main output files are:
@@ -46,7 +46,7 @@ LDAK is available for Linux and Mac. On the [Downloads](/docs/downloads) page, w
 <!-- 
 It is also possible to install the Linux-version of LDAK via [conda](http://anaconda.org/genomedk/ldak5) using the following command:
 ```
-conda install genomedk::ldak5
+conda install genomedk::ldak6
 ```
 -->
 ### ❓ Questions or issues

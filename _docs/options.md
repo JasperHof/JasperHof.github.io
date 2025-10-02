@@ -24,7 +24,8 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 |`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-names PC1,PC3,age`     |
 |`--factor`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
-| `--binary YES`    |  Indicates that the analysed phenotype is binary |
+| `--binary YES`    |  Indicates that the analyzed phenotype is binary |
+| `--mpheno` | Specifies the phenotype number to analyze (e.g., `--mpheno 2` to analyze the second phenotype in the phenotype file). When using `--mpheno ALL`, all phenotypes are analyzed |
 | `--num-pedigree-predictors`    |  The number of SNPs used when testing for structure (default: 512)   |
 | `–-check-pedigree NO`   |  Indicates that there will be no check for structure. In this case, it is assumed that there is structure    |
 | `-–num-MCMC`   | Number of random vectors used to compute the heritability estimate in randomized Haseman-Elston regression (default: ten if $$n$$ < 40000, three if $$n$$ > 40000)     |
@@ -50,6 +51,7 @@ Please note that several arguments must match those used in Step 1 (i.e., you mu
 |`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-numbers PC1,PC3,age`     |
 |`--factor`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
+| `--mpheno` | Specifies the phenotype number to analyze (e.g., `--mpheno 2` to analyze the second phenotype in the phenotype file). When using `--mpheno ALL`, all phenotypes are analyzed |
 | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes. Conversely, it is possible to specify `--spa-test YES` for quantative traits to analyze using SPA  |
 
 ## Step 3
