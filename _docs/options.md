@@ -22,7 +22,7 @@ Default parameters in LDAK-KVIK can be modified by adding options to the command
 |`--covar`   | Name of the quantitative covariate file     |
 |`--covar-numbers`   | Specify a subset of covariates by number. For example, `--covar-numbers 1,2,4-6,8`     |
 |`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-names PC1,PC3,age`     |
-|`--factor`   | Name of the categorical covariate file     |
+|`--factors`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
 | `--binary YES`    |  Indicates that the analyzed phenotype is binary |
 | `--mpheno` | Specifies the phenotype number to analyze (e.g., `--mpheno 2` to analyze the second phenotype in the phenotype file). When using `--mpheno ALL`, all phenotypes are analyzed |
@@ -49,7 +49,7 @@ Please note that several arguments must match those used in Step 1 (i.e., you mu
 |`--covar`   | Name of the quantitative covariate file     |
 |`--covar-numbers`   | Specify a subset of covariates by number. For example, `--covar-numbers 1,2,4-6,8`     |
 |`--covar-names`   | Specify a subset of covariates by names. For example, `--covar-numbers PC1,PC3,age`     |
-|`--factor`   | Name of the categorical covariate file     |
+|`--factors`   | Name of the categorical covariate file     |
 | `--max-threads` | Number of threads (used for parallel computing) |
 | `--mpheno` | Specifies the phenotype number to analyze (e.g., `--mpheno 2` to analyze the second phenotype in the phenotype file). When using `--mpheno ALL`, all phenotypes are analyzed |
 | `–-spa-test NO`   | Indicates that no saddlepoint approximation will be used when testing binary phenotypes. Conversely, it is possible to specify `--spa-test YES` for quantative traits to analyze using SPA  |
