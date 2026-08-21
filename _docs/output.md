@@ -37,7 +37,7 @@ Chromosome Predictor Basepair A1 A2 Wald_Stat Wald_P Effect SD A1_mean MAF SPA_S
 ```
 The regression coefficients and standard errors are respectively given in the `Effect` and `SD` columns. `Wald_Stat` contains the Z-scores, and `Wald_P` contains the associated P values. `SPA_Status` indicates whether the [saddlepoint approximation](/docs/assoc/spa) has been applied.
 
-Please note that `A1` indicates the effect allele; the frequency of the effect allele is specified in the `A1_mean` column.
+Please note that `A1` indicates the effect allele; the frequency of the effect allele is specified in the `A1_mean` column in the `.summaries` file.
 
 <a id="step-3"></a>
 
