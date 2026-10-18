@@ -34,6 +34,12 @@ github_user: "JasperHof"
 github_repo: "JasperHof.github.io"
 github_branch: "master"
 
+# LDAK executable names used in all example commands across the site.
+# Update these when a new executable appears on https://github.com/dougspeed/LDAK
+ldak_linux: ldak7.01.linux
+ldak_mac: ldak6.3.mac
+ldak_docker: jasperhof/ldak:6.1
+
 # Optional
 twitter: dougthespeed
 

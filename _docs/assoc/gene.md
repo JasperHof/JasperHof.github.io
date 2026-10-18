@@ -21,24 +21,24 @@ Here, $$K_S$$ is a "genomic" relatedness matrix constructed using only SNPs with
 After performing LDAK-KVIK [Step 1 and Step 2](/docs/assoc/singlesnp), it is possible to perform gene-based association analysis using the command line:
 
 ```
-./ldak6.linux --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 4
+./{{ site.ldak_linux }} --kvik-step3 kvik --bfile data --genefile <annotfile> --max-threads 4
 ```
 
-LDAK-GBAT can also be used to perform gene-based analysis using **existing** summary statistics. This requires a three-step process, in which the SNPs are allocated to genes and tested using a permutation-based test. The following command lines can be used to run LDAK-GBAT:
+LDAK-GBAT can also be used to perform gene-based analysis using **existing** summary statistics. This requires three commands, which allocate SNPs to genes, test each gene, then combine the results. The following command lines can be used to run LDAK-GBAT:
 
 ```
-./ldak6.linux --cut-genes gbat --bfile data --genefile <annotfile> --max-threads 4
-./ldak6.linux --calc-genes-reml gbat --bfile data --summary <sumstats> --power -0.25 --max-threads 4
-./ldak6.linux --join-genes-reml gbat
+./{{ site.ldak_linux }} --cut-genes gbat --bfile data --genefile <annotfile> --max-threads 4
+./{{ site.ldak_linux }} --calc-genes-reml gbat --bfile data --summary <sumstats> --power -0.25 --max-threads 4
+./{{ site.ldak_linux }} --join-genes-reml gbat
 ```
 
 The results of gene-based association analysis are then stored in the `gbat` folder as `remls.all`.
 
 ## Gene annotation files
 
-Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contains one row for each gene, and four columns, that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. For the gene-based association analyses of UK Biobank data in the LDAK-KVIK publication, we tested 17,332 genes defined based on RefSeq annotations (the corresponding annotations file is provided at [resources](http://www.dougspeed.com/resources)).
+Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contain one row for each gene, and four columns that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. For the gene-based association analyses of UK Biobank data in the LDAK-KVIK publication, we tested 17,332 genes defined based on RefSeq annotations (the corresponding annotations file is provided at [resources](http://www.dougspeed.com/resources)).
 
-It is possible to download gene annotation files (hg37 and hg38) in a Linux terminal using
+It is possible to download gene annotation files (hg37 and hg38) in a Linux terminal using:
 ``` 
 wget https://dougspeed.com/wp-content/uploads/RefSeq_GRCh37.txt
 wget https://dougspeed.com/wp-content/uploads/RefSeq_GRCh38.txt

@@ -8,9 +8,9 @@ description: Technical details of LDAK-KVIK
 
 # Technical details of LDAK-KVIK
 
-**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we summarize the LDAK-KVIK algorithm for each step. For an extensive overview of the LDAK-KVIK algorithm, we refer to the [LDAK-KVIK publication](https://www.nature.com/articles/s41588-025-02286-z).
+**LDAK-KVIK** has two steps when used for single-SNP association analysis, and three steps when used for both single-SNP and gene-based association analysis. Below, we summarise each step of the algorithm. For a complete description, we refer to the [LDAK-KVIK publication](https://www.nature.com/articles/s41588-025-02286-z).
 
-**Please note**: It is not needed to use the full genotype data in LDAK-KVIK Step 1. Instead, we recommend using a subset of SNPs to compute LOCO PRS and estimate $$\lambda$$, which substantially reduces run time with minimal impact on statistical performance. The [Recommendations](/docs/recommendations) page provides example code for reducing the number of SNPs used in Step 1. 
+**Please note**: It is not necessary to use the full genotype data in LDAK-KVIK Step 1. Instead, we recommend using a subset of SNPs to compute LOCO PRS and estimate $$\lambda$$, which substantially reduces run time with minimal impact on statistical performance. The [Recommendations](/docs/recommendations) page provides example code for reducing the number of SNPs used in Step 1. 
 
 ---
 
@@ -19,7 +19,7 @@ description: Technical details of LDAK-KVIK
    2. Estimate $$\alpha$$ and $$h^2_j$$ using partitioned randomized Haseman-Elston Regression
    3. Revise the estimates of $$h^2_j$$ using Monte Carlo REML
    4. Determine suitable elastic net hyperparameters via cross-validation
-   5. Contruct LOCO PRS and estimate $$\lambda$$
+   5. Construct LOCO PRS and estimate $$\lambda$$
 
 **Step 2.** Single-SNP association analysis
    1. Calculate uncalibrated test statistics
@@ -44,13 +44,13 @@ LDAK-KVIK picks 512 SNPs semi-randomly from across the genome, then computes $$\
 
 **Operation 1b - Estimate $$\alpha$$ and $$h^2_j$$ using partitioned randomized Haseman-Elston Regression.**  
 
-LDAK-KVIK obtains $$\hat \alpha$$ and $$\hat h^2$$, estimates of the power parameter and heritability parameter, respectively, by running randomized Haseman-Elston Regression. LDAK-KVIK considers five different values for $$\alpha$$ (-1, -0.75, -0.5, -0.25, 0), then sets $$\hat \alpha$$ to the value that results in best-fitting covariance matrix, and sets $$\hat h^2$$ to the corresponding estimate of $$h^2$$. LDAK-KVIK then obtains $$\hat h^2_j$$, estimates of the per-SNP heritabilties, by setting $$\hat h^2_j = w_j \hat h^2/W$$, where $$w_j=[f_j (1-f_j)]^{1+\hat \alpha}$$ and $$W = \sum_j w_j$$.
+LDAK-KVIK obtains $$\hat \alpha$$ and $$\hat h^2$$, estimates of the power parameter and heritability parameter, respectively, by running randomized Haseman-Elston Regression. LDAK-KVIK considers five different values for $$\alpha$$ (-1, -0.75, -0.5, -0.25, 0), then sets $$\hat \alpha$$ to the value that results in the best-fitting covariance matrix, and sets $$\hat h^2$$ to the corresponding estimate of $$h^2$$. LDAK-KVIK then obtains $$\hat h^2_j$$, estimates of the per-SNP heritabilities, by setting $$\hat h^2_j = w_j \hat h^2/W$$, where $$w_j=[f_j (1-f_j)]^{1+\hat \alpha}$$ and $$W = \sum_j w_j$$.
 
 ---
 
 **Operation 1c - Revise the estimates of $$h^2_j$$ using Monte Carlo REML.**  
 
-LDAK-KVIK computes the REML estimate of $$h^2$$ by iteratively solving equations involving the heritability estimate, covariance matrix and phenotype (see the LDAK-KVIK publication for more details). The Haseman-Elston estimate of $$h^2$$ is used in the first iteration, and updated until converged to an approximate solution of the system of equations. Finally, LDAK-KVIK recomputes the estimates of $$h^2_j$$ using the revised estimate of $$h^2$$ (continuing to use the estimate of $$\alpha$$ from randomized Haseman-Elston Regression).
+LDAK-KVIK computes the REML estimate of $$h^2$$ by iteratively solving equations involving the heritability estimate, covariance matrix and phenotype (see the LDAK-KVIK publication for more details). The Haseman-Elston estimate of $$h^2$$ is used in the first iteration, and updated until it converges to an approximate solution of the system of equations. Finally, LDAK-KVIK recomputes the estimates of $$h^2_j$$ using the revised estimate of $$h^2$$ (continuing to use the estimate of $$\alpha$$ from randomized Haseman-Elston Regression).
 
 ---
 
@@ -70,9 +70,9 @@ LDAK-KVIK uses cross-validation to obtain suitable values for $$p$$ and $$F$$. B
 
 **Operation 1e - Construct LOCO PRS and estimate $$\lambda$$.**
 
-LDAK-KVIK constructs $$P_c$$, the $$c$$th LOCO PRS, assuming the elastic net prior distribution with optimal hyperparameters estimated in step 1d. The SNPs on chromosome $$c$$ are omitted when computing $$P_c$$, such that a different PRS is constructing for each chromosome.
+LDAK-KVIK constructs $$P_c$$, the $$c$$th LOCO PRS, assuming the elastic net prior distribution with optimal hyperparameters estimated in Operation 1d. The SNPs on chromosome $$c$$ are omitted when computing $$P_c$$, such that a different PRS is constructed for each chromosome.
 
-If operation 1a determines there is low structure, LDAK-KVIK sets $$\lambda=1$$. If the test in Operation 1a found strong structure, LDAK-KVAK instead constructs a LOCO PRS $$P_c$$ assuming the ridge regression prior distribution. It then uses least-squares regression using the model $$E(Y - P_c) = X_j \beta_j$$ to compute two sets of unscaled $$\chi^2 (1)$$ statistics for 65,000 randomly-picked SNPs: one set of statistics for $$P_c$$ constructed using the elastic net prior (denoted by $$U_j$$), and one set of statistics for $$P_c$$ constructed using the ridge regression prior (denoted by $$T_j$$). LDAK-KVIK uses the Grammar-Gamma formula to compute $$\lambda'$$, the scaling factor corresponding to the set of statistics corresponding to ridge regression. Finally, $$\lambda$$ is computed such that the mean of the statistics obtained from the elastic net matches those of the scaled statistics from ridge regression: $$\lambda \sum_{j \in S} T_j == \lambda' \sum_{j \in S} U_j$$. Here S is the subset of SNPs such that $$\lambda U_j < 6$$ and $$\lambda' T_j < 6$$, selecting only weakly-associated SNPs.
+If operation 1a determines there is low structure, LDAK-KVIK sets $$\lambda=1$$. If the test in Operation 1a found strong structure, LDAK-KVIK instead constructs a LOCO PRS $$P_c$$ assuming the ridge regression prior distribution. It then uses least-squares regression using the model $$E(Y - P_c) = X_j \beta_j$$ to compute two sets of unscaled $$\chi^2 (1)$$ statistics for 65,000 randomly-picked SNPs: one set of statistics for $$P_c$$ constructed using the elastic net prior (denoted by $$U_j$$), and one set of statistics for $$P_c$$ constructed using the ridge regression prior (denoted by $$T_j$$). LDAK-KVIK uses the Grammar-Gamma formula to compute $$\lambda'$$, the scaling factor for the statistics obtained using ridge regression. Finally, $$\lambda$$ is computed such that the mean of the statistics obtained from the elastic net matches those of the scaled statistics from ridge regression: $$\lambda \sum_{j \in S} T_j = \lambda' \sum_{j \in S} U_j$$. Here S is the subset of SNPs such that $$\lambda U_j < 6$$ and $$\lambda' T_j < 6$$, selecting only weakly-associated SNPs.
 
 ---
 

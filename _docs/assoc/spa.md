@@ -5,10 +5,10 @@ description: Information about using the saddlepoint approximation in LDAK
 
 # Saddlepoint approximation
 
-When analysing binary traits, we recommend running single-SNP analysis using a saddlepoint approximation (SPA). Classical logistic regression may result in inflation of type 1 error when testing phenotypes with case:control imbalance. The SPA implemented in LDAK guards against false positives and can robustly test SNPs for association, even when testing data with highly imbalanced case:control ratio.
+When analysing binary traits, we recommend running single-SNP analysis using a saddlepoint approximation (SPA). Classical logistic regression may result in inflation of type 1 error when testing phenotypes with case:control imbalance. The SPA implemented in LDAK guards against false positives and can robustly test SNPs for association, even when the case:control ratio is highly imbalanced.
 
 The SPA is included in LDAK by default when running `--logistic`, or when running `--kvik-step2` on binary traits, for example:
 ```
-./ldak.out --logistic out --bfile data ----pheno phenofile --covar covfile
+./{{ site.ldak_linux }} --logistic out --bfile data --pheno phenofile --covar covfile
 ``` 
-The SPA can be turned off by specifying `--spa-test NO`, in this case LDAK switches to classical logistic regression.
+The SPA can be turned off by adding `--spa-test NO`, in which case LDAK uses classical logistic regression.

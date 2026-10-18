@@ -17,13 +17,13 @@ LDAK accepts genetic data in three formats, using one of the following arguments
 
 | Argument |  Description |
 |--------------------|--------|
-| `--bfile`    | Binary PLINK (.bed) format, which accomodates hard-coded SNP genotypes. LDAK will then expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
-| `--bgen`    | Oxford (.bgen) format, which accomodates dosage values. Note then LDAK requires an associated samplefile specifying the sample IDs using the `--sample` flag.   |
+| `--bfile`    | Binary PLINK (.bed) format, which accommodates hard-coded SNP genotypes. LDAK will then expect to find the files `<datastem>.bed`, `<datastem>.bim` and `<datastem>.fam`   |
+| `--bgen`    | Oxford (.bgen) format, which accommodates dosage values. Note that LDAK then also requires the corresponding sample file, specified using `--sample`.   |
 | `--sp`    | SP format, which requires data in a large matrix in text format. LDAK will then expect to find the files `<datastem>.sp`, `<datastem>.bim` and `<datastem>.fam`   |
 
 To filter either samples or predictors, see [Data Filtering](/docs/input#filtering). LDAK is usually applied to SNP data, in which case all predictors take values between 0 and 2 (representing the count of the A1 allele). However, LDAK can also be applied to other datatypes; for this your data should be in either gen or SP format and you should use the option `--SNP-data NO`.
 
-Notably, LDAK is not able to process data of `pgen` format and `vcf` format. For application of LDAK-KVIK on these data types, we recommend first converting the genotype data to Binary PLINK format.
+Note that LDAK cannot read `pgen` or `vcf` files. To analyse these data with LDAK-KVIK, we recommend first converting the genotype data to binary PLINK format (e.g., using PLINK).
 
 <a id="pheno"></a>
 
@@ -37,13 +37,13 @@ FID IID Pheno1 Pheno2
 3 3 0.32 36
 ...
 ```
-LDAK accepts phenotype files both with and without a header. In case a header is included, the first two elements must be named either FID & IID or ID1 & ID2. If a phenotype file contains more than one phenotype (i.e., more than three columns), the user must specify the phenotype to analyse in LDAK using the option `--mpheno <integer>` (to specify by number). Alternatively, some functions (most notably REML) allow for testing of all phenotypes by adding --mpheno -1.
+LDAK accepts phenotype files both with and without a header. In case a header is included, the first two elements must be named either FID & IID or ID1 & ID2. If a phenotype file contains more than one phenotype (i.e., more than three columns), the user must specify the phenotype to analyse in LDAK using the option `--mpheno <integer>` (to specify by number). Alternatively, some functions (most notably REML) allow all phenotypes to be analysed by adding `--mpheno -1`.
 
 Missing values should be denoted by NA. Note that whereas PLINK also treats -9 as missing, this is not the case in LDAK. Binary phenotypes should only take values:
 - 0 (control), 1 (case) or NA; or
 - 1 (control), 2 (case) or NA
 
-When a phenotypic value is NA for a particular sample in the analysis of a single phenotype, then that sample is excluded from the analysis. When ananlysing multiple phenotypes, the NA values are imputed to the mean.
+When a phenotypic value is NA for a particular sample in the analysis of a single phenotype, then that sample is excluded from the analysis. When analysing multiple phenotypes, the NA values are imputed to the mean.
 
 <a id="covar"></a>
 
@@ -67,7 +67,7 @@ Missing covariate values should be denoted by NA (missing values are replaced by
 
 ### Gene annotations
 
-Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contains one row for each gene, and four columns, that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. 
+Gene-based association analysis requires a gene annotations file, which should be in 'Browser Extensible Data' format. This means that it should contain one row for each gene, and four columns that report the gene name and chromosome, and its start and end basepairs. For example, if the file contained a single line, with entries "ABC 7 0 10", this would indicate there is one gene, called ABC, which spans the first ten basepairs of Chromosome 7. 
 
 It is possible to download gene annotation files (hg37 and hg38) in a Linux terminal using:
 ``` 
@@ -85,12 +85,12 @@ For most commands, it is possible to filter on SNPs or filter on samples using t
 | Argument |  Description |
 |--------------------|--------|
 | `--extract <extractfile>`    | Tells LDAK to use only the predictors specified in `<extractfile>`   |
-| `--exclude <excludefile>` | Tells LDAK to not use the predictors specified in `<excludefile>`. Note that predictors in --exclude <excludefile> takes priority over predictors in --extract <extractfile> |
-| `--chr <integer>` | Tells LDAK to only use predictors on a particular chromosome. If you use --chr AUTO, LDAK will only use Chromosomes 1-22 (in humans, these are the autosomes) |
+| `--exclude <excludefile>` | Tells LDAK to not use the predictors specified in `<excludefile>`. Note that `--exclude` takes priority over `--extract` |
+| `--chr <integer>` | Tells LDAK to only use predictors on a particular chromosome. If you use `--chr AUTO`, LDAK will only use Chromosomes 1-22 (in humans, these are the autosomes) |
 | `--snp <predname>` | Tells LDAK to only use the named predictor |
-| `--keep <keepfile>` | Tells LDAK to only use the samples specified in <keepfile> |
-| `--remove <removefile>` | Tells LDAK to not use the samples specified in <removefile>. Note that predictors in --remove <removefile> takes priority over predictors in --keep <keepfile> |
+| `--keep <keepfile>` | Tells LDAK to only use the samples specified in `<keepfile>` |
+| `--remove <removefile>` | Tells LDAK to not use the samples specified in `<removefile>`. Note that `--remove` takes priority over `--keep` |
 
 In addition, for many commands, you can add `--pheno <phenofile>` and LDAK will only consider samples for which phenotypes are available.
 
-Note that if you would like to filter predictors based on minor allele frequency, variance, missingness or information score, you must first remake the data (this filtering can not be done on-the-fly).
+Note that if you would like to filter predictors based on minor allele frequency, variance, missingness or information score, you must first remake the data (this filtering cannot be done on the fly).

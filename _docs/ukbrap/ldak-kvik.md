@@ -5,7 +5,7 @@ description: Running LDAK-KVIK on the UK Biobank Research Analysis Platform
 
 These web pages include a tutorial for using **LDAK-KVIK** on the UK Biobank Research Analysis Platform (UKB-RAP). We include a guide for preparing your data, example commands for running LDAK-KVIK, and recommendations for efficient use of the UKB-RAP. The recommendations listed on these pages also apply to other cloud-based computing facilities. Note that several of the recommendations listed here have also been described [elsewhere](https://github.com/dnanexus/UKB_RAP/tree/main/GWAS).
 
-The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, note that is is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation), which is also used in our [YouTube tutorial](https://www.youtube.com/watch?v=e8hSDNR-Edw). In this case, a virtual environment is set up in which you can download and analyse UKB data, and upload to your project after.
+The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](https://dnanexus.gitbook.io/uk-biobank-rap/working-on-the-research-analysis-platform/accessing-data/accessing-bulk-data#analyzing-files-with-swiss-army-knife), which sends command-line executables to the RAP server. However, it is also possible to perform these commands directly on the [Cloud Workstation](https://documentation.dnanexus.com/developer/cloud-workstation), which is also used in our [YouTube tutorial](https://www.youtube.com/watch?v=e8hSDNR-Edw). In this case, a virtual environment is set up in which you can download and analyse UKB data, and upload the results to your project afterwards.
 
 ---------------
 
@@ -29,11 +29,11 @@ The presented guide uses bash scripts that interact with the [Swiss-Army-Knife](
 
 # Running LDAK-KVIK on UKB-RAP
 
-After the data has been prepared, it is possible to run **LDAK-KVIK** on the UKB-RAP using the Swiss-Army-Knife app. The example commands lines included in this page build upon the genotype and phenotype data that have been prepared on the [Preparation](/docs/ukbrap/preparation) page.
+After the data has been prepared, it is possible to run **LDAK-KVIK** on the UKB-RAP using the Swiss-Army-Knife app. The example command lines on this page build upon the genotype and phenotype data that have been prepared on the [Preparation](/docs/ukbrap/preparation) page.
 
 ### LDAK-KVIK Step 1
 
-**LDAK-KVIK** Step 1 is best performed using the directly genotyped SNPs of the UK Biobank. This is, because including more SNPs (e.g., imputed SNPs) do not improve the accuracy of the polygenic risk scores resulting from Step 1. Moreover, Step 1 is much faster when restricted to directly genotyped SNPs, hence it is best to restrict to directly genotyped SNPs in this step.
+**LDAK-KVIK** Step 1 is best performed using the directly genotyped SNPs of the UK Biobank. This is because including more SNPs (e.g., imputed SNPs) does not improve the accuracy of the polygenic risk scores resulting from Step 1. Moreover, Step 1 is much faster when restricted to directly genotyped SNPs, hence it is best to restrict to directly genotyped SNPs in this step.
 
 The following example command runs LDAK-KVIK Step 1 using the Swiss-Army-Knife:
 ```
@@ -41,9 +41,9 @@ project="Basic GWAS"                                        # Name of the projec
 data_file_dir="data"                                        # Name of the working directory
 
 # Specify the command line to install LDAK and run LDAK-KVIK Step 1
-run_ldak="wget https://github.com/dougspeed/LDAK/raw/refs/heads/main/ldak6.1.linux;\ 
-        chmod a+x ldak6.1.linux;\
-        ./ldak6.1.linux --kvik-step1 kvik --bfile ukb_merged --pheno data_height_tab --covar data_pcs_tab --max-threads 4"
+run_ldak="wget https://github.com/dougspeed/LDAK/raw/main/{{ site.ldak_linux }};\
+        chmod a+x {{ site.ldak_linux }};\
+        ./{{ site.ldak_linux }} --kvik-step1 kvik --bfile ukb_merged --pheno data_height_tab --covar data_pcs_tab --max-threads 4"
 
 # Run using Swiss-Army-Knife
 dx run swiss-army-knife  \
@@ -73,9 +73,9 @@ data_file_dir="data"                                        # Name of the workin
 for i in {1..22}; do
 
 # Specify the command line to run LDAK-KVIK Step 2 for each chromosome
-run_ldak="chmod a+x ldak6.1.linux ;\
-  ./ldak6.1.linux --kvik-step2 kvik --bfile imp_chr${i} --pheno data_height_tab \
-  --covar data_pcs_tab --keep ukb_merged.fam --max-threads 4"
+run_ldak="chmod a+x {{ site.ldak_linux }} ;\
+  ./{{ site.ldak_linux }} --kvik-step2 kvik --bfile imp_chr${i} --pheno data_height_tab \
+  --covar data_pcs_tab --keep ukb_merged.fam --chr ${i} --max-threads 4"
 
 # Run using Swiss-Army-Knife 
 dx run swiss-army-knife -iin="data_height_tab" \
@@ -88,7 +88,7 @@ dx run swiss-army-knife -iin="data_height_tab" \
   -iin="${data_file_dir}/kvik.step1.loco.prs" \
   -iin="${data_file_dir}/kvik.step1.effects" \
   -iin="${data_file_dir}/kvik.step1.root" \
-  -iin="${data_file_dir}/ldak6.1.linux" \
+  -iin="${data_file_dir}/{{ site.ldak_linux }}" \
   -icmd="${run_ldak}" --tag="kvik_step2" --instance-type "mem1_ssd1_v2_x16" \
   --destination="${project}:${data_file_dir}" --brief --yes
 done

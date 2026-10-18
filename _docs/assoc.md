@@ -13,10 +13,10 @@ description: Overview of LDAK-KVIK
 LDAK-KVIK is a method for performing mixed-model association analysis (MMAA) for GWAS. LDAK-KVIK uses a three-step process to test SNPs and genes for association with the phenotype:
 
 1. Compute a Leave-One-Chromosome-Out (LOCO) PRS using an Elastic Net model
-2. Use the PRS as offset in single-SNP analysis 
-3. Use the summary statistics of single-SNP analysis to run a gene-based association analysis LDAK-GBAT.
+2. Use the PRS as offsets in single-SNP analysis
+3. Use the summary statistics of single-SNP analysis to run gene-based association analysis with LDAK-GBAT
 
-A summary of the each step is included in the [LDAK-KVIK steps](/docs/assoc/singlesnp), and a detailed description of LDAK-KVIK is included in the LDAK-KVIK [publication](https://www.nature.com/articles/s41588-025-02286-z). Below, we list some innovations of LDAK-KVIK.
+A summary of each step is included in the [LDAK-KVIK steps](/docs/assoc/singlesnp), and a detailed description of LDAK-KVIK is included in the LDAK-KVIK [publication](https://www.nature.com/articles/s41588-025-02286-z). Below, we list the key innovations of LDAK-KVIK.
 
 ## Key innovations of LDAK-KVIK
 

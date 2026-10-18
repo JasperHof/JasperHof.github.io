@@ -9,13 +9,13 @@ permalink: /
 **LDAK-KVIK** is a powerful and computationally efficient method for mixed-model association analysis in genome-wide association studies (GWAS). It is part of the [LDAK](http://www.dougspeed.com) software, which is written in C. LDAK-KVIK has been published in [Nature Genetics](https://www.nature.com/articles/s41588-025-02286-z).
 
 ### 🚀 Why use LDAK-KVIK?
- - **Scalability**: Analyzes hundreds of thousands of individuals within hours
+ - **Scalability**: Analyses hundreds of thousands of individuals within hours, with low memory requirements
  - **Statistical power**: Improved detection of associated loci using an elastic net model
  - **Handles structure**: Robust to relatedness and population stratification
- - **Saddlepoint approximation**: Controls type 1 error when analyzing rare diseases or skewed quantitative traits
- - **Gene-based testing**: Leverage summary statistics in a gene-based association test
+ - **Saddlepoint approximation**: Controls type 1 error when analysing rare diseases or skewed quantitative traits
+ - **Gene-based testing**: Uses the single-SNP summary statistics for gene-based association testing
 
-To download LDAK, please visit our [downloads](/docs/downloads) page. Example code of LDAK-KVIK can be found on the [example code](/docs/example) page. An overview of the steps involved in the LDAK-KVIK algorithm is included on the [LDAK-KVIK steps](/docs/assoc/singlesnp) page.
+To download LDAK, please visit our [downloads](/docs/downloads) page. Example code for LDAK-KVIK can be found on the [example code](/docs/example) page. An overview of the steps involved in the LDAK-KVIK algorithm is included on the [LDAK-KVIK steps](/docs/assoc/singlesnp) page.
 
 Stay updated with the latest developments regarding LDAK software by signing up for the [LDAK mailing list](https://dougspeed.com/downloads/).
 
@@ -30,9 +30,9 @@ Stay updated with the latest developments regarding LDAK software by signing up 
 Example command lines are:
 
 ```
-./ldak6.1.linux --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
-./ldak6.1.linux --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
-./ldak6.1.linux --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
+./{{ site.ldak_linux }} --kvik-step1 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./{{ site.ldak_linux }} --kvik-step2 kvik --bfile data --pheno phenofile --covar covfile --max-threads 4
+./{{ site.ldak_linux }} --kvik-step3 kvik --bfile data --genefile genefile --max-threads 4
 ```
 
 The main output files are:
@@ -51,4 +51,4 @@ conda install genomedk::ldak6
 -->
 ### ❓ Questions or issues
 
-If you have questions or run into issues, please [raise an issue on our GitHub](https://github.com/dougspeed/LDAK/issues).
+If you have questions or run into issues, please [open an issue on GitHub](https://github.com/dougspeed/LDAK/issues).
